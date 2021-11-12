@@ -977,7 +977,7 @@ extension BootpayBioView {
         let alert = initAlert()
         alert.showEdit("설정하기", subTitle: message, closeButtonTitle: OKTitle, animationStyle: .bottomToTop ).setDismissBlock {
 
-            let url = URL(string: UIApplication.openSettingsURLString)
+            let url = URL(string: UIApplicationOpenSettingsURLString)
             if UIApplication.shared.canOpenURL(url!) {
                 UIApplication.shared.open(url!, options: [:])
             }
