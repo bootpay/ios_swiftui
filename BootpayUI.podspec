@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'BootpayUI'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of BootpayUI.'
+  s.summary          = 'Bootpay에서 지원하는 공식 SwiftUI 및 생체인증 결제 라이브러리 입니다. ios 14 이상부터 사용가능합니다.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -24,19 +24,31 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/bootpay/BootpayUI'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'bootpay' => 'rupy1014@gmail.com' }
+  s.author           = { 'bootpay' => 'bootpay.co.kr@gmail.com' }
   s.source           = { :git => 'https://github.com/bootpay/BootpayUI.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '14.0'
 
   s.source_files = 'BootpayUI/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'BootpayUI' => ['BootpayUI/Assets/*.png']
-  # }
+   s.resource_bundles = {
+     'BootpayUI' => ['BootpayUI/*.xcassets']
+   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  
+  
+  s.static_framework = true
+  s.dependency 'Bootpay'
+  s.dependency 'CryptoSwift'
+  s.dependency 'Alamofire'
+  s.dependency 'ObjectMapper'
+  s.dependency 'SnapKit'
+  s.dependency 'JGProgressHUD'
+  s.dependency 'SCLAlertView'
+  
+  
 end

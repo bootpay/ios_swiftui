@@ -35,5 +35,22 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
+    
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLName</key>
+            <string>kr.co.bootpay.uiexample</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>bootpayui</string>
+            </array>
+        </dict>
+    </array>
+    
+    <key>NSFaceIDUsageDescription</key>
+    <string>결제 진행시 권한이 필요합니다</string>
 </dict>
 </plist>

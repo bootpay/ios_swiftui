@@ -1,0 +1,6 @@
+framework module BootpayUI {
+  umbrella header "BootpayUI-umbrella.h"
+
+  export *
+  module * { export * }
+}
