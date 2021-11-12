@@ -18,7 +18,6 @@ struct BioView: View {
     
     var manager = BootpayRest()
     let user = BootUser()
-//    @State private var showModalBootpay = false
     private var payload = BootBioPayload()
      
     var body: some View {
@@ -27,7 +26,7 @@ struct BioView: View {
                     
                
                 if(self.showingBootpay == false) {
-                    Button("pay ") {
+                    Button("생체인증 결제테스트") {
                         
                         user.userId = "12345"
                         user.area = "서울"

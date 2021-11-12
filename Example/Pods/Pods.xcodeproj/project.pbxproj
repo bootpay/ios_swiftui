@@ -156,6 +156,7 @@
 		82DF1908208163EEF6AAEBD0BD0239DC /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE1EE416EFA7E2AFA683EDA7756F8F /* ConstraintConfig.swift */; };
 		86B000E818F1B5D9FE89D8A4B212401B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBE00646A514365F86456896C595115 /* Foundation.framework */; };
 		878BA4B3016AAF2F8DFEC97048EF66EA /* CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393BB8999868E3F6913EC90FEF9C2A9A /* CBC.swift */; };
+		87ACC4BD273E5BB800782928 /* BootpayUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ACC4BC273E5BB800782928 /* BootpayUI.swift */; };
 		8B9CDBE3FFD712120CD66DD8B06C44E4 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCEAC985F9C68F6ACCEDDDE002D81DE /* ParameterEncoder.swift */; };
 		8DA261A267677F2A1860B6E1F7985555 /* Pods-BootpayUI_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A0B2C2EE0265A8CE245CB755219E4A /* Pods-BootpayUI_Tests-dummy.m */; };
 		8F9E1EEF2FE52E3231A769722D5C4148 /* ServerTrustEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B848F4FAD8123D9DA3549B49D1135CD /* ServerTrustEvaluation.swift */; };
@@ -596,6 +597,7 @@
 		840CBA7DB7768B65B2F5308D092723A9 /* ResourceBundle-BootpayUI-BootpayUI-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-BootpayUI-BootpayUI-Info.plist"; sourceTree = "<group>"; };
 		869F7B650250C2537007D690167FB6B6 /* ObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-umbrella.h"; sourceTree = "<group>"; };
 		874132E5E2D4BB7E29231956CFA5FEB0 /* JGProgressHUDAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDAnimation.h; path = JGProgressHUD/JGProgressHUD/include/JGProgressHUDAnimation.h; sourceTree = "<group>"; };
+		87ACC4BC273E5BB800782928 /* BootpayUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootpayUI.swift; sourceTree = "<group>"; };
 		87F3D87AFA87C22C86DD18950BB309DB /* Bootpay-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bootpay-umbrella.h"; sourceTree = "<group>"; };
 		888EDE7E3760FF576719065D52CA8C7A /* BootpayBuildConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BootpayBuildConfig.swift; path = Bootpay/Classes/config/BootpayBuildConfig.swift; sourceTree = "<group>"; };
 		8990A45066391CBD962F74B7A3EA1766 /* BootpayDefaultHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BootpayDefaultHelper.swift; path = Bootpay/Classes/helper/BootpayDefaultHelper.swift; sourceTree = "<group>"; };
@@ -747,7 +749,7 @@
 		F5C1B04FBC5B671D3AC4FB76534B7118 /* UInt128.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UInt128.swift; path = Sources/CryptoSwift/UInt128.swift; sourceTree = "<group>"; };
 		F6CD77B851F08DA3C9996328E25BCB2E /* BatchedCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BatchedCollection.swift; path = Sources/CryptoSwift/BatchedCollection.swift; sourceTree = "<group>"; };
 		F6ED48BEFAA6640DA17BAC0B20402299 /* AlamofireExtended.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlamofireExtended.swift; path = Source/AlamofireExtended.swift; sourceTree = "<group>"; };
-		F70DC420EF4FE78C3708DF222B1CE9FA /* BootpayUI-BootpayUI */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "BootpayUI-BootpayUI"; path = BootpayUI.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		F70DC420EF4FE78C3708DF222B1CE9FA /* BootpayUI.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BootpayUI.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		F804B285E5FF8F3C487B121E20191AAE /* GCM.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GCM.swift; path = Sources/CryptoSwift/BlockMode/GCM.swift; sourceTree = "<group>"; };
 		F81274EDB681F11E7CB05F7DCA2BB33C /* CryptoSwift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CryptoSwift; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCD621793F70CEF6022DC1C6DB37B4D3 /* CBCMAC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBCMAC.swift; path = Sources/CryptoSwift/CBCMAC.swift; sourceTree = "<group>"; };
@@ -1040,7 +1042,7 @@
 				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
 				FD63204F56C3B3F3E1E360750C1D7454 /* Bootpay */,
 				FE16AC3708A37D13F33073CB65BC659C /* BootpayUI.framework */,
-				F70DC420EF4FE78C3708DF222B1CE9FA /* BootpayUI-BootpayUI */,
+				F70DC420EF4FE78C3708DF222B1CE9FA /* BootpayUI.bundle */,
 				F81274EDB681F11E7CB05F7DCA2BB33C /* CryptoSwift */,
 				7FBAFAA66E9C7401884F439AE8BC662C /* JGProgressHUD */,
 				B9084FE779702931E8DF1D00A2D725FB /* ObjectMapper */,
@@ -1375,6 +1377,7 @@
 				7A462F8CD181BA393936FBCBB4B9A2BE /* BootpayBioUI.swift */,
 				45946A801C6BEBC62FFF4FE3439930A4 /* BootpayBioView.swift */,
 				F16DE77451FDB69B3E999FE2B14C6485 /* BootpayBioWebView.swift */,
+				87ACC4BC273E5BB800782928 /* BootpayUI.swift */,
 			);
 			name = swiftUI;
 			path = BootpayUI/Classes/swiftUI;
@@ -1767,7 +1770,7 @@
 			);
 			name = "BootpayUI-BootpayUI";
 			productName = BootpayUI;
-			productReference = F70DC420EF4FE78C3708DF222B1CE9FA /* BootpayUI-BootpayUI */;
+			productReference = F70DC420EF4FE78C3708DF222B1CE9FA /* BootpayUI.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		E0152970E5467A11DF89E7D22C63B47C /* SCLAlertView */ = {
@@ -1814,6 +1817,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					DF3921E6CD47C012486AA4CF963AC46E = {
+						DevelopmentTeam = 7ZCWM83NFK;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1938,6 +1946,7 @@
 			files = (
 				A02745CB7B8D7D16CCA0D73C4D1AB679 /* AuthenticationErrors.swift in Sources */,
 				0B0ECE75472B9B806BB0F72184F7B44C /* Base32.swift in Sources */,
+				87ACC4BD273E5BB800782928 /* BootpayUI.swift in Sources */,
 				1B71827719A8DD99AA1AE1C3C7D81A11 /* BioMetricAuthenticator.swift in Sources */,
 				58716531F712464CB46B38F413072D18 /* BootBioPayload.swift in Sources */,
 				22976668FF13EDFF516E04258C0C146D /* BootBioTheme.swift in Sources */,
@@ -2468,6 +2477,7 @@
 			baseConfigurationReference = 2782AAB2E644087C4FC2B5AF460E3F2A /* BootpayUI.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BootpayUI";
+				DEVELOPMENT_TEAM = 7ZCWM83NFK;
 				IBSC_MODULE = BootpayUI;
 				INFOPLIST_FILE = "Target Support Files/BootpayUI/ResourceBundle-BootpayUI-BootpayUI-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -3000,6 +3010,7 @@
 			baseConfigurationReference = 4839081C80222750BD148276D3DE53D8 /* BootpayUI.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BootpayUI";
+				DEVELOPMENT_TEAM = 7ZCWM83NFK;
 				IBSC_MODULE = BootpayUI;
 				INFOPLIST_FILE = "Target Support Files/BootpayUI/ResourceBundle-BootpayUI-BootpayUI-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

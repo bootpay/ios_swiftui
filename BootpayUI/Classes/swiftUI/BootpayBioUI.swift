@@ -7,21 +7,14 @@
 ////
 //
 import SwiftUI
-
-//import UIKit
+ 
 import Alamofire
-//import SwiftOTP
 import SnapKit
 import JGProgressHUD
 import LocalAuthentication
 import Bootpay
 
 
-#if os(macOS)
-public typealias BTViewRepresentable = NSViewRepresentable
-#elseif os(iOS)
-public typealias BTViewRepresentable = UIViewRepresentable
-#endif
 
 
 @objc public protocol BootpayBioProtocol {    
