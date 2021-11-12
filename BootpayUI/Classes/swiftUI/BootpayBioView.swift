@@ -31,7 +31,7 @@ public class BootpayBioView: BTView {
     let hud = JGProgressHUD()
     
     //내부 변수 관련
-    var bioPayload: BootBioPayload?
+    public var bioPayload: BootBioPayload?
     var payServerUnixtime = 0 //결제용    
     var selectedCardIndex = 0
     var selectedQuotaRow = -1 //picker
@@ -977,7 +977,7 @@ extension BootpayBioView {
         let alert = initAlert()
         alert.showEdit("설정하기", subTitle: message, closeButtonTitle: OKTitle, animationStyle: .bottomToTop ).setDismissBlock {
 
-            let url = URL(string: UIApplication.openSettingsURLString)
+            let url = URL(string: UIApplicationOpenSettingsURLString)
             if UIApplication.shared.canOpenURL(url!) {
                 UIApplication.shared.open(url!, options: [:])
             }

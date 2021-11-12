@@ -755,7 +755,7 @@
 		FD885C550369D133A4280AA5E799935B /* ObjectMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-prefix.pch"; sourceTree = "<group>"; };
 		FDBF54327D92F16EFDAE19A9DCE569A8 /* String+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "Sources/CryptoSwift/String+Extension.swift"; sourceTree = "<group>"; };
 		FDF4AC59A00EEC07AB02AC7FC3611856 /* ConstraintDirectionalInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsetTarget.swift; path = Source/ConstraintDirectionalInsetTarget.swift; sourceTree = "<group>"; };
-		FE16AC3708A37D13F33073CB65BC659C /* BootpayUI */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BootpayUI; path = BootpayUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE16AC3708A37D13F33073CB65BC659C /* BootpayUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BootpayUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE4D0FA469CDB9C0ED8042F7B7D149E9 /* JGProgressHUDIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDIndicatorView.h; path = JGProgressHUD/JGProgressHUD/include/JGProgressHUDIndicatorView.h; sourceTree = "<group>"; };
 		FECD9FB084A64FF1745A8F1FA78FD963 /* PKCS7Padding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKCS7Padding.swift; path = Sources/CryptoSwift/PKCS/PKCS7Padding.swift; sourceTree = "<group>"; };
 		FF3519A9C7910F1A23E0CAE0AC6A4F3F /* CryptoSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CryptoSwift.release.xcconfig; sourceTree = "<group>"; };
@@ -1039,7 +1039,7 @@
 			children = (
 				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
 				FD63204F56C3B3F3E1E360750C1D7454 /* Bootpay */,
-				FE16AC3708A37D13F33073CB65BC659C /* BootpayUI */,
+				FE16AC3708A37D13F33073CB65BC659C /* BootpayUI.framework */,
 				F70DC420EF4FE78C3708DF222B1CE9FA /* BootpayUI.bundle */,
 				F81274EDB681F11E7CB05F7DCA2BB33C /* CryptoSwift */,
 				7FBAFAA66E9C7401884F439AE8BC662C /* JGProgressHUD */,
@@ -1649,7 +1649,7 @@
 			);
 			name = BootpayUI;
 			productName = BootpayUI;
-			productReference = FE16AC3708A37D13F33073CB65BC659C /* BootpayUI */;
+			productReference = FE16AC3708A37D13F33073CB65BC659C /* BootpayUI.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		6F3964F174D0EBFB0D64F8DBC20E1429 /* JGProgressHUD */ = {
@@ -2427,7 +2427,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2460,7 +2460,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";

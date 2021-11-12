@@ -30,9 +30,7 @@ public typealias BTViewRepresentable = UIViewRepresentable
 }
 
 public struct BootpayBioUI: BTViewRepresentable { 
-    var bioPayload: BootBioPayload?
-    
-    var isCallbackMessageOnClosed = true
+    public var bioPayload: BootBioPayload? 
 
     public init(bioPayload: BootBioPayload) {
         self.bioPayload = bioPayload
