@@ -22,7 +22,7 @@ import WebKit
     public var ENV_TYPE = BootpayConstants.ENV_SWIFT
         
     public var webview: WKWebView?
-    @objc public var payload: Payload? = Payload()
+    var payload: Payload? = Payload()
     var parentController: UIViewController?
     
     @objc public var error: (([String : Any]) -> Void)?
