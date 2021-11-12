@@ -1,9 +1,9 @@
 PODS:
   - Alamofire (5.4.4)
-  - Bootpay (3.3.362):
+  - Bootpay (3.3.363):
     - CryptoSwift
     - ObjectMapper
-  - BootpayUI (0.1.0):
+  - BootpayUI (0.2.0):
     - Alamofire
     - Bootpay
     - CryptoSwift
@@ -36,8 +36,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
-  Bootpay: 79669e5c7346ec533f93d54c4175909565c714aa
-  BootpayUI: 3234e9a9154ae97c0f13d482ca8bac48c53c056f
+  Bootpay: 8ab4a88f87d198f5b46af76b99979deab1602780
+  BootpayUI: 8e48c84288bfaea0a81a03f14dce04f28d0e162f
   CryptoSwift: a532e74ed010f8c95f611d00b8bbae42e9fe7c17
   JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
