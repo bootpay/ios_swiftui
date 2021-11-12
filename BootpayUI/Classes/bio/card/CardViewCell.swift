@@ -5,7 +5,7 @@
 //  Created by Taesup Yoon on 13/10/2020.
 //
 
-import UIKit
+import Bootpay
 import SnapKit
 
 class CardViewCell: ScalingCarouselCell {

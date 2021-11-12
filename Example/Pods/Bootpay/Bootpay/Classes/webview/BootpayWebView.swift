@@ -8,12 +8,12 @@
 import WebKit
 
 
-@objc open class BootpayWebView: UIView, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
+@objc open class BootpayWebView: BTView, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
     @objc public var webview: WKWebView!
     
     var beforeUrl = ""
     var isFirstLoadFinish = false
-    var topBlindView: UIView?
+    var topBlindView: BTView?
     var topBlindButton: UIButton?
      
     @objc public init() {
@@ -46,22 +46,25 @@ import WebKit
 //            bottomPadding = window?.safeAreaInsets.bottom ?? CGFloat(0)
 //        }
         
+        #if os(macOS)
+            webview = WKWebView(frame: self.bounds, configuration: configuration)
+        #elseif os(iOS)
+            if #available(iOS 11.0, *) {
+                let window = UIApplication.shared.keyWindow
+                webview = WKWebView(frame: CGRect(x: 0,
+                                                  y: 0,
+                                                  width: UIScreen.main.bounds.width,
+                                                  height: UIScreen.main.bounds.height - (window?.safeAreaInsets.bottom ?? UIScreen.main.bounds.height) - (window?.safeAreaInsets.top ?? 0)),
+                                    configuration: configuration)
+            } else {
+                webview = WKWebView(frame: CGRect(x: 0,
+                                                  y: 0,
+                                                  width: UIScreen.main.bounds.width,
+                                                  height: UIScreen.main.bounds.height),
+                                    configuration: configuration)
+            }
+        #endif
         
-        
-        if #available(iOS 11.0, *) {
-            let window = UIApplication.shared.keyWindow
-            webview = WKWebView(frame: CGRect(x: 0,
-                                              y: 0,
-                                              width: UIScreen.main.bounds.width,
-                                              height: UIScreen.main.bounds.height - (window?.safeAreaInsets.bottom ?? UIScreen.main.bounds.height) - (window?.safeAreaInsets.top ?? 0)),
-                                configuration: configuration)
-        } else {
-            webview = WKWebView(frame: CGRect(x: 0,
-                                              y: 0,
-                                              width: UIScreen.main.bounds.width,
-                                              height: UIScreen.main.bounds.height),
-                                configuration: configuration)
-        }
         webview.uiDelegate = self
         webview.navigationDelegate = self
         self.addSubview(webview)

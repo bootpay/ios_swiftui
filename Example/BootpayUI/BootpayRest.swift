@@ -4,8 +4,7 @@
 //
 //  Created by Taesup Yoon on 2021/05/17.
 //
-
-import UIKit
+ 
 import Alamofire
 import Bootpay
 

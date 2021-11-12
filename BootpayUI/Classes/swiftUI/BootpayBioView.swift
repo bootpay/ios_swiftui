@@ -4,8 +4,7 @@
 //
 //  Created by Taesup Yoon on 2021/11/04.
 //
-
-import UIKit
+ 
 import WebKit
 import SnapKit
 import JGProgressHUD
@@ -14,7 +13,7 @@ import Alamofire
 import Bootpay
 import SCLAlertView
 
-public class BootpayBioView: UIView {
+public class BootpayBioView: BTView {
 //    var parent: BootpayBioUI!
     
     
@@ -978,7 +977,7 @@ extension BootpayBioView {
         let alert = initAlert()
         alert.showEdit("설정하기", subTitle: message, closeButtonTitle: OKTitle, animationStyle: .bottomToTop ).setDismissBlock {
 
-            let url = URL(string: UIApplicationOpenSettingsURLString)
+            let url = URL(string: UIApplication.openSettingsURLString)
             if UIApplication.shared.canOpenURL(url!) {
                 UIApplication.shared.open(url!, options: [:])
             }

@@ -4,8 +4,8 @@
 //
 //  Created by Taesup Yoon on 13/10/2020.
 //
-
-import UIKit
+ 
+import Bootpay
 
 class CardCell: ScalingCarouselCell {
     override init(frame: CGRect) {
@@ -28,7 +28,7 @@ class CardCell: ScalingCarouselCell {
     }
 }
 
-@objc public class CardSelectView: UIView {
+@objc public class CardSelectView: BTView {
     
     var data: [CardInfo]?
     

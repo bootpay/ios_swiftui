@@ -4,8 +4,7 @@
 //
 //  Created by Taesup Yoon on 15/10/2020.
 //
-
-import UIKit
+ 
 
 public class BootBioTheme: NSObject {
     @objc static public var fontColor = UIColor.black

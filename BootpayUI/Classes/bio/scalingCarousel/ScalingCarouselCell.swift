@@ -6,8 +6,7 @@
 //  License
 //  Copyright © 2017-present Pete Smith
 //  Released under an MIT license: http://opensource.org/licenses/MIT
-//
-import UIKit
+// 
 
 /*
  This cell subclass is intended to be used together with ScalingCarouselView

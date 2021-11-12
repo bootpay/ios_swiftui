@@ -4,8 +4,7 @@
 //
 //  Created by Taesup Yoon on 13/10/2020.
 //
-
-import UIKit
+ 
 
 public struct CardCode {
     public static let BC = "01" //BC카드

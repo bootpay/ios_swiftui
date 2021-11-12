@@ -8,7 +8,7 @@
 //
 import SwiftUI
 
-import UIKit
+//import UIKit
 import Alamofire
 //import SwiftOTP
 import SnapKit
@@ -44,10 +44,7 @@ public struct BootpayBioUI: BTViewRepresentable {
     
     #if os(macOS)
     func makeNSView(context: Context) -> BootpayWebView {
-        let webView = BootpayWebView()
-        webView.frame = CGRect.zero
-        webView.navigationDelegate = context.coordinator
-        webView.allowsBackForwardNavigationGestures = true
+        let webView = BootpayWebView() 
        return webView
     }
 
