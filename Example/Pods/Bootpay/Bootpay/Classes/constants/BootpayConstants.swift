@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct BootpayConstants {
+public class BootpayConstants {
     public static let CDN_URL = "https://inapp.bootpay.co.kr/3.3.3/production.html";
 //    static let CDN_URL = "https://www.google.com"
     public static let BRIDGE_NAME = "BootpayiOS"
@@ -77,9 +77,7 @@ public struct BootpayConstants {
             payload.extra = extra
         }
         payload.userInfo?.setEncodedValueAll()
-        
-        print("payload: \([ "BootPay.request(", getPayloadJson(payload), ")", error(), confirm(), ready(), cancel(), done(), close() ].reduce("", +))")
-        
+         
         
         return [
             "BootPay.request(",

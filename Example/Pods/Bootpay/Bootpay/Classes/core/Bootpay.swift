@@ -22,7 +22,7 @@ import WebKit
     public var ENV_TYPE = BootpayConstants.ENV_SWIFT
         
     public var webview: WKWebView?
-    public var payload: Payload? = Payload()
+    var payload: Payload? = Payload()
     var parentController: UIViewController?
     
     @objc public var error: (([String : Any]) -> Void)?
@@ -86,11 +86,13 @@ import WebKit
     @objc(removePaymentWindow)
     public static func removePaymentWindow() {
         if shared.parentController != nil {
-            #if os(macOS)
-            shared.parentController?.dismiss(nil)
-            #elseif os(iOS)
-            shared.parentController?.dismiss(animated: true, completion: nil)
-            #endif 
+        #if os(macOS)
+        shared.parentController?.dismiss(nil)
+        #elseif os(iOS)
+        shared.parentController?.dismiss(animated: true, completion: nil)
+        #endif
+            
+//            shared.parentController?.dismiss(animated: true, completion: nil)
             shared.parentController = nil
         } else if shared.ENV_TYPE == BootpayConstants.ENV_SWIFT_UI {
             shared.close?()
@@ -188,7 +190,7 @@ extension Bootpay {
         loadSkTime()
     }
     
-    public static func getUUID() -> String {
+    @objc public static func getUUID() -> String {
         var uuid = BootpayDefaultHelper.getString(key: "uuid")
         if uuid == "" {
             uuid = UUID().uuidString

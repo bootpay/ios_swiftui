@@ -22,7 +22,7 @@ pod 'BootpayUI'
 
 ## Author
 
-bootpay, rupy1014@gmail.com
+bootpay, bootpay.co.kr@gmail.com
 
 ## License
 

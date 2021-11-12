@@ -38,14 +38,6 @@ import WebKit
         let configuration = WKWebViewConfiguration()
         configuration.userContentController.add(self, name: BootpayConstants.BRIDGE_NAME)
         
-//        var topPadding = CGFloat(0)
-//        var bottomPadding = CGFloat(0)
-//        if #available(iOS 11.0, *) {
-//            let window = UIApplication.shared.keyWindow
-//            topPadding = window?.safeAreaInsets.top ?? CGFloat(0)
-//            bottomPadding = window?.safeAreaInsets.bottom ?? CGFloat(0)
-//        }
-        
         #if os(macOS)
             webview = WKWebView(frame: self.bounds, configuration: configuration)
         #elseif os(iOS)
@@ -93,8 +85,8 @@ import WebKit
             topBlindView = nil
             topBlindButton?.removeFromSuperview()
             topBlindButton = nil
-        } 
-    }
+        }
+    }    
     
     @objc public func closeView() {
         
@@ -112,18 +104,23 @@ import WebKit
             webview.load(URLRequest(url: url))
         }
     }
-     
+    
+    //flutter 에서 호출되는 함수
     @objc public func goBack() {
         webview.goBack()
     }
-     
+    
+    //flutter 에서 호출되는 함수
     @objc public func transactionConfirm(data: [String: Any]) {
         Bootpay.transactionConfirm(data: data)
     }
-     
+    
+    //flutter 에서 호출되는 함수
     @objc public func removePaymentWindow() {
         Bootpay.removePaymentWindow()
     }
+    
+    //flutter 에서 호출되는 함수
     @objc public func setPayload(_ data: [String: Any]) {
         let payload = Payload(JSON: data)
         Bootpay.shared.payload = payload
@@ -131,8 +128,6 @@ import WebKit
     
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         guard let payload = Bootpay.shared.payload else { return }
-        
-        
 //        Bootpay.shared.webview = webView
         if isFirstLoadFinish == false {
             isFirstLoadFinish = true
@@ -153,7 +148,7 @@ import WebKit
         
         guard let url =  navigationAction.request.url else { return decisionHandler(.allow) }
         beforeUrl = url.absoluteString
-         
+       
         updateBlindViewIfNaverLogin(url.absoluteString)
         
         if(isItunesURL(url.absoluteString)) {
@@ -284,8 +279,7 @@ import WebKit
 }
 
 extension BootpayWebView {
-    open func doJavascript(_ script: String) { 
-        
+    open func doJavascript(_ script: String) {
         webview.evaluateJavaScript(script, completionHandler: nil)
     }
     
