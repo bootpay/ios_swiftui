@@ -29,6 +29,7 @@ public struct BootpayUI: BTViewRepresentable {
     #if os(macOS)
     func makeNSView(context: Context) -> BootpayWebView {
         let webView = BootpayWebView()
+        webView.startBootpay()
        return webView
     }
 
@@ -38,6 +39,7 @@ public struct BootpayUI: BTViewRepresentable {
     // 뷰 객체를 생성하고 초기 상태를 구성합니다. 딱 한 번만 호출됩니다.
     public func makeUIView(context: Context) -> BootpayWebView {
        let webView = BootpayWebView()
+        webView.startBootpay()
        return webView
     }
     

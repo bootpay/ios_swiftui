@@ -545,7 +545,7 @@ extension BootpayBioView: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return bioPayload?.extra?.quotas.count ?? 0
+        return bioPayload?.extra?.quota?.split(separator: ",").count ?? 0
     }
     
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -560,16 +560,18 @@ extension BootpayBioView: UIPickerViewDataSource, UIPickerViewDelegate {
        
     
     func getPickerTitle(row: Int) -> String {
-        if let quotas = bioPayload?.extra?.quotas {
+        
+        
+        if let quotas = bioPayload?.extra?.quota?.split(separator: ",") {
             if quotas.count <= row { return "" }
-            if quotas[row] == 0 { return "일시불" }
+            if quotas[row] == "0" { return "일시불" }
             else { return "\(quotas[row])개월" }
         }
         return ""
     }
     
     func isShowQuota() -> Bool {
-        if let payload = bioPayload, let quotas = bioPayload?.extra?.quotas {
+        if let payload = bioPayload, let quotas = bioPayload?.extra?.quota?.split(separator: ",") {
             return payload.price >= 50000 && quotas.count > 0
         }
         return false
@@ -829,8 +831,7 @@ extension BootpayBioView {
             otp: value,
             bioPayload: self.bioPayload!) { result, value in
                 
-                if(result == true) {
-                    
+                if(result == true) {                    
                     //카드리스트를 요청 후
                     self.slideRightCardUI()
                     self.cardWalletList()
@@ -856,13 +857,11 @@ extension BootpayBioView {
                 if(result == true) {
                     if let data = value as? [String: AnyObject] {
                         if let biometric_secret_key = data["biometric_secret_key"] as? String, let biometric_device_id = data["biometric_device_id"] as? String, let server_unixtime = data["server_unixtime"] as? CLong {
-                            
-                            
+                                                        
                            BootpayDefaultHelper.setValue("biometric_secret_key", value: biometric_secret_key)
                            BootpayDefaultHelper.setValue("biometric_device_id", value: biometric_device_id)
                             
                             self.slideRightCardUI()
-                            
                             self.registerBioOTP(key: biometric_secret_key, serverTime: server_unixtime)
                         }
                     }
@@ -918,8 +917,7 @@ extension BootpayBioView {
             serverTime: self.payServerUnixtime) { (result, value) in
                 if(result == true) {
                     guard let res = value as? [String: AnyObject] else { return }
-                    self.bootpayConfirm(data: res)
-//                    Bootpay.goConfirm(res)
+                    self.bootpayConfirm(data: res) 
                 } else {
                     if let jsonString = String(data: value as! Data, encoding: String.Encoding.utf8), let json = jsonString.convertToDictionary() {
                         if let code = json["code"] as? Int, let msg = json["message"] as? String {

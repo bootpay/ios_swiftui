@@ -23,7 +23,7 @@ import WebKit
         
     public var webview: WKWebView?
     @objc public var payload: Payload? = Payload()
-    var parentController: UIViewController?
+    var parentController: BTViewController?
     
     @objc public var error: (([String : Any]) -> Void)?
     @objc public var ready: (([String : Any]) -> Void)?
@@ -62,6 +62,24 @@ import WebKit
                                       payload: Payload,
                                       _ animated: Bool = true,
                                       _ modalPresentationStyle: UIModalPresentationStyle = .fullScreen) -> Bootpay.Type {
+        shared.parentController = viewController
+        shared.payload = payload
+        
+        loadSessionValues()
+        
+        let vc = BootpayController()
+        vc.modalPresentationStyle = modalPresentationStyle //or .overFullScreen for transparency
+        viewController.present(vc, animated: animated, completion: nil)
+        return self
+    }
+    
+    @objc(requestPaymentStr::::)
+    public static func requestPaymentStr(viewController: UIViewController,
+                                      payload: String,
+                                      _ animated: Bool = true,
+                                      _ modalPresentationStyle: UIModalPresentationStyle = .fullScreen) -> Bootpay.Type {
+        guard let payload = Payload(JSONString: payload) else { return self }
+        
         shared.parentController = viewController
         shared.payload = payload
         

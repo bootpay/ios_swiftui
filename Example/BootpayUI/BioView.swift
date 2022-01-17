@@ -60,7 +60,7 @@ struct BioView: View {
                                 payload.userInfo = user
                                 
                                 payload.extra = BootExtra()
-                                payload.extra?.quotas = [0,2,3,4,5,6]
+                                payload.extra?.quota = "0,2,3,4,5,6"
 
                                 let p1 = BootBioPrice()
                                 let p2 = BootBioPrice()

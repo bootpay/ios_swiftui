@@ -8,11 +8,12 @@
 import WebKit
 
 
-@objc open class BootpayWebView: BTView, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
+@objc open class BootpayWebView: BTView {
     @objc public var webview: WKWebView!
     
     var beforeUrl = ""
     var isFirstLoadFinish = false
+    var isStartBootpay = false
     var topBlindView: BTView?
     var topBlindButton: UIButton?
      
@@ -25,7 +26,6 @@ import WebKit
         #endif
         
         initComponent()
-        startBootpay()
     }
     
     required public init(coder: NSCoder) {
@@ -38,8 +38,13 @@ import WebKit
         let configuration = WKWebViewConfiguration()
         configuration.userContentController.add(self, name: BootpayConstants.BRIDGE_NAME)
         
+        
+        
         #if os(macOS)
             webview = WKWebView(frame: self.bounds, configuration: configuration)
+        
+//            webview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+         
         #elseif os(iOS)
             if #available(iOS 11.0, *) {
                 let window = UIApplication.shared.keyWindow
@@ -55,7 +60,14 @@ import WebKit
                                                   height: UIScreen.main.bounds.height),
                                     configuration: configuration)
             }
+        
         #endif
+        
+        print(webview.frame)
+        
+//        if(DeviceHelper.nativeMac == DeviceHelper.currentDevice) {
+//            webview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        }
         
         webview.uiDelegate = self
         webview.navigationDelegate = self
@@ -102,36 +114,35 @@ import WebKit
     @objc public func startBootpay() {
         if let url = URL(string: BootpayConstants.CDN_URL) {
             webview.load(URLRequest(url: url))
+            self.isStartBootpay = true
         }
     }
-    
-    //flutter 에서 호출되는 함수
+     
     @objc public func goBack() {
         webview.goBack()
     }
-    
-    //flutter 에서 호출되는 함수
+     
     @objc public func transactionConfirm(data: [String: Any]) {
         Bootpay.transactionConfirm(data: data)
     }
-    
-    //flutter 에서 호출되는 함수
+     
     @objc public func removePaymentWindow() {
         Bootpay.removePaymentWindow()
     }
-    
-    //flutter 에서 호출되는 함수
+     
     @objc public func setPayload(_ data: [String: Any]) {
         let payload = Payload(JSON: data)
         Bootpay.shared.payload = payload
     }
     
+}
+
+extension BootpayWebView: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
+    
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         guard let payload = Bootpay.shared.payload else { return }
-//        Bootpay.shared.webview = webView
-        if isFirstLoadFinish == false {
-            isFirstLoadFinish = true
-            
+        if isFirstLoadFinish == false && self.isStartBootpay == true  {
+            isFirstLoadFinish = true            
             let quickPopup = payload.extra?.quickPopup ?? 0
             
             let scriptList = BootpayConstants.getJSBeforePayStart(quickPopup == 1)
@@ -139,6 +150,8 @@ import WebKit
                 webView.evaluateJavaScript(script, completionHandler: nil)
             }
             let scriptPay = BootpayConstants.getJSPay(payload: payload)
+            
+            print(scriptPay);
             webView.evaluateJavaScript(scriptPay, completionHandler: nil)
         }
     }
@@ -213,7 +226,7 @@ import WebKit
                 }
                 return
             }
-            guard let action = body["action"] as? String else { return }
+            guard let action = body["action"] as? String else { return } 
             
             if action == "BootpayCancel" {
                 Bootpay.shared.cancel?(body)

@@ -16,13 +16,10 @@ struct ContentView: View {
 //    @State private var showModal = false
     @State private var showingBootpay = false
     private var payload = Payload()
-     
-
-
+       
     var body: some View {
         GeometryReader { geometry in
-            VStack {
-                
+            VStack { 
                 
                 if(self.showingBootpay) {
                     BootpayUI(payload: payload)
@@ -51,25 +48,25 @@ struct ContentView: View {
                     Button("부트페이 결제테스트") {
                         showingBootpay = true
 
-                        #if os(macOS)
+                        #if os(macOS) 
                         payload.applicationId = "5b8f6a4d396fa665fdc2b5e7" //web application id
                         #elseif os(iOS)
                         payload.applicationId = "5b8f6a4d396fa665fdc2b5e9" //ios application id
                         #endif
 
-//                        payload.pg = "payapp"
-//                        payload.method = "npay"
-
-                        payload.price = 1000
+                        
+                        payload.price = 50000
                         payload.orderId = String(NSTimeIntervalSince1970)
                         payload.name = "테스트 아이템"
+                        
+                        payload.extra = BootExtra()
+                        payload.extra?.quota = "0,2,3,4,5,6"
 
                         let user = BootUser()
                         user.username = "테스트 유저"
                         user.phone = "01012345678"
                         payload.userInfo = user
                     }.sheet(isPresented: self.$showingBootpay) {
-//                        BootpayBioView().clearModalBackground()
                     }
                 }
             }.frame(width: geometry.size.width, height: geometry.size.height)
