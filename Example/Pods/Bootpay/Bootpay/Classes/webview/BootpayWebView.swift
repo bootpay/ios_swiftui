@@ -63,8 +63,6 @@ import WebKit
         
         #endif
         
-        print(webview.frame)
-        
 //        if(DeviceHelper.nativeMac == DeviceHelper.currentDevice) {
 //            webview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 //        }

@@ -27,7 +27,7 @@
   "static_framework": true,
   "dependencies": {
     "Bootpay": [
-
+      "~> 3.4.0"
     ],
     "CryptoSwift": [
 

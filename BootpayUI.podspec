@@ -42,7 +42,7 @@ TODO: Add long description of the pod here.
   
   
   s.static_framework = true
-  s.dependency 'Bootpay'
+  s.dependency 'Bootpay', '~> 3.4.0'
   s.dependency 'CryptoSwift'
   s.dependency 'Alamofire'
   s.dependency 'ObjectMapper'
