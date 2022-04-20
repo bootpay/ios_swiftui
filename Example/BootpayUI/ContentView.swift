@@ -54,8 +54,10 @@ struct ContentView: View {
                         payload.applicationId = "5b8f6a4d396fa665fdc2b5e9" //ios application id
                         #endif
 
+                        payload.pg = "nicepay"
+                        payload.method = "kakao"
                         
-                        payload.price = 50000
+                        payload.price = 1000
                         payload.orderId = String(NSTimeIntervalSince1970)
                         payload.name = "테스트 아이템"
                         
