@@ -22,7 +22,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 //
- 
+
+import UIKit
 import ObjectiveC.NSObjCRuntime
 
 /// NSObject associated object
@@ -59,7 +60,7 @@ public extension String {
 
 public extension UIImage {
     static func fromBundle(_ name: String) -> UIImage? {
-        let frameworkBundle = Bundle(for: BootpayBioWebView.self)
+        let frameworkBundle = Bundle(for: BootpayBio.self)
         let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("BootpayUI.bundle")
         let resourceBundle = Bundle(url: bundleURL!)
         return UIImage(named: name, in: resourceBundle, compatibleWith: nil)

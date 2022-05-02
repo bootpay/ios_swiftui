@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BootpayUI'
-  s.version          = '1.0.3'
+  s.version          = '4.0.2'
   s.summary          = 'Bootpay에서 지원하는 공식 SwiftUI 및 생체인증 결제 라이브러리 입니다. ios 14 이상부터 사용가능합니다.'
 
 # This description is used to generate tags and improve search results.
@@ -42,13 +42,14 @@ TODO: Add long description of the pod here.
   
   
   s.static_framework = true
-  s.dependency 'Bootpay', '~> 3.5.1'
+  s.dependency 'Bootpay', '~> 4.0.2'
+  s.dependency 'SCLAlertView'
   s.dependency 'CryptoSwift'
   s.dependency 'Alamofire'
   s.dependency 'ObjectMapper'
+#  pod 'SwiftOTP',  '~> 3.0.0'
   s.dependency 'SnapKit'
   s.dependency 'JGProgressHUD'
-  s.dependency 'SCLAlertView'
-  
+  s.dependency 'SwiftyJSON'
   
 end

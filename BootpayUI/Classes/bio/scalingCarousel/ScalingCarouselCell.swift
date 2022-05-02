@@ -6,7 +6,8 @@
 //  License
 //  Copyright © 2017-present Pete Smith
 //  Released under an MIT license: http://opensource.org/licenses/MIT
-// 
+//
+import UIKit
 
 /*
  This cell subclass is intended to be used together with ScalingCarouselView
@@ -31,7 +32,7 @@ open class ScalingCarouselCell: UICollectionViewCell {
     open var alphaMinimum: CGFloat = 0.85
     
     /// The corner radius value of the cell's main view
-    open var cornerRadius: CGFloat = 20.0
+    open var cornerRadius: CGFloat = 6.0
     
     // MARK: - IBOutlets
     

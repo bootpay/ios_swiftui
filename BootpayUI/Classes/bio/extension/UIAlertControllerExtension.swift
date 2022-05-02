@@ -23,7 +23,8 @@
 //  THE SOFTWARE.
 //
 
-import Foundation 
+import Foundation
+import UIKit
 
 let CancelTitle     =   "취소"
 let OKTitle         =   "확인"

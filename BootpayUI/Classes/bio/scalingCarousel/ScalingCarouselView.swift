@@ -6,7 +6,8 @@
 //  License
 //  Copyright © 2017-present Pete Smith
 //  Released under an MIT license: http://opensource.org/licenses/MIT
-// 
+//
+import UIKit
 
 /*
  ScalingCarouselView is a subclass of UICollectionView which

@@ -4,7 +4,8 @@
 //
 //  Created by Taesup Yoon on 13/10/2020.
 //
- 
+
+import UIKit
 
 public struct CardCode {
     public static let BC = "01" //BC카드
@@ -46,7 +47,7 @@ public struct CardCode {
             ]
         case CardCode.KB:
             return [
-                UIColor.init(red: 254.0 / 255, green: 205.0 / 255, blue: 46.0 / 255, alpha: 1.0),
+                UIColor.init(red: 0.41, green: 0.38, blue: 0.33, alpha: 1.0),
                 UIColor.init(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0),
 //                UIColor.init(red: 115.0 / 255, green: 105.0 / 255, blue: 95.0 / 255, alpha: 1.0)
             ]

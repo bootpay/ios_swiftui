@@ -4,8 +4,8 @@
 //
 //  Created by Taesup Yoon on 13/10/2020.
 //
- 
-import Bootpay
+
+import UIKit
 
 class CardCell: ScalingCarouselCell {
     override init(frame: CGRect) {
@@ -28,9 +28,9 @@ class CardCell: ScalingCarouselCell {
     }
 }
 
-@objc public class CardSelectView: BTView {
+@objc public class CardSelectView: UIView {
     
-    var data: [CardInfo]?
+    var data: [WalletData]?
     
     // MARK: - Properties (Private)
     public var scalingCarousel: ScalingCarouselView!
@@ -47,18 +47,18 @@ class CardCell: ScalingCarouselCell {
            fatalError("init(coder:) has not been implemented")
     }
      
-    public func setData(_ data: [CardInfo]) {
-        self.data = data
+    public func setData(_ data: [WalletData]) {
+        self.data = data 
     }
     
     // MARK: - Configuration
     
     public func addCarousel() {
         
-        let inset = self.frame.width * 0.2
+        let inset = self.frame.width * 0.15
         let height = self.frame.height
          
-        scalingCarousel = ScalingCarouselView(withFrame: frame, andInset: inset)
+        scalingCarousel = ScalingCarouselView(withFrame: CGRect(x: self.frame.origin.x, y: 0, width: self.frame.width, height:  height), andInset: inset)
         scalingCarousel.scrollDirection = .horizontal
         scalingCarousel.sendable = self.sendable
         scalingCarousel.dataSource = self
@@ -93,19 +93,22 @@ extension CardSelectView: UICollectionViewDataSource {
         if let scalingCell = cell as? CardViewCell {
             if indexPath.row < data?.count ?? 0 {
                 if let data = self.data {
-                    scalingCell.setData(data: data[indexPath.row])
+                    scalingCell.setData(data: data[indexPath.row], tag: indexPath.row)
                 }
             } else if indexPath.row == data?.count ?? 0 {
-                let temp = CardInfo()
-                temp.card_type = 1
-                scalingCell.setData(data: temp)
+                let temp = WalletData()
+                temp.wallet_type = 1
+//                temp.card_type = 1
+                scalingCell.setData(data: temp, tag: -1)
             } else if indexPath.row == (data?.count ?? 0) + 1 {
-                let temp = CardInfo()
-                temp.card_type = 2
-                scalingCell.setData(data: temp)
+                let temp = WalletData()
+                temp.wallet_type = 2
+//                temp.card_type = 2
+                scalingCell.setData(data: temp, tag: -1)
             }
             
             cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cellClick(_:))))
+            cell.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(cellLongClick(_:))))
         }
         
         DispatchQueue.main.async {
@@ -117,12 +120,26 @@ extension CardSelectView: UICollectionViewDataSource {
     }
     
     @objc func cellClick(_ sender: UITapGestureRecognizer) {
-        
         let location = sender.location(in: scalingCarousel)
         let indexPath = scalingCarousel.indexPathForItem(at: location)
        
         if let index = indexPath {
             sendable?.clickCard(index.row)
+        }
+    }
+    
+    
+    @objc func cellLongClick(_ sender: UILongPressGestureRecognizer) {
+//        if(data.wad)
+        if sender.state == .began {
+            let location = sender.location(in: scalingCarousel)
+            let indexPath = scalingCarousel.indexPathForItem(at: location)
+           
+            if let index = indexPath {
+                if index.row < data?.count ?? 0 {
+                    sendable?.longClickCard(index.row)
+                }
+            }
         }
     }
     

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class BootBioPrice: NSObject {
+public class BootBioPrice: NSObject, Codable {
     @objc public var name = ""
     @objc public var price = Double(0)
     @objc public var priceStroke = Double(0)

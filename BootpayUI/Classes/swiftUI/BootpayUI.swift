@@ -5,7 +5,6 @@
 //  Created by Taesup Yoon on 2021/11/12.
 //
 import SwiftUI
-  
 import Bootpay
 
 
@@ -57,8 +56,8 @@ extension BootpayUI {
         return self
     }
 
-    public func onReady(_ action: @escaping ([String : Any]) -> Void) -> BootpayUI {
-        Bootpay.shared.ready = action
+    public func onIssued(_ action: @escaping ([String : Any]) -> Void) -> BootpayUI {
+        Bootpay.shared.issued = action
         return self
     }
     

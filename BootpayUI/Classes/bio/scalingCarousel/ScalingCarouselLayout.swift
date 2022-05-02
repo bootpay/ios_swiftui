@@ -6,7 +6,8 @@
 //  License
 //  Copyright © 2017-present Pete Smith
 //  Released under an MIT license: http://opensource.org/licenses/MIT
-// 
+//
+import UIKit
 
 /*
  ScalingCarouselLayout is used together with SPBCarouselView to
