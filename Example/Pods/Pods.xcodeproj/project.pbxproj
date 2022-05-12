@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00021FEBD77723F4CC6CD7778B961BD0 /* BootpayBioPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDEF028AB9EB1CA8A5101914BAD8B /* BootpayBioPrice.swift */; };
 		005B319B494ED2DAA239B9939A504DFC /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ED0A953E6EE8B076A0906EA5ECC43F8E /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		010AA84B7283C88A909975F46906ABCB /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B0E2ACFDD81113383C52AED86506D /* Payload.swift */; };
-		0159DFB4A9C36568E9910C3ECE300095 /* ScalingCarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DE8070EFE72CB553036A07D1EABBF /* ScalingCarouselLayout.swift */; };
 		01CC4DED1918A9B89F073BE5464D5C2F /* ZeroPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCECB3E82C5EC740ED28EFFB3B77835 /* ZeroPadding.swift */; };
+		024AB58B9A585A37766C7F29793260DC /* BootpayBioPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4446A4B1BE14A28E118E00573515200 /* BootpayBioPresenter.swift */; };
+		025DE18E002E517676C57DCC0C3DC8BA /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DED34885CA24F0BCA1BFAADB1C94F0 /* NSObjectExtension.swift */; };
 		0288E85B33F93C587F0957994B17DE10 /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02685C077F08F838E6DE0222D6AED790 /* ConstraintMakerFinalizable.swift */; };
 		0358EF9E145842BD828733D7549A9BA5 /* JGProgressHUDFadeAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = D6D07036106054D828B73C7A92F60FC3 /* JGProgressHUDFadeAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		039847E4C4A021D30916497A4C29ACB2 /* Bootpay-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 662B9C47464F4EFFAB8FC920F6E36BE6 /* Bootpay-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -22,6 +24,7 @@
 		0A82A284B5340535F9CAE1EDDCAE95BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBE00646A514365F86456896C595115 /* Foundation.framework */; };
 		0B963EBE22B7FE2808AF1AA462BBCD55 /* Words and Bits.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88600916C58CB3380DFC74FF1D7561B /* Words and Bits.swift */; };
 		0BF2256D9FB7172A39D0FC046319B888 /* BootExtra.swift in Sources */ = {isa = PBXBuildFile; fileRef = A944F2ECEB43714A5C516B067E01172E /* BootExtra.swift */; };
+		0C17C76C68ABD947FDBC18ABE060B079 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E161AABB69109F5751DB2881D0A4FFB9 /* UIAlertControllerExtension.swift */; };
 		0CAC3DD7593378D986224057904BFDF6 /* HKDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA324BC32EE20850B23BDB675EC83A6 /* HKDF.swift */; };
 		0D4BCD3970519B720869F25014A5567C /* Prime Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9FF19045FF095A3B43B961EFEF1538 /* Prime Test.swift */; };
 		0DB26B3DEC720921579B317A9EF76116 /* Digest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C311D4C4DA4DD7C98010E294E93111A /* Digest.swift */; };
@@ -29,22 +32,24 @@
 		0F4037DBF307AC8058BD0A3D35C7E7E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBE00646A514365F86456896C595115 /* Foundation.framework */; };
 		103951E4231F2E6FB9BA6743FE5AC890 /* Cryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBAD7EBD7FE3C6B5C1B1BD3FCD9C291 /* Cryptor.swift */; };
 		116160DDA8F8B12E180C9ED3ED9302FE /* ChaCha20+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5BA511CC78A1C48D04D8C6C335CF69 /* ChaCha20+Foundation.swift */; };
+		1212CB8B223C718A15A85966AB38B62B /* ScalingCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D715A7CADA3A3FABE4B8A630A5DEF /* ScalingCarouselView.swift */; };
+		12CDB02A279BD154ABDFBA9BD0E7A153 /* ScalingCarouselLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933DE8070EFE72CB553036A07D1EABBF /* ScalingCarouselLayout.swift */; };
 		12CE5425AEBD056B48B19EDC0F3F001A /* ConstraintMakerRelatable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953F4A9C45D442647C4F0C68B646E8C7 /* ConstraintMakerRelatable+Extensions.swift */; };
 		131AF39DB5D027302BF425764BC19A2E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC5B55FDFEFABE90B0FF5E9EDC3892B9 /* QuartzCore.framework */; };
 		141FD2497CD57FF2C837036B23E9949A /* BootStatItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613E89F9BBEAEB5A127A26067D52B441 /* BootStatItem.swift */; };
 		14581ADA3D30B97AAB6C2E580FF8A3A4 /* HMAC+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FA4EC2D64A75A2ACE66E9EC94779F8 /* HMAC+Foundation.swift */; };
+		16F9D9F326F2055C72EFA99BA4D6D9A0 /* CardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085058E7F33C321F4EB8F69ED381139E /* CardViewCell.swift */; };
+		172295EE777F47A3CFC209D0F2433874 /* BootpayUI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D62BDBE96838DEE6DB80D873868E94 /* BootpayUI-dummy.m */; };
 		1976BB7D7E26A12E29283E71154B63B3 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014A4BD60550B7BC3869DFD59327F65F /* SessionDelegate.swift */; };
 		1AB171190F52BD670023F15456AEADD8 /* Rabbit+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555CB6AEF4D81807172F74D55816571C /* Rabbit+Foundation.swift */; };
 		1AF451788FC6A578ACD7F1D5B522C11B /* PBKDF2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209832F355726664BB7F6A8A684A9C87 /* PBKDF2.swift */; };
 		1AFFECDF9F720868E6F7D7A5D038601A /* EnumOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C16784E97D66380DF26533556B575B /* EnumOperators.swift */; };
-		1EAF6D8C4549AA909E3217DAC7C26C52 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3C47032A4A49DE1B65E78010FB214 /* CardInfo.swift */; };
+		1BB8424790750474203DB1340C687318 /* BootpayBioWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6BBDBE871006D2A9408A2460678234 /* BootpayBioWebView.swift */; };
 		1EBF897FA46178205AA64732E6087F96 /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D869432A0EE5A0FE4125EAD2F2C4EEFB /* ConstraintInsetTarget.swift */; };
 		1EE44196E7BCE57AD96A2C751651EF40 /* AlamofireExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C1085E2046B8641CC70558DE46A115 /* AlamofireExtended.swift */; };
 		20A47984D36278566DA9A5DDED2359BC /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943204688548B668EFC57210F0041FF /* ConstraintViewDSL.swift */; };
-		2250414D7E05223B26E9FE11A0D87A0F /* BootpayBuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F60D4B955BC9CE17226C38DE18431F8 /* BootpayBuildConfig.swift */; };
 		22ABA1B560A2DF59277F93CFC0F0895F /* ISO10126Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEFA08391B8A8DE54D7EF59181648D04 /* ISO10126Padding.swift */; };
 		230676E272DB804D42D0FF9AA6BE7B10 /* UInt16+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92EDB62D665DC1133BDFE27FD1D0DC1 /* UInt16+Extension.swift */; };
-		2331A28DEBFE3FFD6D3044D23773AA45 /* UInt64+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92612A7CC3B866E8A60458633B074291 /* UInt64+Data.swift */; };
 		23C742754A5512D83CC1AED254B0B782 /* DictionaryTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A0A83C144A788211F02254B5B223D7 /* DictionaryTransform.swift */; };
 		241B3059E288A3B9EC1755032FFBEB8B /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC69E179AC663902AA748F6B6D716DCD /* URLTransform.swift */; };
 		251BEC8F23779CE312E8C7205E66DDF8 /* BlockEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAB7889BE4E77D4F658BB3934C28983 /* BlockEncryptor.swift */; };
@@ -53,12 +58,9 @@
 		26A4440C7542A2C02C644DCBD6B50D6A /* SHA3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E1DB7FDCEDB40C6047CF0E306978B /* SHA3.swift */; };
 		26BA70CC5163ABEBFC0E1440C65069E7 /* CodableTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88DE42C86DC6BFB7223DE6E1F19A497 /* CodableTransform.swift */; };
 		285D9E9DFDD52BFBB81D5FDC2A8DFC05 /* JGProgressHUDErrorIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B29F6EE1BA634D558788EFE1557E67 /* JGProgressHUDErrorIndicatorView.m */; };
-		2867B024823BC9B8C652D1A8C0F416E1 /* BootpayBioPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937CDEF028AB9EB1CA8A5101914BAD8B /* BootpayBioPrice.swift */; };
 		292B3A6CB6DE606290FDC132A79669A4 /* String+FoundationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79B097B645D7E9194A9ED10D965EB13 /* String+FoundationExtension.swift */; };
 		298944A03F032038984C3FC42AB0977F /* PBKDF1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7B6693520994B9EB20002C164B9EC0 /* PBKDF1.swift */; };
 		2A86F51CB1E573B238FD415ED8E21353 /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3073EAE793DF82689AB0BF14448C28AA /* FromJSON.swift */; };
-		2B52860BAFA0118D0EE0A109048B1BC8 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF94EAEFC68C9B0C60C75C11CDE9611 /* Generator.swift */; };
-		2B8EA9FDE2CB9F465246AF2934AD8CCB /* PG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A82F6AD18122224D629B8D8CE1FCDCA /* PG.swift */; };
 		2B9437C2AF332DEB1C540CCC04D83B20 /* JGProgressHUDIndeterminateIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF26447A54BF2A0BBB5C95FEDF5E56D /* JGProgressHUDIndeterminateIndicatorView.m */; };
 		2BC6A5E1E87E423FE059D829C8ABD31A /* ECB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8B83F4146F606C3F9652B8898D1A26 /* ECB.swift */; };
 		2C04540F5FDF63F18B780B34F0F54F1F /* EnumTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B050867ADF0E617FF5EEB750A756F5 /* EnumTransform.swift */; };
@@ -67,17 +69,15 @@
 		2CEBE5C1BEC6A1A1F89C6AD76F643DF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6FC326CF0FCF4EC54FE8D7A00AB0A8E /* UIKit.framework */; };
 		2E12C7861517766D8D630A3E41045542 /* Updatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE231CA80E6F20B310CF9EDDFDD89056 /* Updatable.swift */; };
 		2F219D2462018F2678635B4C661D421F /* Floating Point Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062698E353209A87F237235C0972EC2 /* Floating Point Conversion.swift */; };
+		2F43136E5BE4B37B82C2C39E338BEA68 /* BootBioPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C317AC9F782A9EE90DB321AF58D3A2 /* BootBioPayload.swift */; };
 		2FACF34940520FDEB66659F425A807BC /* BlockDecryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE54A8E6FB8063CB05FF9BCAF149547 /* BlockDecryptor.swift */; };
-		30266A32CCFFA1888FC9CEC29DC0F2AB /* CardSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6C2CD95A57CFD84752EADFC46BB961 /* CardSelectView.swift */; };
-		306F3CBE51E8F4930C68F57EB688DAF9 /* OTPAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E68DDDBEE541BE6691A624051677C /* OTPAlgorithm.swift */; };
+		2FCB4EB7795F06905996997E1C5C37F5 /* WalletData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1791F6E4EFF43F184EE5DA4EBFBE8E /* WalletData.swift */; };
 		3185717A9EDFF0F207D0BD04C39861C9 /* JGProgressHUDIndeterminateIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 64335C2FDD8032A73777B1DD4CE79AB7 /* JGProgressHUDIndeterminateIndicatorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		319E9C7E5460E320A05354813A525052 /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F89F3BB4F72AA8AEC88D7A84486A8CF /* SCLExtensions.swift */; };
 		3332D1BDA01060569F38F09B4068275C /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817257ED9435AF17D33AC1CDFBA8DB67 /* DeviceHelper.swift */; };
 		33A7D0F2D03004CE256A75E03DF33C70 /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C4483062141A309DE812871048FA7D /* RetryPolicy.swift */; };
 		348573643488014085A1E3F91CEB97F9 /* JGProgressHUD-Defines.h in Headers */ = {isa = PBXBuildFile; fileRef = C800BAF060CC76B623D502D89E27FDE3 /* JGProgressHUD-Defines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		36C443FA3761990AF075FAF964141B1B /* BootpayBioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7F0FC645BFAC78A56B6CE0159F966A /* BootpayBioController.swift */; };
 		38F162A0BF9F470AEDC7CE413B5AF57E /* JGProgressHUDRingIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 27E3DF3F8DA07DF85DB9C439E872EB79 /* JGProgressHUDRingIndicatorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		392BF89DF6E3CE0ACEE65E7453C6AACD /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED9D3675DE4849BBD67C346D3B5FDC4 /* StringExtension.swift */; };
 		39E3C4F6AE7D79A2FD333C578C68D965 /* JGProgressHUDImageIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A52C1327EB8F106FB6777FAF5F5788 /* JGProgressHUDImageIndicatorView.m */; };
 		39E6286EC2BBA4101831C98C497B2B1A /* BlockCipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7075632D1B3348C1CB58B052EB455109 /* BlockCipher.swift */; };
 		3A249390AE1A43E90A84145CC60B1806 /* Blowfish+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A28BE27E03115271138ED8BB9F007C /* Blowfish+Foundation.swift */; };
@@ -91,12 +91,10 @@
 		40D14FA6AE60307CE024C9A0E9D89CA1 /* Checksum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101CACCA5D75EE9A9A0CD7515C212A62 /* Checksum.swift */; };
 		410AE8C930A4B7D34838C5E66D7006BB /* BatchedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC8051F20201944CF8F119BA0F91399 /* BatchedCollection.swift */; };
 		412BCCBEDE999C88E4DBF5A3D78DD007 /* Data Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93881528E60DE6EB93C4597E402F4D13 /* Data Conversion.swift */; };
-		4195AC74D853DB6F275D8CD08E765C15 /* CardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085058E7F33C321F4EB8F69ED381139E /* CardViewCell.swift */; };
 		44B2D66853DDD01A35606439593DAB43 /* Bitwise Ops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE70DE9BDF55DB4155687F8DC723FEF /* Bitwise Ops.swift */; };
 		46080BD15CF8259EDDD3B13662D24712 /* JGProgressHUDFadeZoomAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCEFD82DC3474C1C40D6888FA02824B /* JGProgressHUDFadeZoomAnimation.m */; };
 		463054C0113D84B728806C0DD107DC0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBE00646A514365F86456896C595115 /* Foundation.framework */; };
 		46A64A43AFA057B6B63C8F0C12F509B4 /* Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C303AFE0286772389444EF4231DB9679 /* Combine.swift */; };
-		46CADBFFB3C59F5F2B63934734DF5E6A /* WalletCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6947F37D60C58338CB171EB2E0ED36 /* WalletCardData.swift */; };
 		47BC875F1A51CECF97FF492734C94BD4 /* CFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1C8B1DB8DE95D85D649DAA91E2C8D /* CFB.swift */; };
 		49A01FE48388C76469F0C6348ADACD02 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3B1E35EFB8FA4D7C1F8423DDCF462 /* Map.swift */; };
 		49A43693B6522E8A25CC2519B2B55379 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7336D76976FD18F4C8DCF421264C99E9 /* String+Extension.swift */; };
@@ -106,21 +104,22 @@
 		4A8FDEEDB6C4D1D09A6A74AE23E35F69 /* Bootpay-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B8B7FE1BA47DAFDB2CAD41B154297B /* Bootpay-dummy.m */; };
 		4ACE6EF10F98557B2CA7FB6A1DA7CFF2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBE00646A514365F86456896C595115 /* Foundation.framework */; };
 		4B6715B088FE1DC1B04F258D39D58032 /* CTR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93192C7439D91660B74AAB961DDA9A58 /* CTR.swift */; };
+		4D399FC2C1AE53441F89630255E9DFF0 /* ScalingCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD4CDC1EF41FA1F1C5E227A47C8E6F /* ScalingCarouselCell.swift */; };
 		4D88DD529B9C1813641D47E7FA487FEE /* Multiplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FFFC0791CB222AAFF34046B1536FE1 /* Multiplication.swift */; };
+		4F7E24F1686CB34C7555E67613546933 /* BootpayBioUIModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9941A1B718B9B2FDFB048F763DA06B /* BootpayBioUIModal.swift */; };
 		52ECF73DDCC8E061CB9E7799B16A0DBB /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800C1B8959FEF4E83476618DD1A84FCC /* SwiftyJSON.swift */; };
 		53182098DA2BF97E9A70F0F4BE0902DB /* JGProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D81B7B2D338253BA9A783135CB7CEC /* JGProgressHUD-dummy.m */; };
 		5358CDBF3A820A2782835909CBF015E3 /* Cipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B891CF36DB476BCE43F431716F38760A /* Cipher.swift */; };
 		5369FE05A087E56CEC6A065D9A7218E5 /* CryptoSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC042B3ECC883A342B3BC7AB3B9DFE11 /* CryptoSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		55AABB1FB38F61A3369ACC555FF3046D /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 61900BD4617FE55BA2E0A911E3472509 /* Alamofire-dummy.m */; };
-		57DCCA32BE7A9483E14FF05095F1AC76 /* BootpayBio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B7236D81CA1165F42B39D595A0AB3 /* BootpayBio.swift */; };
+		55B2C83CBF61F0024EA782D5E3DC8B77 /* BootBioTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E31A033442D085B5C7309880443642 /* BootBioTheme.swift */; };
 		587226A7FF7EDAE6F3F5761C5B77F094 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBE00646A514365F86456896C595115 /* Foundation.framework */; };
 		58A6BC43C6B543377BA8FBDD87F4DE65 /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73FD88614202A05F41A3518E744E70C /* ConstraintLayoutGuide.swift */; };
 		5900F9370A2C67D69647BBC0C2FA3800 /* Bootpay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875F26403019F6B7FA187D43F26F31C2 /* Bootpay.swift */; };
+		5AE12CDFEA08D94C9E6D59A84FF7D1DC /* TOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E3EF944616FB9CD2395C0048E7ACB8 /* TOTP.swift */; };
 		5AF42C4F13266100AD1B5D7C91AB3CC2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBE00646A514365F86456896C595115 /* Foundation.framework */; };
-		5B767FFE6843E3A00FA789135224384C /* Base32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D6E8D3F7B4FB91149A3D618DA9534E /* Base32.swift */; };
 		5B8CC8BB11784917BD5E372E866E2F0B /* ConstraintDirectionalInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26F8720ECC7F2ABBA84EFB193641BF1 /* ConstraintDirectionalInsetTarget.swift */; };
 		5BC2A5C97D15096715BD6DD6B5E1C8A3 /* SCLAlertView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 13AFAFE0F068FB46106186A0E031C1F3 /* SCLAlertView-dummy.m */; };
-		5E4501DD5510AA0AABBE77A3997A55D2 /* BioMetricAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EA0FFBF4E091541784B1394C41E64 /* BioMetricAuthenticator.swift */; };
 		5EB4E05A4BB89D96AA6D910957390AC4 /* Bit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A891FAC1EB4CA9D2661ACD0BB401E9E /* Bit.swift */; };
 		5F3B1C7B25C109974A52E89573D3BA83 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F467BEFAD33F167F1A9BEA197F7038A4 /* GCD.swift */; };
 		5FA8A8F7C84F1FC93C691373C1253D4A /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1F0A1A845CCEA030133CED1C836F1E /* SwiftyJSON-dummy.m */; };
@@ -128,35 +127,32 @@
 		5FBF3FF3604540120FC494B7B1D8E136 /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F36ABD99827075530A2B5A15645BBEA /* UILayoutSupport+Extensions.swift */; };
 		603911970770A987775D64CF086EF1A2 /* AES.Cryptors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0760E270B8A6AFC1A3DAA8E6CFDD683B /* AES.Cryptors.swift */; };
 		6072037B868899671FFE035E056AD1F3 /* CustomDateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3B66E4EDA022FAF2BD67FD7ED0417A /* CustomDateFormatTransform.swift */; };
+		6413342E85A41F747B43A32836781620 /* BootpayUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F592B20273E27FCE1B8B2A86F2DE169 /* BootpayUI.swift */; };
 		64158B5CED9EFC69C18B3A7E58C0EDAB /* BlockModeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8776957864C91F2CE08C238770F964D4 /* BlockModeOptions.swift */; };
+		645C201B762D4A7FA711EB5C5F5DC848 /* BootpayBioUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076E4D9C5051B772030FE44351903EB7 /* BootpayBioUIController.swift */; };
 		654DABAE3B1BF7FDEB7FEBAB928DBB02 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7580C8B055CD3C199EB81E773D1739F /* Mapper.swift */; };
 		68FB2DCB4C77DBCAF9A6037E470F2BDE /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042687266F379BD135202F7BE35AE342 /* ParameterEncoding.swift */; };
 		68FF3E9463377415D0F2AE8A39AFAEEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBE00646A514365F86456896C595115 /* Foundation.framework */; };
 		6912C68861FA4A314D56067A37D6838A /* Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC36A3E61631BFCDC4910899C0433B82 /* Addition.swift */; };
-		6991EC45864A5AB0A089BF3A54EB73B3 /* TOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E3EF944616FB9CD2395C0048E7ACB8 /* TOTP.swift */; };
 		69FF8DC7C331D926D7B07491F6705606 /* CipherModeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6F565D41872E1A7BA0D2C6F2AB8946 /* CipherModeWorker.swift */; };
 		6A15C35CB5AEEB8C31B06497A63C04DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBE00646A514365F86456896C595115 /* Foundation.framework */; };
-		6A4977EC42ACD3CB51B849784348C8E9 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B3BE102D73D3D3C43B767F3A339C6 /* UIButtonExtension.swift */; };
 		6B8ED07B07D4C11242A792313BDBA12A /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF74A41E7D32AFE8D981AA20AEA89F /* ConstraintPriority.swift */; };
 		6BF5F294E32E46E8A689F158AD9A64F0 /* BootItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D295BE5C2EC6982DA5843C441E8BB7 /* BootItem.swift */; };
 		6CB271052DD44EC4D85FC91B741ECC53 /* BigUInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE85D65FE254BD7AEAD2C26242DB20A5 /* BigUInt.swift */; };
 		6DB62EB8F78CF10FB4CE4337BFEAB889 /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD38F042042DE1AEC4F267502CE794 /* Generics.swift */; };
 		6E04EAA7307C7407A457BFCEB40025C0 /* ConstraintMakerPrioritizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5908CD302FA323E53BB69E8C789482 /* ConstraintMakerPrioritizable.swift */; };
+		6F9BFC659FA6B1C3CC57847B8D54C16C /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF94EAEFC68C9B0C60C75C11CDE9611 /* Generator.swift */; };
 		6F9FF95307E6C3C9C45357DA18B57D77 /* BootpayAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7EDAB6CBB0C1F06D6FC00057F4F5E8 /* BootpayAnalytics.swift */; };
+		6FD977D121648B20B297E735AE1997EE /* WalletCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6947F37D60C58338CB171EB2E0ED36 /* WalletCardData.swift */; };
 		710AA1B376D307240C331A5A313EA3B6 /* JGProgressHUDAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DAB5B64C95BC8B92825FF6CD4400540 /* JGProgressHUDAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		74613974D008A170F004ADF1FB5291EF /* ScalingCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD4CDC1EF41FA1F1C5E227A47C8E6F /* ScalingCarouselCell.swift */; };
 		7483E5327027263F7E4B94A2997191C4 /* AuthenticationInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD87BC50218F4786FC58AA785AFDD25A /* AuthenticationInterceptor.swift */; };
 		75966A9262648D4647D764E3E76BC6AC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAA6AA0A78F2FF05ABC3754D9409D8E /* Response.swift */; };
 		76E6A6907573B7BEF67326BA9DC91600 /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14CE720A4E06C056E336C56B2075E7 /* ConstraintLayoutGuideDSL.swift */; };
 		772C822C679DE18FEB38C4E245E0393F /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 749E69510FFEE4D7D2556139BC3B9899 /* SnapKit-dummy.m */; };
-		777609B45FE83435ECED9FE2C1104CE3 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E161AABB69109F5751DB2881D0A4FFB9 /* UIAlertControllerExtension.swift */; };
 		77EB53F8BDFD7CECB64AC5A44295280F /* JGProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B8120D69E9CE9B6472E1368F65406ABA /* JGProgressHUD.m */; };
 		78A6BBF6C563D23B034FAFFF09EC59D5 /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD74025C5B09527624FFA90DC1363F6 /* ConstraintConstantTarget.swift */; };
 		7930C94414B4C661867AC4FBE82E996C /* URLEncodedFormEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89631ED64FAC16221642F807A05B543F /* URLEncodedFormEncoder.swift */; };
-		79E7E199FF1B9D8E48452EBE07408B71 /* BootBioTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E31A033442D085B5C7309880443642 /* BootBioTheme.swift */; };
 		7B068137A8925891446203B5D3D6A4ED /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E927094BAB34585128989AF746E69B66 /* CFNetwork.framework */; };
-		7CD9ABE3B667DA35F06D0526F78ACAEB /* BootpayUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19BDACF7138C47065496BB756728A2F /* BootpayUI.swift */; };
-		7D3E70170E20E73EEE0E265E0F6D5209 /* HOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7B84F4A80F7507734A08A2FD172985 /* HOTP.swift */; };
 		7E02F5B62BE00E97847DF549FFED2490 /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7A3D58949271EC987D4BEC1E41F282 /* HTTPHeaders.swift */; };
 		7E9FA57E8B31010D51A659ABA3C81FDD /* OFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C407B0ED0B8F3E7BDD98D5AF28D9FDC3 /* OFB.swift */; };
 		7F1BB526AAE3ECDCE90127D9D0E10261 /* StringEncoding+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44025940B8167C3E018D1619C96642B6 /* StringEncoding+Alamofire.swift */; };
@@ -167,18 +163,14 @@
 		81B8D2B7CEB25C2448B0BC9B33591A65 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69952D01A8E575D3958848216EE1BD0 /* Session.swift */; };
 		8226699FC4F8BD40D2F935B69F12B65D /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE05A4AC7CC4E94EC1D26B26C6A2A8B /* ConstraintMaker.swift */; };
 		824D816B1EE404F2DD400EE678695CBE /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66658710EB43C9507573ECF8A69F529 /* ResponseSerialization.swift */; };
+		834D967B830AB4B9E3146593108FFA52 /* BiometricData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48C3A62CD6169C386FA357018358FC /* BiometricData.swift */; };
 		84E9C119B0A44BF29CE1706674B7A7DA /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7BB060EDD51C8F6F5654A101A4CA34 /* ConstraintRelation.swift */; };
 		8613DF613D2A46C97CE723AE4C6622DB /* ToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479727A14C08E6DF1A90BF131D795C42 /* ToJSON.swift */; };
 		8769FA6C58BC84ABB1AB3202A1F28016 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B997A0F73FC2441578C8290DD844A3E8 /* ConstraintMakerEditable.swift */; };
-		87C8B3E02818D1BB001F3A2F /* BootpayBioWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C8B3DF2818D1BB001F3A2F /* BootpayBioWebView.swift */; };
-		87C8B3E22818D30B001F3A2F /* BootpayBioUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C8B3E12818D30B001F3A2F /* BootpayBioUI.swift */; };
-		87C8B3E828192309001F3A2F /* BootpayBioUIModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C8B3E728192309001F3A2F /* BootpayBioUIModal.swift */; };
-		87C8B3EC28192E6D001F3A2F /* BootpayBioUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C8B3EB28192E6D001F3A2F /* BootpayBioUIController.swift */; };
 		891AC7D357625AFAA0CD0122CFAFF0B0 /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6284D660436C0EA049B7F4A1E1E23A /* ConstraintLayoutSupportDSL.swift */; };
-		89A7E750D48C2F725E7BEFFB0EF24B5A /* CardCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D97B30B68D45E6D6A43736FD092012 /* CardCode.swift */; };
+		89D1056D38CB72020CAC1313818DA704 /* BootpayBio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939B7236D81CA1165F42B39D595A0AB3 /* BootpayBio.swift */; };
 		8B08399869BB60A444E350A9C3C55231 /* UInt64+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B56E0E659C5643FEA8A0CFCCA0A16A /* UInt64+Extension.swift */; };
 		8BB842D500DFB369126EAAFE8AA11FF0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3EA6E8F228E7F329E3BC100ADC56887 /* Images.xcassets */; };
-		8C58886D7FDBAA9B77240FE89C1EF763 /* WalletData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1791F6E4EFF43F184EE5DA4EBFBE8E /* WalletData.swift */; };
 		8CB9AB8356015800E80BA9F4A46E1B1D /* JGProgressHUDShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = B483A26679699A05905214D3F76E897F /* JGProgressHUDShadow.m */; };
 		8D093D940EBF34A9819E605CA30072E9 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A30F3D045DD24EA3C1EE076A881A00D /* Authenticator.swift */; };
 		8D75FC8D7476C9674234F39F1A820D8C /* URLConvertible+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = F942C7AFDE8AE2D66E0C8FAE0F406EC0 /* URLConvertible+URLRequestConvertible.swift */; };
@@ -196,9 +188,11 @@
 		97BED69E0214D6AC798D55C245B3D03B /* Integer Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68645FA1E0968E4E71511B516802A9B1 /* Integer Conversion.swift */; };
 		97ECA0253E23A2D66D8BDE79EFB15DB0 /* JGProgressHUDFadeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 200F383FB8B65FD417626F3419DCD333 /* JGProgressHUDFadeAnimation.m */; };
 		9816E1B4707FC991F13C0F09E9A3E6FC /* RSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872C39AF2169CF98A54A2C6D44D5E5C /* RSA.swift */; };
+		988E6B922BE264E24B661ACDDD53EBB2 /* CardCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D97B30B68D45E6D6A43736FD092012 /* CardCode.swift */; };
 		98ADF3C23BD98579BE6286FA18D5C0AE /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B330B693E18DED60F12DEBD443FB8AC2 /* ConstraintConfig.swift */; };
 		99D058E53EFEE3AC4857CDE3DBA5C004 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC50FBF9E1D76F19F425F9161191DB02 /* ParameterEncoder.swift */; };
 		99E669238AC4BA6463AB628E44E5C94B /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277C2EE2E62199BA84833BF14F18C3B /* ConstraintItem.swift */; };
+		9A5ED2556C9F4432CE100E889790E319 /* BootpayBuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F60D4B955BC9CE17226C38DE18431F8 /* BootpayBuildConfig.swift */; };
 		9ADB1DEE00779A65F01873CB59688DA5 /* OCB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4314C04CC4FA226660F7C0DFE2E0CADE /* OCB.swift */; };
 		9B9910754CDA7BC8B7D9A4BAD3DE87B3 /* CBCMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4596A0E0DE68B61EA7A30D88465591B3 /* CBCMAC.swift */; };
 		9C8B3C2360E1B84022A2C2997E6FC764 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F5D7531FDE23513B9B4FD5D8DBF1BE /* Random.swift */; };
@@ -206,16 +200,19 @@
 		9D18D9D33BCAA16A6FF6DF7FCBB1ADD7 /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE16CB8ECE8D02268312103B29BB0E /* TransformType.swift */; };
 		9D63C512BC6208828149206FB12C5236 /* BootpayUI-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 07259DE70B76178BB3F765B13BAAD3D2 /* BootpayUI-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D669F48E6A0354B47FF4A092D1C1412 /* PKCS5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A31604212B60E8FFE80D445DDD8F22 /* PKCS5.swift */; };
+		9D903FF6BC55C7A5538985826B51319A /* CardSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6C2CD95A57CFD84752EADFC46BB961 /* CardSelectView.swift */; };
 		9E1795567B266E7D93025ACF047C1E53 /* ObjectMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2E30F2596A196A4679199F1FE5B10A /* ObjectMapper-dummy.m */; };
 		9F46A291D5668ECC4F7FADD18A5D652B /* Shifts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF659D665D63F0137DB2774A02ADBEF7 /* Shifts.swift */; };
 		A00186B27E9DC4C57AF56BB512D0ECC8 /* IntegerOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3156C07ED97E454D4C71D80AE0A1A45 /* IntegerOperators.swift */; };
 		A045D4965A1237F28D963013225CADB9 /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97EA3946B879267E2EE4E35BF720A35 /* ConstraintOffsetTarget.swift */; };
 		A052B5211F2F79E22DF391EB60D1EB1E /* StreamEncryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CC029EEA3F371E8BF187A2297932B /* StreamEncryptor.swift */; };
 		A0A897551B68DECB4707EF40836F8769 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBE00646A514365F86456896C595115 /* Foundation.framework */; };
+		A10E36D8034C14915A209C8BFEB2DB3A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED9D3675DE4849BBD67C346D3B5FDC4 /* StringExtension.swift */; };
 		A22FD96F9642AE880ABB056939C094EA /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F7290BD195FD31C787403B6A6CA787 /* ConstraintMakerRelatable.swift */; };
 		A29100AA1876DDEFF6F54694A51FDB0E /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC02AA63AE5338F91B7F6E654EBFB2E /* NetworkReachabilityManager.swift */; };
 		A2EBCD9A8D317810BB5D8BD7D362A904 /* CMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4964543EF1D1F97D2B9BCD63583A1F00 /* CMAC.swift */; };
 		A3193DD885107D5205B1503651820E70 /* BootUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF861B025C4D99E14964C339FA447CC /* BootUser.swift */; };
+		A3A78EFA322A3136D8C97F0CD1EEF9A9 /* HOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7B84F4A80F7507734A08A2FD172985 /* HOTP.swift */; };
 		A3B944DD9A8620A0BEBE3CAF997765EF /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD8990A22562D400B58420BCA720DBD /* Data+Extension.swift */; };
 		A41738FB5BC535CE843425078F9F1217 /* Division.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4664B3E2CDD8C7BAC2E8F9BF84AE078 /* Division.swift */; };
 		A53BDE589BDD6483F3EEDCE5EA1DCCD3 /* Protected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E097308CCCE974D70CC6419E5E93353 /* Protected.swift */; };
@@ -226,7 +223,6 @@
 		A7CB89E5A017714721F2EF1BF2F598F2 /* Array+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF018141E2360A56122E165B91B928 /* Array+Foundation.swift */; };
 		A87B79D75FD0C74745B61CFC681418BB /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9F54A120DD70082A7AA879E8E68C66 /* ConstraintInsets.swift */; };
 		A962440BF1EF1132E2703A30F666DBB0 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0BF09600FA48C07675A1CF439E2987 /* Operators.swift */; };
-		AA310CBC61997422AFB3A1C162A44C42 /* BootBioPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C317AC9F782A9EE90DB321AF58D3A2 /* BootBioPayload.swift */; };
 		ABE93B85F19EA4601AFE013B32D8B665 /* ObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E4B05FA2DE4838C078D3B0617FD2000 /* ObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC14BBC1D6C65883BC92B6001948FC9A /* SCLAlertView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 958539EC09D1CA9B30257FEF521F8F3B /* SCLAlertView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AF943D51B814BC2402D35CB597F1584B /* DataTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23134E3DF9EECF533D874FB42E87E3ED /* DataTransform.swift */; };
@@ -238,23 +234,23 @@
 		B559E38CCE60B1E7D20754DE80C683DF /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A9EBFC9AB50312E027B2F6ED7AA751 /* ConstraintLayoutSupport.swift */; };
 		B60D47DB1423D44F243A0FBBE8417963 /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33FDEB1A989BC6F97F0AC00962BF3D5 /* ConstraintMultiplierTarget.swift */; };
 		B628BF1BB156E0E6DB77DA845C9B4C74 /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76A11BDCBCBFE0BA96615FE9B952E3D /* TransformOf.swift */; };
+		B6D4621F19934ACCD8F1CF6E99EE8DED /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962B3BE102D73D3D3C43B767F3A339C6 /* UIButtonExtension.swift */; };
 		B704B198B9B520D449260877E300D821 /* ServerTrustEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EF5FB691D5BAE21EF752E6AC033D30 /* ServerTrustEvaluation.swift */; };
 		B844090B9042E79165B5C41988BA59E8 /* CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C2BF3D7ECBF11EFFB89EE591CA44F2 /* CBC.swift */; };
 		BAF4438E18A8BE0623B9D6AA0AF6A933 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B0D65E6439D437258E61E19A5153553 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC0ECA8F22DEDE8886E189CD0EAA1197 /* URLRequest+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB13E15F2738B6C98CDD0401B68D790 /* URLRequest+Alamofire.swift */; };
 		BC229F8FFA14490EB792EB4E50B9C71F /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6807A4B359EEC74C44C85C684713785D /* ConstraintRelatableTarget.swift */; };
-		C011FD7C4A9BF27A8829C1F7FD5ACD44 /* BootpayUI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D62BDBE96838DEE6DB80D873868E94 /* BootpayUI-dummy.m */; };
 		C1A0AD5FDD062A006B64EC7BEC1BB53E /* ChaCha20.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135698767F72A8438E1BF3261E6A39C1 /* ChaCha20.swift */; };
 		C1E36057976A58C6A0E99C451405FA09 /* Pods-BootpayUI_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EAB3C25DCAE7A11311A593200D68BFE1 /* Pods-BootpayUI_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C2E72CEC99E6AFFA464E1B101817DF66 /* Blowfish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C6E18FC5BB858D1DF5CC245D45C84 /* Blowfish.swift */; };
 		C3125CAE240D927828C375F92C5A83CA /* ImmutableMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC419B3346DABB180984866C81FD1F58 /* ImmutableMappable.swift */; };
 		C39C468681F88C04D47B65C685D90780 /* Cryptors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E919DC6F490242D6C099B54F333BB5 /* Cryptors.swift */; };
+		C528DFFEA10E0A50EFA513F801A15010 /* UInt64+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92612A7CC3B866E8A60458633B074291 /* UInt64+Data.swift */; };
 		C6F7EBF85FB95997E8AB57E429FBCDCE /* Pods-BootpayUI_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B377F70C117B517785900C469A8BE7B6 /* Pods-BootpayUI_Example-dummy.m */; };
 		C7036C1D4FE9589A9D9027B6AAD235FB /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB17C9D0D758D901669B8DBD5657FCA1 /* ConstraintMakerExtendable.swift */; };
-		C8CCE57C43D58CDEEF8ECD07ACD62BC5 /* ScalingCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D715A7CADA3A3FABE4B8A630A5DEF /* ScalingCarouselView.swift */; };
 		C903804579145CB3FCB800C2A2FDDC1A /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1598E9CB08621DF8BFF535047F8ADE7C /* Debugging.swift */; };
 		C9B055D5B95B1EFABDD138A37F233195 /* GCM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1249AE4C292D33F60D6833A715D1F35F /* GCM.swift */; };
-		CA1710D00D20033E6EB4690B81E1DDE9 /* AuthenticationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A86E6E4135198DE2A7882782D4993D /* AuthenticationErrors.swift */; };
+		CA3C7AF3A36724499416DF8C31781AA4 /* BioConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3336F3BDC720E51B8C0EABE7ECB698A4 /* BioConstants.swift */; };
 		CB1888317F27CF322945B3D86E700782 /* Poly1305.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D06046FB0B38F0E215D52BBF5ED224 /* Poly1305.swift */; };
 		CBA882EB5070934CB0504DDF926847DD /* BlockMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1FAD88370A4961CC7886CC7E92AEFC /* BlockMode.swift */; };
 		CEAEDE354C393E94933B445A0502C2D5 /* BootpayWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE20CD9D8CCBDA20C056BE36567AF65 /* BootpayWebView.swift */; };
@@ -265,8 +261,9 @@
 		D0105E112AC52D87E3FE7DAE4445F8D3 /* AEAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B20A4280646014D29E33CEEC821718 /* AEAD.swift */; };
 		D03E6F3EAA346874A1DBD8994C65F6E1 /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C08231E4E23B6327872275620DECCA /* ConstraintLayoutGuide+Extensions.swift */; };
 		D0BD0421C58FCDAD1ADBE5E223DF4B22 /* String.Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA4185EA3F53C6B3692F55161117190 /* String.Extention.swift */; };
-		D0E115CC9A481E0E3C223365C126CE60 /* BootpayBioPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4446A4B1BE14A28E118E00573515200 /* BootpayBioPresenter.swift */; };
+		D0DED84A0FB49156BEE91AA107FE3E5E /* OTPAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E68DDDBEE541BE6691A624051677C /* OTPAlgorithm.swift */; };
 		D0EA90FBF83350C49E6EF6C8A98D6F00 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9986123CA7B83F6D98C9CDB5DB55238 /* AFError.swift */; };
+		D174EE5A226E78884B41948E59C53B7B /* BootpayBioUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A928C5AEBE1F6C1D6C62A54E085B83 /* BootpayBioUI.swift */; };
 		D410D59EC842F5E03D903BDF154221AD /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ACACF410D5879AEF122A3E9DD79D26 /* Mappable.swift */; };
 		D5ACE597A9CF13AEE2A77CE40D3C6736 /* BootpayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF93FE2F965C0453446A10C26D6C2AF5 /* BootpayController.swift */; };
 		D66A0AA7DF977C9B4ACDAB897F53AC67 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDA9E30B2FEF2A8A49661858AC8D217 /* Constraint.swift */; };
@@ -277,6 +274,7 @@
 		D908E8D3B0EA96834DCA6E99ED5B03A1 /* AEADChaCha20Poly1305.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470CF7960A43F6D9134A9407AF720CE5 /* AEADChaCha20Poly1305.swift */; };
 		DA34899BEF0668D76CBCE8C4CE47B97B /* RequestTaskMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B1282B3A354EC005D883F25B769B32 /* RequestTaskMap.swift */; };
 		DA62F46E977DA679CB934184026E0E9C /* JGProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7F8F3C27EF5F59634F4FBAE6691F3C /* JGProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB5F0A5237C8BE7709E8B04E88CE2AA1 /* PG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A82F6AD18122224D629B8D8CE1FCDCA /* PG.swift */; };
 		DB908031DAEED8BF3A0FE85166D15C6C /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 377FA67A5563CD954F23F58FEE52EF1B /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DBA47BD048BCF45716F49DCCA5B8F84D /* DigestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CADBBEA9EDFC93DA2AF2FACE9F9942 /* DigestType.swift */; };
 		DD902FE8D6824681C929D028655AE121 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D25E288F32F6940F4C325B8AE89235 /* RequestInterceptor.swift */; };
@@ -287,11 +285,13 @@
 		E4F78D27473C7AE854D20E9425EA108F /* JGProgressHUDImageIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C1C80CA1C1DA4340D586D86BCADDE7F /* JGProgressHUDImageIndicatorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E54654D504A42C24F284A68F87F7671D /* OperationQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241E22D39A4419EB126252798345ADB /* OperationQueue+Alamofire.swift */; };
 		E5A85DE179BCE91816DB2A01D35B1B56 /* Rabbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51C0698EE1ED798ECBD659EAB88D99 /* Rabbit.swift */; };
-		E6ABF1924F836D9C1615413D53CEC9C2 /* BiometricData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C48C3A62CD6169C386FA357018358FC /* BiometricData.swift */; };
+		E5C0EBA7EBEB15111FEE80EFD31DF2F8 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D3C47032A4A49DE1B65E78010FB214 /* CardInfo.swift */; };
 		E81D84499FCFEAE5BC7D28504707AB57 /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073CEDE5C630F6447A8B5889391A7EDB /* ConstraintView+Extensions.swift */; };
 		E9151F0618792812EFDC32BFF2609B57 /* JGProgressHUDAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F3A5B59DBA739DEEC607EFBB4A75FF /* JGProgressHUDAnimation.m */; };
+		E9A96C4F728ADB15978E93F8E45337F9 /* AuthenticationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A86E6E4135198DE2A7882782D4993D /* AuthenticationErrors.swift */; };
 		E9B4C89E7EB3B27D46AFCA452C3D426F /* MultipartUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850F1E73A7DE6820C1B0F91906AB1FC1 /* MultipartUpload.swift */; };
 		EAA0CA11C28F4ACD0B14066E432E1B8D /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48738D0A4C047FFEB64D7CBB892E83CF /* ConstraintPriorityTarget.swift */; };
+		EB7192F236D2C3FFE0696178DEA6180B /* BioMetricAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275EA0FFBF4E091541784B1394C41E64 /* BioMetricAuthenticator.swift */; };
 		EC89451ECC3C78692367B87306AEC60E /* BootpayConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE7971918455886B63228CF16231193 /* BootpayConstant.swift */; };
 		ECB85B8C3253CE3FD861EEB2F096433B /* MapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AACCFA540E79976B6A9D7E377F8DE39 /* MapError.swift */; };
 		ED1BE09166EA13990C57CFC213EE5CA8 /* JGProgressHUDPieIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4050B820FA060A2A0662894D042F9F /* JGProgressHUDPieIndicatorView.m */; };
@@ -315,13 +315,13 @@
 		FA2AAED1483DE97F9A30B1A20C1DD1CE /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177FCE78B52047F70EF51D96B47151C5 /* Comparable.swift */; };
 		FA99EB0D2AA22684405A363E0EB5FE0C /* JGProgressHUDIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6327C44260718F35EDC208C63D2BBF05 /* JGProgressHUDIndicatorView.m */; };
 		FAB0C4C892D6A6EB7A1303308251BE3C /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0D450D682936B2505F03D665C3139C /* Padding.swift */; };
+		FAEDF2479CA281D49F337057FD090EDB /* Base32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D6E8D3F7B4FB91149A3D618DA9534E /* Base32.swift */; };
 		FC9B3EFB07F71F44350C0760A611A8DB /* UInt128.swift in Sources */ = {isa = PBXBuildFile; fileRef = B606FB8438688C276826DCFE6B74C193 /* UInt128.swift */; };
-		FE3624830F2C88CE1DCB780A99748A29 /* BioConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3336F3BDC720E51B8C0EABE7ECB698A4 /* BioConstants.swift */; };
 		FE6A5040ED86FB46ECCC67B85E698D25 /* CCM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36BEABC2990F1DFDEE1EB10843592CB /* CCM.swift */; };
 		FE78DE4625F0288DBC1FB62BD454BDB1 /* BootOneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB87C7F065457FB361D9D7D7DF0B489C /* BootOneStore.swift */; };
-		FEB01C681C1EA23E81B3CCE66641793B /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DED34885CA24F0BCA1BFAADB1C94F0 /* NSObjectExtension.swift */; };
 		FF45F94897760B213DA370662B7D8C9B /* NSDecimalNumberTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F75BEB271B5A3B4327C85D9D05AF76 /* NSDecimalNumberTransform.swift */; };
 		FF46C65F12CCC5573C980A627B539E63 /* BootpayDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E519AA3C1467BFC1AD303D4E2470339E /* BootpayDefaultHelper.swift */; };
+		FFFF6BF7BB2186528A6CFCFE566689D4 /* BootpayBioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7F0FC645BFAC78A56B6CE0159F966A /* BootpayBioController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -489,6 +489,7 @@
 		07259DE70B76178BB3F765B13BAAD3D2 /* BootpayUI-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BootpayUI-umbrella.h"; sourceTree = "<group>"; };
 		073CEDE5C630F6447A8B5889391A7EDB /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintView+Extensions.swift"; path = "Sources/ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
 		0760E270B8A6AFC1A3DAA8E6CFDD683B /* AES.Cryptors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AES.Cryptors.swift; path = Sources/CryptoSwift/AES.Cryptors.swift; sourceTree = "<group>"; };
+		076E4D9C5051B772030FE44351903EB7 /* BootpayBioUIController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BootpayBioUIController.swift; sourceTree = "<group>"; };
 		07E2417DED072DBD4F09824D6E2F5ED8 /* SnapKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.release.xcconfig; sourceTree = "<group>"; };
 		085058E7F33C321F4EB8F69ED381139E /* CardViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardViewCell.swift; sourceTree = "<group>"; };
 		0A51C0698EE1ED798ECBD659EAB88D99 /* Rabbit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Rabbit.swift; path = Sources/CryptoSwift/Rabbit.swift; sourceTree = "<group>"; };
@@ -498,6 +499,7 @@
 		0D5B304F8DF235E26CF53A6D8757D6DF /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		0E097308CCCE974D70CC6419E5E93353 /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Source/Protected.swift; sourceTree = "<group>"; };
 		0E7BB060EDD51C8F6F5654A101A4CA34 /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Sources/ConstraintRelation.swift; sourceTree = "<group>"; };
+		0E9941A1B718B9B2FDFB048F763DA06B /* BootpayBioUIModal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BootpayBioUIModal.swift; sourceTree = "<group>"; };
 		0FC833728EB90E6CB0D1E054E6728622 /* JGProgressHUDSuccessIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDSuccessIndicatorView.h; path = JGProgressHUD/JGProgressHUD/include/JGProgressHUDSuccessIndicatorView.h; sourceTree = "<group>"; };
 		0FE20CD9D8CCBDA20C056BE36567AF65 /* BootpayWebView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BootpayWebView.swift; path = Bootpay/Classes/webview/BootpayWebView.swift; sourceTree = "<group>"; };
 		101CACCA5D75EE9A9A0CD7515C212A62 /* Checksum.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Checksum.swift; path = Sources/CryptoSwift/Checksum.swift; sourceTree = "<group>"; };
@@ -531,6 +533,7 @@
 		20D81B7B2D338253BA9A783135CB7CEC /* JGProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JGProgressHUD-dummy.m"; sourceTree = "<group>"; };
 		22D6E8D3F7B4FB91149A3D618DA9534E /* Base32.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Base32.swift; sourceTree = "<group>"; };
 		23134E3DF9EECF533D874FB42E87E3ED /* DataTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataTransform.swift; path = Sources/DataTransform.swift; sourceTree = "<group>"; };
+		26A928C5AEBE1F6C1D6C62A54E085B83 /* BootpayBioUI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BootpayBioUI.swift; sourceTree = "<group>"; };
 		275EA0FFBF4E091541784B1394C41E64 /* BioMetricAuthenticator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BioMetricAuthenticator.swift; sourceTree = "<group>"; };
 		27E3DF3F8DA07DF85DB9C439E872EB79 /* JGProgressHUDRingIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDRingIndicatorView.h; path = JGProgressHUD/JGProgressHUD/include/JGProgressHUDRingIndicatorView.h; sourceTree = "<group>"; };
 		28300C5908B6F795CEC5F99D198FBC5F /* PKCS7Padding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKCS7Padding.swift; path = Sources/CryptoSwift/PKCS/PKCS7Padding.swift; sourceTree = "<group>"; };
@@ -621,6 +624,7 @@
 		6AACCFA540E79976B6A9D7E377F8DE39 /* MapError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapError.swift; path = Sources/MapError.swift; sourceTree = "<group>"; };
 		6B0D65E6439D437258E61E19A5153553 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
 		6B5BA511CC78A1C48D04D8C6C335CF69 /* ChaCha20+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ChaCha20+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/ChaCha20+Foundation.swift"; sourceTree = "<group>"; };
+		6C6BBDBE871006D2A9408A2460678234 /* BootpayBioWebView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BootpayBioWebView.swift; sourceTree = "<group>"; };
 		6D7A3D58949271EC987D4BEC1E41F282 /* HTTPHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPHeaders.swift; path = Source/HTTPHeaders.swift; sourceTree = "<group>"; };
 		6DAF74A41E7D32AFE8D981AA20AEA89F /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Sources/ConstraintPriority.swift; sourceTree = "<group>"; };
 		6DFF018141E2360A56122E165B91B928 /* Array+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/Array+Foundation.swift"; sourceTree = "<group>"; };
@@ -637,9 +641,10 @@
 		78C1085E2046B8641CC70558DE46A115 /* AlamofireExtended.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlamofireExtended.swift; path = Source/AlamofireExtended.swift; sourceTree = "<group>"; };
 		78FA4EC2D64A75A2ACE66E9EC94779F8 /* HMAC+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HMAC+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/HMAC+Foundation.swift"; sourceTree = "<group>"; };
 		791DABB5089712EA7652EA9CEBF09930 /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
-		7AE8E0683D99957AF59EB01FCDD74256 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		7AE8E0683D99957AF59EB01FCDD74256 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		7B69467E6E075C893D51A9EF60DD543E /* SnapKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.debug.xcconfig; sourceTree = "<group>"; };
 		7E4B05FA2DE4838C078D3B0617FD2000 /* ObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-umbrella.h"; sourceTree = "<group>"; };
+		7F592B20273E27FCE1B8B2A86F2DE169 /* BootpayUI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BootpayUI.swift; sourceTree = "<group>"; };
 		7FBAFAA66E9C7401884F439AE8BC662C /* JGProgressHUD */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JGProgressHUD; path = JGProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		800C1B8959FEF4E83476618DD1A84FCC /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON/SwiftyJSON.swift; sourceTree = "<group>"; };
 		802D7C5F559CB83811D5F50BFD26DBCB /* SecureBytes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SecureBytes.swift; path = Sources/CryptoSwift/SecureBytes.swift; sourceTree = "<group>"; };
@@ -658,13 +663,9 @@
 		8421C4AA03F55B43F05FAD75F2F5097A /* DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateTransform.swift; path = Sources/DateTransform.swift; sourceTree = "<group>"; };
 		850F1E73A7DE6820C1B0F91906AB1FC1 /* MultipartUpload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartUpload.swift; path = Source/MultipartUpload.swift; sourceTree = "<group>"; };
 		86117009B40FC305F97A2A9F0379C11C /* BootpayBuildConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BootpayBuildConfig.swift; path = Bootpay/Classes/config/BootpayBuildConfig.swift; sourceTree = "<group>"; };
-		874D3A064FDEA658888E45269559796B /* BootpayUI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = BootpayUI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		874D3A064FDEA658888E45269559796B /* BootpayUI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = BootpayUI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		875F26403019F6B7FA187D43F26F31C2 /* Bootpay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bootpay.swift; path = Bootpay/Classes/core/Bootpay.swift; sourceTree = "<group>"; };
 		8776957864C91F2CE08C238770F964D4 /* BlockModeOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlockModeOptions.swift; path = Sources/CryptoSwift/BlockMode/BlockModeOptions.swift; sourceTree = "<group>"; };
-		87C8B3DF2818D1BB001F3A2F /* BootpayBioWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BootpayBioWebView.swift; sourceTree = "<group>"; };
-		87C8B3E12818D30B001F3A2F /* BootpayBioUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootpayBioUI.swift; sourceTree = "<group>"; };
-		87C8B3E728192309001F3A2F /* BootpayBioUIModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootpayBioUIModal.swift; sourceTree = "<group>"; };
-		87C8B3EB28192E6D001F3A2F /* BootpayBioUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootpayBioUIController.swift; sourceTree = "<group>"; };
 		88A4B3C709278A110E4CA5DAB1045447 /* JGProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JGProgressHUD-prefix.pch"; sourceTree = "<group>"; };
 		895EF24C4DCA4A1C2DDD4A6BD66D89DB /* HMAC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HMAC.swift; path = Sources/CryptoSwift/HMAC.swift; sourceTree = "<group>"; };
 		89631ED64FAC16221642F807A05B543F /* URLEncodedFormEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLEncodedFormEncoder.swift; path = Source/URLEncodedFormEncoder.swift; sourceTree = "<group>"; };
@@ -708,11 +709,10 @@
 		9C057C0666FCD9FFFE221572FF7B2AF7 /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsets.swift; path = Sources/ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
 		9C48C3A62CD6169C386FA357018358FC /* BiometricData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BiometricData.swift; sourceTree = "<group>"; };
 		9D52999B90BE20EDAA3D044734F9959E /* Pods-BootpayUI_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BootpayUI_Example-frameworks.sh"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DAC54744AEDC25701B98834D6C3490A /* CryptoSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CryptoSwift.debug.xcconfig; sourceTree = "<group>"; };
 		9EE05A4AC7CC4E94EC1D26B26C6A2A8B /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Sources/ConstraintMaker.swift; sourceTree = "<group>"; };
 		9F67DAFD58188B8590AEA036142B21C4 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
-		A19BDACF7138C47065496BB756728A2F /* BootpayUI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BootpayUI.swift; sourceTree = "<group>"; };
 		A21809F4059762097DF0376AC523A192 /* BootpayUI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BootpayUI.modulemap; sourceTree = "<group>"; };
 		A33DF66F10FEB348DA5AFB2F0F3E07F9 /* UInt32+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt32+Extension.swift"; path = "Sources/CryptoSwift/UInt32+Extension.swift"; sourceTree = "<group>"; };
 		A3EA6E8F228E7F329E3BC100ADC56887 /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = BootpayUI/Images.xcassets; sourceTree = "<group>"; };
@@ -819,7 +819,7 @@
 		E4A4B299D082263E841863195CBC524D /* Pods-BootpayUI_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-BootpayUI_Tests"; path = Pods_BootpayUI_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4A52C1327EB8F106FB6777FAF5F5788 /* JGProgressHUDImageIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUDImageIndicatorView.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUDImageIndicatorView.m; sourceTree = "<group>"; };
 		E519AA3C1467BFC1AD303D4E2470339E /* BootpayDefaultHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BootpayDefaultHelper.swift; path = Bootpay/Classes/helper/BootpayDefaultHelper.swift; sourceTree = "<group>"; };
-		E56AC2AEFABD09FACB5D23C068995E0E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E56AC2AEFABD09FACB5D23C068995E0E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		E5C480B894999B8AFBAA153DA01A8143 /* Subtraction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Subtraction.swift; path = Sources/CryptoSwift/CS_BigInt/Subtraction.swift; sourceTree = "<group>"; };
 		E7580C8B055CD3C199EB81E773D1739F /* Mapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mapper.swift; path = Sources/Mapper.swift; sourceTree = "<group>"; };
 		E76A11BDCBCBFE0BA96615FE9B952E3D /* TransformOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformOf.swift; path = Sources/TransformOf.swift; sourceTree = "<group>"; };
@@ -1046,6 +1046,7 @@
 				BA14F12D4A27B07EB4F0DEA32FD75880 /* JGProgressHUDSuccessIndicatorView.m */,
 				05893D3CECF247C9B0979F20311124AE /* Support Files */,
 			);
+			name = JGProgressHUD;
 			path = JGProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -1096,6 +1097,7 @@
 				BC69E179AC663902AA748F6B6D716DCD /* URLTransform.swift */,
 				65658CE08C558A65B865C9BFC04F9267 /* Support Files */,
 			);
+			name = ObjectMapper;
 			path = ObjectMapper;
 			sourceTree = "<group>";
 		};
@@ -1113,6 +1115,15 @@
 			);
 			name = "Pods-BootpayUI_Tests";
 			path = "Target Support Files/Pods-BootpayUI_Tests";
+			sourceTree = "<group>";
+		};
+		3A897B8C12FF76E6C3AE37B0EAD19C2B /* webview */ = {
+			isa = PBXGroup;
+			children = (
+				6C6BBDBE871006D2A9408A2460678234 /* BootpayBioWebView.swift */,
+			);
+			name = webview;
+			path = webview;
 			sourceTree = "<group>";
 		};
 		44CCC95921ABB5952347A90AA1F5DF53 /* Products */ = {
@@ -1141,6 +1152,7 @@
 				275EA0FFBF4E091541784B1394C41E64 /* BioMetricAuthenticator.swift */,
 				939B7236D81CA1165F42B39D595A0AB3 /* BootpayBio.swift */,
 			);
+			name = core;
 			path = core;
 			sourceTree = "<group>";
 		};
@@ -1186,19 +1198,8 @@
 				8F36ABD99827075530A2B5A15645BBEA /* UILayoutSupport+Extensions.swift */,
 				21C5CBE74F43D348CF59D280288B3F40 /* Support Files */,
 			);
+			name = SnapKit;
 			path = SnapKit;
-			sourceTree = "<group>";
-		};
-		5C39FF7F5B8A1B0638A40D0A755CD436 /* swiftUI */ = {
-			isa = PBXGroup;
-			children = (
-				A19BDACF7138C47065496BB756728A2F /* BootpayUI.swift */,
-				87C8B3E12818D30B001F3A2F /* BootpayBioUI.swift */,
-				87C8B3E728192309001F3A2F /* BootpayBioUIModal.swift */,
-				87C8B3EB28192E6D001F3A2F /* BootpayBioUIController.swift */,
-			);
-			name = swiftUI;
-			path = BootpayUI/Classes/swiftUI;
 			sourceTree = "<group>";
 		};
 		651C50B7A0B0088B469DF00DE57E06F5 /* models */ = {
@@ -1212,6 +1213,7 @@
 				2D6947F37D60C58338CB171EB2E0ED36 /* WalletCardData.swift */,
 				1B1791F6E4EFF43F184EE5DA4EBFBE8E /* WalletData.swift */,
 			);
+			name = models;
 			path = models;
 			sourceTree = "<group>";
 		};
@@ -1336,6 +1338,7 @@
 				2BCECB3E82C5EC740ED28EFFB3B77835 /* ZeroPadding.swift */,
 				C03CCB1217E4BFE3A416F579D0B35E9B /* Support Files */,
 			);
+			name = CryptoSwift;
 			path = CryptoSwift;
 			sourceTree = "<group>";
 		};
@@ -1354,14 +1357,6 @@
 			path = "../Target Support Files/Alamofire";
 			sourceTree = "<group>";
 		};
-		87C8B3DE2818D1BB001F3A2F /* webview */ = {
-			isa = PBXGroup;
-			children = (
-				87C8B3DF2818D1BB001F3A2F /* BootpayBioWebView.swift */,
-			);
-			path = webview;
-			sourceTree = "<group>";
-		};
 		913BA0E63E9C7CA0919444A6835C96FC /* BootpayUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1369,7 +1364,7 @@
 				9D5E83FD53557C93194D77F902269EEA /* bio */,
 				2EDF7AB6619E5206336A4CD4F0B29949 /* Pod */,
 				DCB505F02A9AD5F7D72BE24A89E81E01 /* Support Files */,
-				5C39FF7F5B8A1B0638A40D0A755CD436 /* swiftUI */,
+				D1B209563EBAC53FEA37CB3B28A48396 /* swiftUI */,
 			);
 			name = BootpayUI;
 			path = ../..;
@@ -1381,6 +1376,7 @@
 				800C1B8959FEF4E83476618DD1A84FCC /* SwiftyJSON.swift */,
 				F051A5DC1CB990FDEFAC3B67597F28A6 /* Support Files */,
 			);
+			name = SwiftyJSON;
 			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
@@ -1391,13 +1387,13 @@
 				2F89F3BB4F72AA8AEC88D7A84486A8CF /* SCLExtensions.swift */,
 				A97171031797D126A18395636780DADF /* Support Files */,
 			);
+			name = SCLAlertView;
 			path = SCLAlertView;
 			sourceTree = "<group>";
 		};
 		9D5E83FD53557C93194D77F902269EEA /* bio */ = {
 			isa = PBXGroup;
 			children = (
-				87C8B3DE2818D1BB001F3A2F /* webview */,
 				B219939BA29E377AE01331C8466EE1DA /* card */,
 				E3E9A6107CB4131FFFD1F3F2250D2133 /* config */,
 				E5A3CA03901520278D000E793AB9775F /* constants */,
@@ -1407,6 +1403,7 @@
 				651C50B7A0B0088B469DF00DE57E06F5 /* models */,
 				F85D79475DDA5BEE73E94F5F90ACBFF1 /* scalingCarousel */,
 				C930F4D812F042F619032DF2CFD80387 /* swiftOTP */,
+				3A897B8C12FF76E6C3AE37B0EAD19C2B /* webview */,
 			);
 			name = bio;
 			path = BootpayUI/Classes/bio;
@@ -1433,6 +1430,7 @@
 				8D7F0FC645BFAC78A56B6CE0159F966A /* BootpayBioController.swift */,
 				C4446A4B1BE14A28E118E00573515200 /* BootpayBioPresenter.swift */,
 			);
+			name = dialog;
 			path = dialog;
 			sourceTree = "<group>";
 		};
@@ -1442,6 +1440,7 @@
 				1E6C2CD95A57CFD84752EADFC46BB961 /* CardSelectView.swift */,
 				085058E7F33C321F4EB8F69ED381139E /* CardViewCell.swift */,
 			);
+			name = card;
 			path = card;
 			sourceTree = "<group>";
 		};
@@ -1509,6 +1508,7 @@
 				64FAE859146CAFEDDF8B3B71FE3249CF /* Validation.swift */,
 				80847F5F5D733725CF9803E41CC78DDE /* Support Files */,
 			);
+			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1547,6 +1547,7 @@
 				D3E3EF944616FB9CD2395C0048E7ACB8 /* TOTP.swift */,
 				92612A7CC3B866E8A60458633B074291 /* UInt64+Data.swift */,
 			);
+			name = swiftOTP;
 			path = swiftOTP;
 			sourceTree = "<group>";
 		};
@@ -1560,6 +1561,18 @@
 				44CCC95921ABB5952347A90AA1F5DF53 /* Products */,
 				C52D14174E08037F16180EC9047F64E6 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D1B209563EBAC53FEA37CB3B28A48396 /* swiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				26A928C5AEBE1F6C1D6C62A54E085B83 /* BootpayBioUI.swift */,
+				076E4D9C5051B772030FE44351903EB7 /* BootpayBioUIController.swift */,
+				0E9941A1B718B9B2FDFB048F763DA06B /* BootpayBioUIModal.swift */,
+				7F592B20273E27FCE1B8B2A86F2DE169 /* BootpayUI.swift */,
+			);
+			name = swiftUI;
+			path = BootpayUI/Classes/swiftUI;
 			sourceTree = "<group>";
 		};
 		DB0FA9D3E30B1A08AA61828A32ECCDF8 /* Pods-BootpayUI_Example */ = {
@@ -1601,6 +1614,7 @@
 			children = (
 				3F60D4B955BC9CE17226C38DE18431F8 /* BootpayBuildConfig.swift */,
 			);
+			name = config;
 			path = config;
 			sourceTree = "<group>";
 		};
@@ -1611,6 +1625,7 @@
 				92D97B30B68D45E6D6A43736FD092012 /* CardCode.swift */,
 				9A82F6AD18122224D629B8D8CE1FCDCA /* PG.swift */,
 			);
+			name = constants;
 			path = constants;
 			sourceTree = "<group>";
 		};
@@ -1621,6 +1636,7 @@
 				E161AABB69109F5751DB2881D0A4FFB9 /* UIAlertControllerExtension.swift */,
 				962B3BE102D73D3D3C43B767F3A339C6 /* UIButtonExtension.swift */,
 			);
+			name = extension;
 			path = extension;
 			sourceTree = "<group>";
 		};
@@ -1660,6 +1676,7 @@
 				CF3A3F3718635951C68409EA48DD2DD9 /* URL.Extention.swift */,
 				BACB5D728B7094D52F991F8005AFF91B /* Support Files */,
 			);
+			name = Bootpay;
 			path = Bootpay;
 			sourceTree = "<group>";
 		};
@@ -1670,6 +1687,7 @@
 				933DE8070EFE72CB553036A07D1EABBF /* ScalingCarouselLayout.swift */,
 				3B2D715A7CADA3A3FABE4B8A630A5DEF /* ScalingCarouselView.swift */,
 			);
+			name = scalingCarousel;
 			path = scalingCarousel;
 			sourceTree = "<group>";
 		};
@@ -1821,7 +1839,7 @@
 			buildConfigurationList = 7F35417863D517B3815938B1CD82A0F0 /* Build configuration list for PBXNativeTarget "BootpayUI" */;
 			buildPhases = (
 				F57BA5FB5BFBAE5FA2FC5C05B7A6F475 /* Headers */,
-				9E1EA4B5DA62EA6D2A38B706BA44E916 /* Sources */,
+				7ACCA4CFD1E544D5510A739C2AA8D932 /* Sources */,
 				4E49ACF8543E48759D2EC711BCB1D9EF /* Frameworks */,
 				E730465FD8E9EBFD6C767AAC95E6912F /* Resources */,
 			);
@@ -2312,56 +2330,56 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7ACCA4CFD1E544D5510A739C2AA8D932 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9A96C4F728ADB15978E93F8E45337F9 /* AuthenticationErrors.swift in Sources */,
+				FAEDF2479CA281D49F337057FD090EDB /* Base32.swift in Sources */,
+				CA3C7AF3A36724499416DF8C31781AA4 /* BioConstants.swift in Sources */,
+				EB7192F236D2C3FFE0696178DEA6180B /* BioMetricAuthenticator.swift in Sources */,
+				834D967B830AB4B9E3146593108FFA52 /* BiometricData.swift in Sources */,
+				2F43136E5BE4B37B82C2C39E338BEA68 /* BootBioPayload.swift in Sources */,
+				55B2C83CBF61F0024EA782D5E3DC8B77 /* BootBioTheme.swift in Sources */,
+				89D1056D38CB72020CAC1313818DA704 /* BootpayBio.swift in Sources */,
+				FFFF6BF7BB2186528A6CFCFE566689D4 /* BootpayBioController.swift in Sources */,
+				024AB58B9A585A37766C7F29793260DC /* BootpayBioPresenter.swift in Sources */,
+				00021FEBD77723F4CC6CD7778B961BD0 /* BootpayBioPrice.swift in Sources */,
+				D174EE5A226E78884B41948E59C53B7B /* BootpayBioUI.swift in Sources */,
+				645C201B762D4A7FA711EB5C5F5DC848 /* BootpayBioUIController.swift in Sources */,
+				4F7E24F1686CB34C7555E67613546933 /* BootpayBioUIModal.swift in Sources */,
+				1BB8424790750474203DB1340C687318 /* BootpayBioWebView.swift in Sources */,
+				9A5ED2556C9F4432CE100E889790E319 /* BootpayBuildConfig.swift in Sources */,
+				6413342E85A41F747B43A32836781620 /* BootpayUI.swift in Sources */,
+				172295EE777F47A3CFC209D0F2433874 /* BootpayUI-dummy.m in Sources */,
+				988E6B922BE264E24B661ACDDD53EBB2 /* CardCode.swift in Sources */,
+				E5C0EBA7EBEB15111FEE80EFD31DF2F8 /* CardInfo.swift in Sources */,
+				9D903FF6BC55C7A5538985826B51319A /* CardSelectView.swift in Sources */,
+				16F9D9F326F2055C72EFA99BA4D6D9A0 /* CardViewCell.swift in Sources */,
+				6F9BFC659FA6B1C3CC57847B8D54C16C /* Generator.swift in Sources */,
+				A3A78EFA322A3136D8C97F0CD1EEF9A9 /* HOTP.swift in Sources */,
+				025DE18E002E517676C57DCC0C3DC8BA /* NSObjectExtension.swift in Sources */,
+				D0DED84A0FB49156BEE91AA107FE3E5E /* OTPAlgorithm.swift in Sources */,
+				DB5F0A5237C8BE7709E8B04E88CE2AA1 /* PG.swift in Sources */,
+				4D399FC2C1AE53441F89630255E9DFF0 /* ScalingCarouselCell.swift in Sources */,
+				12CDB02A279BD154ABDFBA9BD0E7A153 /* ScalingCarouselLayout.swift in Sources */,
+				1212CB8B223C718A15A85966AB38B62B /* ScalingCarouselView.swift in Sources */,
+				A10E36D8034C14915A209C8BFEB2DB3A /* StringExtension.swift in Sources */,
+				5AE12CDFEA08D94C9E6D59A84FF7D1DC /* TOTP.swift in Sources */,
+				0C17C76C68ABD947FDBC18ABE060B079 /* UIAlertControllerExtension.swift in Sources */,
+				B6D4621F19934ACCD8F1CF6E99EE8DED /* UIButtonExtension.swift in Sources */,
+				C528DFFEA10E0A50EFA513F801A15010 /* UInt64+Data.swift in Sources */,
+				6FD977D121648B20B297E735AE1997EE /* WalletCardData.swift in Sources */,
+				2FCB4EB7795F06905996997E1C5C37F5 /* WalletData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		923A165064579A9B4841DE672C37DAAD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				52ECF73DDCC8E061CB9E7799B16A0DBB /* SwiftyJSON.swift in Sources */,
 				5FA8A8F7C84F1FC93C691373C1253D4A /* SwiftyJSON-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9E1EA4B5DA62EA6D2A38B706BA44E916 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CA1710D00D20033E6EB4690B81E1DDE9 /* AuthenticationErrors.swift in Sources */,
-				87C8B3E828192309001F3A2F /* BootpayBioUIModal.swift in Sources */,
-				87C8B3E22818D30B001F3A2F /* BootpayBioUI.swift in Sources */,
-				5B767FFE6843E3A00FA789135224384C /* Base32.swift in Sources */,
-				FE3624830F2C88CE1DCB780A99748A29 /* BioConstants.swift in Sources */,
-				5E4501DD5510AA0AABBE77A3997A55D2 /* BioMetricAuthenticator.swift in Sources */,
-				E6ABF1924F836D9C1615413D53CEC9C2 /* BiometricData.swift in Sources */,
-				AA310CBC61997422AFB3A1C162A44C42 /* BootBioPayload.swift in Sources */,
-				79E7E199FF1B9D8E48452EBE07408B71 /* BootBioTheme.swift in Sources */,
-				57DCCA32BE7A9483E14FF05095F1AC76 /* BootpayBio.swift in Sources */,
-				36C443FA3761990AF075FAF964141B1B /* BootpayBioController.swift in Sources */,
-				D0E115CC9A481E0E3C223365C126CE60 /* BootpayBioPresenter.swift in Sources */,
-				2867B024823BC9B8C652D1A8C0F416E1 /* BootpayBioPrice.swift in Sources */,
-				2250414D7E05223B26E9FE11A0D87A0F /* BootpayBuildConfig.swift in Sources */,
-				7CD9ABE3B667DA35F06D0526F78ACAEB /* BootpayUI.swift in Sources */,
-				C011FD7C4A9BF27A8829C1F7FD5ACD44 /* BootpayUI-dummy.m in Sources */,
-				89A7E750D48C2F725E7BEFFB0EF24B5A /* CardCode.swift in Sources */,
-				1EAF6D8C4549AA909E3217DAC7C26C52 /* CardInfo.swift in Sources */,
-				30266A32CCFFA1888FC9CEC29DC0F2AB /* CardSelectView.swift in Sources */,
-				4195AC74D853DB6F275D8CD08E765C15 /* CardViewCell.swift in Sources */,
-				2B52860BAFA0118D0EE0A109048B1BC8 /* Generator.swift in Sources */,
-				7D3E70170E20E73EEE0E265E0F6D5209 /* HOTP.swift in Sources */,
-				FEB01C681C1EA23E81B3CCE66641793B /* NSObjectExtension.swift in Sources */,
-				87C8B3E02818D1BB001F3A2F /* BootpayBioWebView.swift in Sources */,
-				306F3CBE51E8F4930C68F57EB688DAF9 /* OTPAlgorithm.swift in Sources */,
-				2B8EA9FDE2CB9F465246AF2934AD8CCB /* PG.swift in Sources */,
-				74613974D008A170F004ADF1FB5291EF /* ScalingCarouselCell.swift in Sources */,
-				0159DFB4A9C36568E9910C3ECE300095 /* ScalingCarouselLayout.swift in Sources */,
-				C8CCE57C43D58CDEEF8ECD07ACD62BC5 /* ScalingCarouselView.swift in Sources */,
-				87C8B3EC28192E6D001F3A2F /* BootpayBioUIController.swift in Sources */,
-				392BF89DF6E3CE0ACEE65E7453C6AACD /* StringExtension.swift in Sources */,
-				6991EC45864A5AB0A089BF3A54EB73B3 /* TOTP.swift in Sources */,
-				777609B45FE83435ECED9FE2C1104CE3 /* UIAlertControllerExtension.swift in Sources */,
-				6A4977EC42ACD3CB51B849784348C8E9 /* UIButtonExtension.swift in Sources */,
-				2331A28DEBFE3FFD6D3044D23773AA45 /* UInt64+Data.swift in Sources */,
-				46CADBFFB3C59F5F2B63934734DF5E6A /* WalletCardData.swift in Sources */,
-				8C58886D7FDBAA9B77240FE89C1EF763 /* WalletData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3274,7 +3292,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

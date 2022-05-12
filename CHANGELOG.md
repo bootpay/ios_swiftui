@@ -1,3 +1,7 @@
+## 4.0.21
+
+* swift compiler version 에 따른 코드 분기 
+
 ## 4.0.2
 
 * Bootpay.confirm(data) -> Bootpay.transacionConfirm() 으로 수정 

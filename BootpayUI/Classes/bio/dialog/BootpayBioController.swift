@@ -733,7 +733,11 @@ extension BootpayBioController {
             if buttonText == CancelTitle { return }
             
             // open settings
+            #if swift(>=4.2)
+            let url = URL(string: UIApplication.openSettingsURLString)
+            #else
             let url = URL(string: UIApplicationOpenSettingsURLString)
+            #endif
             if UIApplication.shared.canOpenURL(url!) {
                 UIApplication.shared.open(url!, options: [:])
             }
