@@ -651,6 +651,7 @@
 		80E31A033442D085B5C7309880443642 /* BootBioTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BootBioTheme.swift; sourceTree = "<group>"; };
 		817257ED9435AF17D33AC1CDFBA8DB67 /* DeviceHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DeviceHelper.swift; path = Bootpay/Classes/helper/DeviceHelper.swift; sourceTree = "<group>"; };
 		8178F8E5F46D5012D56F5D5826C54F2B /* JGProgressHUDPieIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDPieIndicatorView.h; path = JGProgressHUD/JGProgressHUD/include/JGProgressHUDPieIndicatorView.h; sourceTree = "<group>"; };
+		81994924283C711100EAA1FD /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		81A86E6E4135198DE2A7882782D4993D /* AuthenticationErrors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationErrors.swift; sourceTree = "<group>"; };
 		81E8435A88F5074CC6D7EF14563C9611 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		829E39B44FF139A138E1B95501F9CECF /* StreamDecryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StreamDecryptor.swift; path = Sources/CryptoSwift/StreamDecryptor.swift; sourceTree = "<group>"; };
@@ -1053,6 +1054,7 @@
 				874D3A064FDEA658888E45269559796B /* BootpayUI.podspec */,
 				7AE8E0683D99957AF59EB01FCDD74256 /* LICENSE */,
 				E56AC2AEFABD09FACB5D23C068995E0E /* README.md */,
+				81994924283C711100EAA1FD /* CHANGELOG.md */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
