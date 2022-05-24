@@ -12,8 +12,6 @@ import WebKit
     @objc public var webview: WKWebView!
     
     var beforeUrl = ""
-    var isFirstLoadFinish = false
-    var isStartBootpay = false
     var topBlindView: BTView?
     var topBlindButton: UIButton?
      
@@ -37,6 +35,7 @@ import WebKit
         
         let configuration = WKWebViewConfiguration()
         configuration.userContentController.add(self, name: BootpayConstant.BRIDGE_NAME)
+//        configuration.userContentController.add(self, name: "postMessageListener")
         
         
         
@@ -46,20 +45,26 @@ import WebKit
 //            webview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
          
         #elseif os(iOS)
-            if #available(iOS 11.0, *) {
-                let window = UIApplication.shared.keyWindow
-                webview = WKWebView(frame: CGRect(x: 0,
-                                                  y: 0,
-                                                  width: UIScreen.main.bounds.width,
-                                                  height: UIScreen.main.bounds.height - (window?.safeAreaInsets.bottom ?? UIScreen.main.bounds.height) - (window?.safeAreaInsets.top ?? 0)),
-                                    configuration: configuration)
-            } else {
-                webview = WKWebView(frame: CGRect(x: 0,
-                                                  y: 0,
-                                                  width: UIScreen.main.bounds.width,
-                                                  height: UIScreen.main.bounds.height),
-                                    configuration: configuration)
-            }
+//            if #available(iOS 11.0, *) {
+//                let window = UIApplication.shared.keyWindow
+//                webview = WKWebView(frame: CGRect(x: 0,
+//                                                  y: 0,
+//                                                  width: UIScreen.main.bounds.width,
+//                                                  height: UIScreen.main.bounds.height - (window?.safeAreaInsets.bottom ?? UIScreen.main.bounds.height) - (window?.safeAreaInsets.top ?? 0)),
+//                                    configuration: configuration)
+//            } else {
+//                webview = WKWebView(frame: CGRect(x: 0,
+//                                                  y: 0,
+//                                                  width: UIScreen.main.bounds.width,
+//                                                  height: UIScreen.main.bounds.height),
+//                                    configuration: configuration)
+//            }
+        
+        webview = WKWebView(frame: CGRect(x: 0,
+                                          y: 0,
+                                          width: UIScreen.main.bounds.width,
+                                          height: UIScreen.main.bounds.height),
+                            configuration: configuration)
         
         #endif
         
@@ -73,29 +78,29 @@ import WebKit
         Bootpay.shared.webview = webview
     }
     
-    func updateBlindViewIfNaverLogin(_ url: String) {
-        if(url.starts(with: "https://nid.naver.com/")) { //show
-            if topBlindView == nil { topBlindView = UIView() }
-            else { topBlindView?.removeFromSuperview() }
-            if topBlindButton == nil { topBlindButton = UIButton() }
-            else { topBlindButton?.removeFromSuperview() }
-            
-            topBlindView?.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 50)
-            topBlindView?.backgroundColor = .white
-            self.addSubview(topBlindView!)
-            
-            topBlindButton?.frame = CGRect(x: self.frame.width - 50, y: 0, width: 50, height: 50)
-            topBlindButton?.setTitle("X", for: .normal)
-            topBlindButton?.setTitleColor(.black, for: .normal)
-            topBlindButton?.addTarget(self, action: #selector(closeView), for: .touchUpInside)
-            self.addSubview(topBlindButton!)
-            
-        } else { //hide
-            topBlindView?.removeFromSuperview()
-            topBlindView = nil
-            topBlindButton?.removeFromSuperview()
-            topBlindButton = nil
+    func updateBlindViewIfNaverLogin(_ webView: WKWebView, _ url: String) {
+        if(url.starts(with: "https://nid.naver.com")) { //show
+            webView.evaluateJavaScript("document.getElementById('back').remove();")
         }
+//        if(url.starts(with: "https://nid.naver.com/")) { //show
+//            if topBlindView == nil { topBlindView = UIView() }
+//            else { topBlindView?.removeFromSuperview() }
+//            topBlindView?.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 100)
+//            topBlindView?.backgroundColor = .red
+//            webView.superview?.addSubview(topBlindView!)
+//
+////            topBlindButton?.frame = CGRect(x: self.frame.width - 50, y: 0, width: 50, height: 50)
+////            topBlindButton?.setTitle("X", for: .normal)
+////            topBlindButton?.setTitleColor(.black, for: .normal)
+////            topBlindButton?.addTarget(self, action: #selector(closeView), for: .touchUpInside)
+////            self.addSubview(topBlindButton!)
+//
+//        } else { //hide
+//            topBlindView?.removeFromSuperview()
+//            topBlindView = nil
+////            topBlindButton?.removeFromSuperview()
+////            topBlindButton = nil
+//        }
     }
     
     @objc public func closeView() {
@@ -112,7 +117,6 @@ import WebKit
     @objc public func startBootpay() {
         if let url = URL(string: BootpayConstant.CDN_URL) {
             webview.load(URLRequest(url: url))
-            self.isStartBootpay = true
         }
     }
      
@@ -139,25 +143,16 @@ extension BootpayWebView: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHan
     
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         guard let payload = Bootpay.shared.payload else { return }
-        if isFirstLoadFinish == false && self.isStartBootpay == true  {
-            isFirstLoadFinish = true
-//            let quickPopup = payload.extra?.quickPopup ?? false
-            
+        
+        guard let url = webView.url?.absoluteString else { return; }
+        if(url.contains("webview.bootpay.co.kr")) {
             let scriptList = BootpayConstant.getJSBeforePayStart()
             for script in scriptList {
-                print(script)
                 webView.evaluateJavaScript(script, completionHandler: nil)
             }
-            let scriptPay = BootpayConstant.getJSPay(payload: payload, requestType: Bootpay.shared.request_type)
-             
-            print(scriptPay)
+            let scriptPay = BootpayConstant.getJSPay(payload: payload, requestType: Bootpay.shared.request_type) 
+
             webView.evaluateJavaScript(scriptPay, completionHandler: nil)
-//            print(scriptPay);
-//            webView.evaluateJavaScript(scriptPay, completionHandler:{(result, error) in
-//                if let error = error {
-//                    print(error)
-//                }
-//            })
         }
     }
     
@@ -166,8 +161,11 @@ extension BootpayWebView: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHan
         
         guard let url =  navigationAction.request.url else { return decisionHandler(.allow) }
         beforeUrl = url.absoluteString
+        
+        print(url.absoluteString)
+         
        
-        updateBlindViewIfNaverLogin(url.absoluteString)
+        updateBlindViewIfNaverLogin(webView, url.absoluteString)
         
         if(isItunesURL(url.absoluteString)) {
             startAppToApp(url)
@@ -217,37 +215,85 @@ extension BootpayWebView: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHan
     }
     
     open func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+              
+        
+        
         if(message.name == BootpayConstant.BRIDGE_NAME) {
+             
             
             guard let body = message.body as? [String: Any] else {
                 if message.body as? String == "close" {
                     Bootpay.shared.close?()
                     Bootpay.removePaymentWindow()
+                } else {
+                    let dic = convertStringToDictionary(text: message.body as! String)
+                    guard let dic = dic else { return }
+                    parseBootpayEvent(data: dic)
                 }
                 return
             }
-            guard let event = body["event"] as? String else { return }
+            parseBootpayEvent(data: body)
+        }
+    }
+    
+    func parseBootpayEvent(data: [String: Any]) {
+        var isRedirect = false
+        if(Bootpay.shared.payload?.extra?.openType == "redirect") { isRedirect = true }
+        guard let event = data["event"] as? String else { return }
+        
+        if event == "cancel" {
+            Bootpay.shared.cancel?(data)
+            if(isRedirect) {
+                //redirect는 닫기 이벤트를 안줘서 처리해야함
+                Bootpay.shared.close?()
+                Bootpay.removePaymentWindow()
+            }
+        } else if event == "error" {
+            Bootpay.shared.error?(data)
             
-            if event == "cancel" {
-                Bootpay.shared.cancel?(body)
-            } else if event == "error" {
-                Bootpay.shared.error?(body)
-            } else if event == "issued" {
-                Bootpay.shared.issued?(body)
-            } else if event == "confirm" {
-                if let confirm = Bootpay.shared.confirm {
-                    if(confirm(body)) {
-                        Bootpay.transactionConfirm()
-                    }
-//                    else {
-//                        Bootpay.removePaymentWindow()
-//                    }
+            //결과를 보는 설정이면 남겨두어야 함
+            //redirect는 닫기 이벤트를 안줘서 처리해야함
+            if(Bootpay.shared.payload?.extra?.displayErrorResult != true && isRedirect) {
+                Bootpay.shared.close?()
+                Bootpay.removePaymentWindow()
+            }
+        } else if event == "issued" {
+            Bootpay.shared.issued?(data)
+            if(Bootpay.shared.payload?.extra?.displaySuccessResult != true && isRedirect) {
+                //redirect는 닫기 이벤트를 안줘서 처리해야함
+                Bootpay.shared.close?()
+                Bootpay.removePaymentWindow()
+            }
+        } else if event == "confirm" {
+            if let confirm = Bootpay.shared.confirm {
+                if(confirm(data)) {
+                    Bootpay.transactionConfirm()
                 }
-            } else if event == "done" {
-                Bootpay.shared.done?(body)
-//                Bootpay.removePaymentWindow()
+            }
+        } else if event == "done" {
+            Bootpay.shared.done?(data)
+            if(Bootpay.shared.payload?.extra?.displaySuccessResult != true && isRedirect) {
+                //redirect는 닫기 이벤트를 안줘서 처리해야함
+                Bootpay.shared.close?()
+                Bootpay.removePaymentWindow()
+            }
+        } else if event == "close" {
+            //결과페이지에서 닫기 버튼 클릭시 
+            Bootpay.shared.close?()
+            Bootpay.removePaymentWindow()
+        }
+    }
+    
+    func convertStringToDictionary(text: String) -> [String:Any]? {
+        if let data = text.data(using: .utf8) {
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any]
+                return json
+            } catch {
+                print("Something went wrong")
             }
         }
+        return nil
     }
     
     public func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
@@ -360,7 +406,6 @@ extension BootpayWebView {
         } else if(sUrl.starts(with: "shinsegaeeasypayment")) {
             itunesUrl = "https://apps.apple.com/kr/app/ssgpay/id666237916"
         } else if(sUrl.starts(with: "cloudpay")) {
-        
             itunesUrl = "https://apps.apple.com/kr/app/%ED%95%98%EB%82%98%EC%B9%B4%EB%93%9C-%EC%9B%90%ED%81%90%ED%8E%98%EC%9D%B4/id847268987"
         } else if(sUrl.starts(with: "hanawalletmembers")) {
             itunesUrl = "https://apps.apple.com/kr/app/n-wallet/id492190784"
@@ -386,6 +431,8 @@ extension BootpayWebView {
             itunesUrl = "https://apps.apple.com/kr/app/kakaotalk/id362057947"
         } else if(sUrl.starts(with: "chaipayment")) {
             itunesUrl = "https://apps.apple.com/kr/app/%EC%B0%A8%EC%9D%B4/id1459979272"
+        } else if(sUrl.starts(with: "ukbanksmartbanknonloginpay")) {
+            itunesUrl = "https://itunes.apple.com/kr/developer/%EC%BC%80%EC%9D%B4%EB%B1%85%ED%81%AC/id1178872626?mt=8"
         }
         
         if(itunesUrl.count > 0) {

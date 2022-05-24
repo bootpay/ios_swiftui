@@ -72,7 +72,7 @@ import Bootpay
         HTTPCookieStorage.shared.cookieAcceptPolicy = HTTPCookie.AcceptPolicy.always  // 현대카드 등 쿠키설정 이슈 해결을 위해 필요
         
         let configuration = WKWebViewConfiguration()
-        configuration.userContentController.add(self, name: BioConstants.BRIDGE_NAME)
+        configuration.userContentController.add(self, name: BootpayConstant.BRIDGE_NAME)
 //        webview = WKWebView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height - 80), configuration: configuration)
         #if os(macOS)
             webview = WKWebView(frame: self.bounds, configuration: configuration)
@@ -80,7 +80,17 @@ import Bootpay
         //            webview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
          
         #elseif os(iOS)
-            webview = WKWebView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height - 80), configuration: configuration)
+            webview = WKWebView(frame: CGRect(x: 0,
+                                              y: 0,
+                                              width: self.frame.width,
+                                              height: self.frame.height - 80),
+                                configuration: configuration)
+        
+//        webview = WKWebView(frame: CGRect(x: 0,
+//                                          y: 0,
+//                                          width: UIScreen.main.bounds.width,
+//                                          height: UIScreen.main.bounds.height),
+//                            configuration: configuration)
 
         #endif
         
@@ -196,7 +206,7 @@ import Bootpay
             scriptPay = BioConstants.getJSDestroyWallet(payload: payload)
         }
         
-        print("scriptPay: \(scriptPay), requestType: \(BootpayBio.sharedBio.requestType)")
+//        print("scriptPay: \(scriptPay), requestType: \(BootpayBio.sharedBio.requestType)")
          
         if(!scriptPay.isEmpty) { webview.evaluateJavaScript(scriptPay, completionHandler: nil) }
     }
@@ -208,7 +218,7 @@ import Bootpay
             
             let scriptList = BioConstants.getJSBeforePayStart(payload: self.payload!)
             for script in scriptList {
-                print(script)
+//                print(script)
                 webView.evaluateJavaScript(script, completionHandler: nil)
             }
             callInjectedJavaScript()
@@ -220,7 +230,8 @@ import Bootpay
         guard let url =  navigationAction.request.url else { return decisionHandler(.allow) }
         beforeUrl = url.absoluteString
         
-        print(url.absoluteString)
+//        print(url.absoluteString)
+        updateBlindViewIfNaverLogin(webView, url.absoluteString)
         
         if(isItunesURL(url.absoluteString)) {
             startAppToApp(url)
@@ -261,118 +272,97 @@ import Bootpay
       
         webView.removeFromSuperview()
     }
-    
-//    func viewForZ
-    
+     
     open func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        print("action = \(message.body), type = \(BootpayBio.sharedBio.requestType)")
-        if(message.name == BioConstants.BRIDGE_NAME) {
+//        print("action = \(message.body), type = \(BootpayBio.sharedBio.requestType)")
+        if(message.name == BootpayConstant.BRIDGE_NAME) {
             guard let body = message.body as? [String: Any] else {
                 if message.body as? String == "close" {
                     self.onClose()
                 } else {
-                    print(11111)
-                    self.onEasySuccess(data: message.body)
-//                    self.onEasy
-//                    if([BioConstants.REQUEST_PASSWORD_TOKEN,
-//                        BioConstants.REQUEST_PASSWORD_TOKEN_FOR_ADD_CARD,
-//                        BioConstants.REQUEST_PASSWORD_TOKEN_DELETE_CARD,
-//                        BioConstants.REQUEST_PASSWORD_TOKEN_FOR_BIO_FOR_PAY].contains(BootpayBio.sharedBio.requestType)) {
-//                        let dic = [
-//                            "type": BootpayBio.sharedBio.requestType,
-//                            "token": message.body
-//                        ] as [String : Any]
-//
-//                        onNextJob?(dic)
-////                        onCallbackPasswordToken?(message.body as! String)
-//                    }
+//                    self.onEasySuccess(data: message.body)
+                    
+                    let dic = convertStringToDictionary(text: message.body as! String)
+                    guard let dic = dic else {
+                        self.onEasySuccess(data: message.body)
+                        return
+                    }
+                    parseBootpayEvent(data: dic)
                 }
                 return
             }
             
+            parseBootpayEvent(data: body)
             
             
-            guard let event = body["event"] as? String else {
-                print(22222)
-                self.onEasySuccess(data: body)
-//                if([BioConstants.REQUEST_ADD_BIOMETRIC,
-//                           BioConstants.REQUEST_ADD_BIOMETRIC_FOR_PAY].contains(BootpayBio.sharedBio.requestType)) {
+//            guard let event = body["event"] as? String else {
+//                self.onEasySuccess(data: body)
+//                return
+//            }
 //
-//                    if let biometric_device_uuid = body["biometric_device_uuid"], let biometric_secret_key = body["biometric_secret_key"], let server_unixtime = body["server_unixtime"] {
+//            if event == "cancel" {
+//                onCancel(data: body)
+//            } else if event == "error" {
+//                onError(data: body)
+//            } else if event == "issued" {
+//                onIssued(data: body)
+//            } else if event == "confirm" {
+//                onConfirm(data: body)
 //
-//                        let dic = [
-//                            "biometric_device_uuid": "\(biometric_device_uuid)",
-//                            "biometric_secret_key": "\(biometric_secret_key)",
-//                            "server_unixtime": "\(server_unixtime)",
-//                            "type": BootpayBio.sharedBio.requestType,
-//                            "nextType": BioConstants.NEXT_JOB_GET_WALLET_LIST
-//                        ] as [String : Any]
-//
-////                        BootpayBio.sharedBio.requestType = BioConstants.REQUEST_BIO_FOR_PAY
-////                        onCallbackBioDevice?(dic)
-//                        onNextJob?(dic)
-//                    }
-//                } else {
-//                    let dic = [
-//                        "type": BioConstants.REQUEST_TYPE_NONE,
-//                        "initToken": true
-//                    ] as [String : Any]
-//
-////                    BootpayDefaultHelper.setValue("password_token", value: "")
-////                    requestType = BioConstants.REQUEST_TYPE_NONE
-////                    BootpayBio.sharedBio.easySuccess?(body)
-//
-//                    onNextJob?(dic)
-//                    BootpayBio.sharedBio.done?(body)
-//                }
-                return
-            }
-            
-//            onCallbackFunction?(BioConstants.REQUEST_TYPE_NONE)
-//            BootpayDefaultHelper.setValue("password_token", value: "") // error_code을때가 있어 강제 예외처리
-//            let dic = [
-//                "type": BioConstants.REQUEST_TYPE_NONE,
-//                "initToken": true
-//            ] as [String : Any]
-//
-//            onNextJob?(dic)  // error_code을때가 있어 강제 예외처리
-            
-            if event == "cancel" {
-                onCancel(data: body)
-//                BootpayBio.sharedBio.cancel?(body)
-//                if let error_code = body["error_code"] as? String {
-//                    //카드 추가시 닫기
-//                    if(error_code == "RC_CLOSE_WINDOW") {
-//                        BootpayBio.sharedBio.close?()
-//                        BootpayBio.removePaymentWindow()
-//                        return
-//                    }
-//                }
-            } else if event == "error" {
-                onError(data: body)
-//                if let error_code = body["error_code"] as? String {  
-//                    if(error_code == "USER_PW_TOKEN_EXPIRED") {
-//                        onCallbackInitPasswordToken?()
-//                        return
-//                    }
-//                }
-                 
-//                BootpayBio.sharedBio.error?(body)
-//                BootpayBio.removePaymentWindow()
-            } else if event == "issued" {
-                onIssued(data: body)
-//                BootpayBio.sharedBio.issued?(body)
-            } else if event == "confirm" {
-                onConfirm(data: body)
-                
-            } else if event == "done" {
-                onDone(data: body)
+//            } else if event == "done" {
+//                onDone(data: body)
+//            }
+        }
+    }
+    
+    
+    func parseBootpayEvent(data: [String: Any]) {
+        var isRedirect = false
+        if(payload?.extra?.openType == "redirect") { isRedirect = true }
+        
+        guard let event = data["event"] as? String else {
+            self.onEasySuccess(data: data)
+            return
+        }
+        
+        if event == "cancel" {
+            onCancel(data: data, isRedirect: isRedirect)
+        } else if event == "error" {
+            onError(data: data, isRedirect: isRedirect)
+        } else if event == "issued" {
+            onIssued(data: data, isRedirect: isRedirect)
+        } else if event == "confirm" {
+            onConfirm(data: data)
+        } else if event == "done" {
+            onDone(data: data, isRedirect: isRedirect)
+        } else if event == "close" {
+            //결과페이지에서 닫기 버튼 클릭시
+            onClose()
+        }
+    }
+    
+    
+    func convertStringToDictionary(text: String) -> [String:Any]? {
+        if let data = text.data(using: .utf8) {
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any]
+                return json
+            } catch {
+                print("Something went wrong")
             }
         }
+        return nil
     }
 }
  
 extension BootpayBioWebView {
+    
+    func updateBlindViewIfNaverLogin(_ webView: WKWebView, _ url: String) {
+        if(url.starts(with: "https://nid.naver.com")) { //show
+            webView.evaluateJavaScript("document.getElementById('back').remove();")
+        }
+    }
+    
     internal func doJavascript(_ script: String) {
         webview.evaluateJavaScript(script, completionHandler: nil)
     }
@@ -439,15 +429,13 @@ extension BootpayBioWebView {
         ].reduce("", +)
         
         
-        print("transactionConfirm call")
-        
         webview.evaluateJavaScript(script, completionHandler: nil)
     }
 }
 
 extension BootpayBioWebView {
-    func onError(data: [String: Any]) {
-        print("onError: \(data)")
+    func onError(data: [String: Any], isRedirect: Bool) {
+//        print("onError: \(data)")
         
         let dic = [
             "type": BioConstants.REQUEST_TYPE_NONE,
@@ -465,12 +453,17 @@ extension BootpayBioWebView {
         } else {
             BootpayBio.sharedBio.requestType = BioConstants.REQUEST_TYPE_NONE
             BootpayBio.sharedBio.error?(data)
-            BootpayBio.removePaymentWindow()
+            if(payload?.extra?.displayErrorResult != true && isRedirect) {
+                BootpayBio.sharedBio.close?()
+                BootpayBio.removePaymentWindow()
+            } else {
+                BootpayBio.removePaymentWindow()
+            }
         }
     }
     
     func onClose() {
-        print("close")
+//        print("close")
         
         if([BioConstants.REQUEST_PASSWORD_TOKEN_FOR_ADD_CARD,
             BioConstants.REQUEST_PASSWORD_TOKEN_FOR_BIO_FOR_PAY,
@@ -499,37 +492,46 @@ extension BootpayBioWebView {
         } else {
             if(BioConstants.REQUEST_BIO_FOR_PAY != BootpayBio.sharedBio.requestType) {
                 BootpayBio.sharedBio.close?()
+                BootpayBio.removePaymentWindow()
             }
         }
     }
     
-    func onIssued(data: [String: Any]) {
-        print("onIssued: \(data)")
+    func onIssued(data: [String: Any], isRedirect: Bool) {
+//        print("onIssued: \(data)")
         
         BootpayBio.sharedBio.requestType = BioConstants.REQUEST_TYPE_NONE
         BootpayBio.sharedBio.issued?(data)
+        
+        if(payload?.extra?.displaySuccessResult != true && isRedirect) {
+            BootpayBio.sharedBio.close?()
+            BootpayBio.removePaymentWindow()
+        }
     }
     
     
     func onConfirm(data: [String: Any]) {
-        print("onConfirm: \(data)")
+//        print("onConfirm: \(data)")
         
         if let confirm = BootpayBio.sharedBio.confirm {
             if(confirm(data)) {
                 transactionConfirm()
 //                        Bootpay.confirm(data: body)
             }
-//            else {
-//                Bootpay.removePaymentWindow()
-//            }
         }
     }
     
-    func onCancel(data: [String: Any]) {
-        print("onCancel: \(data)")
+    func onCancel(data: [String: Any], isRedirect: Bool) {
+//        print("onCancel: \(data)")
         
         BootpayBio.sharedBio.requestType = BioConstants.REQUEST_TYPE_NONE
         BootpayBio.sharedBio.cancel?(data)
+        
+        if(isRedirect) {
+            BootpayBio.sharedBio.close?()
+            BootpayBio.removePaymentWindow()
+        }
+        
 //        if let error_code = data["error_code"] as? String {
 //            //카드 추가시 닫기
 //            if(error_code == "RC_CLOSE_WINDOW") {
@@ -541,14 +543,18 @@ extension BootpayBioWebView {
     }
     
     
-    func onDone(data: [String: Any]) {
-        print("onDone: \(data)")
+    func onDone(data: [String: Any], isRedirect: Bool) {
+//        print("onDone: \(data)")
         BootpayBio.sharedBio.done?(data)
+        if(payload?.extra?.displaySuccessResult != true && isRedirect) {
+            BootpayBio.sharedBio.close?()
+            BootpayBio.removePaymentWindow()
+        }
     }
     
     
     func onEasyError(data: [String: Any]) {
-        print("onEasyError: \(data)")
+//        print("onEasyError: \(data)")
         let dic = [
             "type": BioConstants.REQUEST_TYPE_NONE,
             "initToken": true
@@ -562,7 +568,7 @@ extension BootpayBioWebView {
     
     //onEasuSuccess 먼저 수행 후 onEasyError로 보내주자
     func onEasySuccess(data: Any?) {
-        print("onEasySuccess: \(data)")
+//        print("onEasySuccess: \(data)")
         
         if([BioConstants.REQUEST_PASSWORD_TOKEN,
             BioConstants.REQUEST_PASSWORD_TOKEN_FOR_ADD_CARD,
@@ -578,7 +584,7 @@ extension BootpayBioWebView {
                 dic["type"] = BootpayBio.sharedBio.requestType
                 dic["nextType"] = BioConstants.NEXT_JOB_GET_WALLET_LIST
                 
-                print("wallet data = \(dic)")
+//                print("wallet data = \(dic)")
                 onNextJob?(dic)
             }
         } else {
@@ -592,7 +598,7 @@ extension BootpayBioWebView {
                 BootpayBio.sharedBio.requestType = BioConstants.REQUEST_TYPE_NONE
             }
             
-            print("onEasySuccess Done: \(data), type: \(BootpayBio.sharedBio.requestType)")
+//            print("onEasySuccess Done: \(data), type: \(BootpayBio.sharedBio.requestType)")
             
             BootpayBio.sharedBio.done?(data as? [String:Any] ?? [String:Any]())
         }

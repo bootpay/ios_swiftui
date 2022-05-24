@@ -1,3 +1,7 @@
+## 4.1.6
+
+* bootpay 4.1.6 적용 
+
 ## 4.0.21
 
 * swift compiler version 에 따른 코드 분기 

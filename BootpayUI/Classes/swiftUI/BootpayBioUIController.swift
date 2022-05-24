@@ -46,38 +46,4 @@ public struct BootpayBioUIController: BTViewControllerRepresentable {
     }
     #endif
 }
-
-//
-//extension BootpayBioUIController {
-//    
-//    public func onError(_ action: @escaping ([String : Any]) -> Void) -> BootpayBioUIController {
-//        BootpayBio.sharedBio.error = action
-//        return self
-//    }
-//
-//    public func onIssued(_ action: @escaping ([String : Any]) -> Void) -> BootpayBioUIController {
-//        BootpayBio.sharedBio.issued = action
-//        return self
-//    }
-//    
-//    public func onClose(_ action: @escaping () -> Void) -> BootpayBioUIController {
-//        BootpayBio.sharedBio.close = action
-//        return self
-//    }
-//    
-//    public func onConfirm(_ action: @escaping([String : Any]) -> Bool) -> BootpayBioUIController {
-//        BootpayBio.sharedBio.confirm = action
-//        return self
-//    }
-//    
-//    public func onCancel(_ action: @escaping ([String : Any]) -> Void) -> BootpayBioUIController {
-//        BootpayBio.sharedBio.cancel = action
-//        return self
-//    }
-//    
-//    public func onDone(_ action: @escaping ([String : Any]) -> Void) -> BootpayBioUIController {
-//        BootpayBio.sharedBio.done = action
-//        return self
-//    }
-//}
-// 
+ 

@@ -106,7 +106,7 @@
 		4B6715B088FE1DC1B04F258D39D58032 /* CTR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93192C7439D91660B74AAB961DDA9A58 /* CTR.swift */; };
 		4D399FC2C1AE53441F89630255E9DFF0 /* ScalingCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FD4CDC1EF41FA1F1C5E227A47C8E6F /* ScalingCarouselCell.swift */; };
 		4D88DD529B9C1813641D47E7FA487FEE /* Multiplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FFFC0791CB222AAFF34046B1536FE1 /* Multiplication.swift */; };
-		4F7E24F1686CB34C7555E67613546933 /* BootpayBioUIModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9941A1B718B9B2FDFB048F763DA06B /* BootpayBioUIModal.swift */; };
+		4F7E24F1686CB34C7555E67613546933 /* BootpayBioUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9941A1B718B9B2FDFB048F763DA06B /* BootpayBioUI.swift */; };
 		52ECF73DDCC8E061CB9E7799B16A0DBB /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800C1B8959FEF4E83476618DD1A84FCC /* SwiftyJSON.swift */; };
 		53182098DA2BF97E9A70F0F4BE0902DB /* JGProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D81B7B2D338253BA9A783135CB7CEC /* JGProgressHUD-dummy.m */; };
 		5358CDBF3A820A2782835909CBF015E3 /* Cipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B891CF36DB476BCE43F431716F38760A /* Cipher.swift */; };
@@ -263,7 +263,6 @@
 		D0BD0421C58FCDAD1ADBE5E223DF4B22 /* String.Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA4185EA3F53C6B3692F55161117190 /* String.Extention.swift */; };
 		D0DED84A0FB49156BEE91AA107FE3E5E /* OTPAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E68DDDBEE541BE6691A624051677C /* OTPAlgorithm.swift */; };
 		D0EA90FBF83350C49E6EF6C8A98D6F00 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9986123CA7B83F6D98C9CDB5DB55238 /* AFError.swift */; };
-		D174EE5A226E78884B41948E59C53B7B /* BootpayBioUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A928C5AEBE1F6C1D6C62A54E085B83 /* BootpayBioUI.swift */; };
 		D410D59EC842F5E03D903BDF154221AD /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ACACF410D5879AEF122A3E9DD79D26 /* Mappable.swift */; };
 		D5ACE597A9CF13AEE2A77CE40D3C6736 /* BootpayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF93FE2F965C0453446A10C26D6C2AF5 /* BootpayController.swift */; };
 		D66A0AA7DF977C9B4ACDAB897F53AC67 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDA9E30B2FEF2A8A49661858AC8D217 /* Constraint.swift */; };
@@ -499,7 +498,7 @@
 		0D5B304F8DF235E26CF53A6D8757D6DF /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		0E097308CCCE974D70CC6419E5E93353 /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Source/Protected.swift; sourceTree = "<group>"; };
 		0E7BB060EDD51C8F6F5654A101A4CA34 /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Sources/ConstraintRelation.swift; sourceTree = "<group>"; };
-		0E9941A1B718B9B2FDFB048F763DA06B /* BootpayBioUIModal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BootpayBioUIModal.swift; sourceTree = "<group>"; };
+		0E9941A1B718B9B2FDFB048F763DA06B /* BootpayBioUI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BootpayBioUI.swift; sourceTree = "<group>"; };
 		0FC833728EB90E6CB0D1E054E6728622 /* JGProgressHUDSuccessIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDSuccessIndicatorView.h; path = JGProgressHUD/JGProgressHUD/include/JGProgressHUDSuccessIndicatorView.h; sourceTree = "<group>"; };
 		0FE20CD9D8CCBDA20C056BE36567AF65 /* BootpayWebView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BootpayWebView.swift; path = Bootpay/Classes/webview/BootpayWebView.swift; sourceTree = "<group>"; };
 		101CACCA5D75EE9A9A0CD7515C212A62 /* Checksum.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Checksum.swift; path = Sources/CryptoSwift/Checksum.swift; sourceTree = "<group>"; };
@@ -533,7 +532,6 @@
 		20D81B7B2D338253BA9A783135CB7CEC /* JGProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JGProgressHUD-dummy.m"; sourceTree = "<group>"; };
 		22D6E8D3F7B4FB91149A3D618DA9534E /* Base32.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Base32.swift; sourceTree = "<group>"; };
 		23134E3DF9EECF533D874FB42E87E3ED /* DataTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataTransform.swift; path = Sources/DataTransform.swift; sourceTree = "<group>"; };
-		26A928C5AEBE1F6C1D6C62A54E085B83 /* BootpayBioUI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BootpayBioUI.swift; sourceTree = "<group>"; };
 		275EA0FFBF4E091541784B1394C41E64 /* BioMetricAuthenticator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BioMetricAuthenticator.swift; sourceTree = "<group>"; };
 		27E3DF3F8DA07DF85DB9C439E872EB79 /* JGProgressHUDRingIndicatorView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDRingIndicatorView.h; path = JGProgressHUD/JGProgressHUD/include/JGProgressHUDRingIndicatorView.h; sourceTree = "<group>"; };
 		28300C5908B6F795CEC5F99D198FBC5F /* PKCS7Padding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PKCS7Padding.swift; path = Sources/CryptoSwift/PKCS/PKCS7Padding.swift; sourceTree = "<group>"; };
@@ -641,7 +639,7 @@
 		78C1085E2046B8641CC70558DE46A115 /* AlamofireExtended.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlamofireExtended.swift; path = Source/AlamofireExtended.swift; sourceTree = "<group>"; };
 		78FA4EC2D64A75A2ACE66E9EC94779F8 /* HMAC+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HMAC+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/HMAC+Foundation.swift"; sourceTree = "<group>"; };
 		791DABB5089712EA7652EA9CEBF09930 /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
-		7AE8E0683D99957AF59EB01FCDD74256 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		7AE8E0683D99957AF59EB01FCDD74256 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		7B69467E6E075C893D51A9EF60DD543E /* SnapKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.debug.xcconfig; sourceTree = "<group>"; };
 		7E4B05FA2DE4838C078D3B0617FD2000 /* ObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-umbrella.h"; sourceTree = "<group>"; };
 		7F592B20273E27FCE1B8B2A86F2DE169 /* BootpayUI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BootpayUI.swift; sourceTree = "<group>"; };
@@ -663,7 +661,7 @@
 		8421C4AA03F55B43F05FAD75F2F5097A /* DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateTransform.swift; path = Sources/DateTransform.swift; sourceTree = "<group>"; };
 		850F1E73A7DE6820C1B0F91906AB1FC1 /* MultipartUpload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartUpload.swift; path = Source/MultipartUpload.swift; sourceTree = "<group>"; };
 		86117009B40FC305F97A2A9F0379C11C /* BootpayBuildConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BootpayBuildConfig.swift; path = Bootpay/Classes/config/BootpayBuildConfig.swift; sourceTree = "<group>"; };
-		874D3A064FDEA658888E45269559796B /* BootpayUI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = BootpayUI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		874D3A064FDEA658888E45269559796B /* BootpayUI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = BootpayUI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		875F26403019F6B7FA187D43F26F31C2 /* Bootpay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bootpay.swift; path = Bootpay/Classes/core/Bootpay.swift; sourceTree = "<group>"; };
 		8776957864C91F2CE08C238770F964D4 /* BlockModeOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlockModeOptions.swift; path = Sources/CryptoSwift/BlockMode/BlockModeOptions.swift; sourceTree = "<group>"; };
 		88A4B3C709278A110E4CA5DAB1045447 /* JGProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JGProgressHUD-prefix.pch"; sourceTree = "<group>"; };
@@ -709,7 +707,7 @@
 		9C057C0666FCD9FFFE221572FF7B2AF7 /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsets.swift; path = Sources/ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
 		9C48C3A62CD6169C386FA357018358FC /* BiometricData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BiometricData.swift; sourceTree = "<group>"; };
 		9D52999B90BE20EDAA3D044734F9959E /* Pods-BootpayUI_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BootpayUI_Example-frameworks.sh"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DAC54744AEDC25701B98834D6C3490A /* CryptoSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CryptoSwift.debug.xcconfig; sourceTree = "<group>"; };
 		9EE05A4AC7CC4E94EC1D26B26C6A2A8B /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Sources/ConstraintMaker.swift; sourceTree = "<group>"; };
 		9F67DAFD58188B8590AEA036142B21C4 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
@@ -819,7 +817,7 @@
 		E4A4B299D082263E841863195CBC524D /* Pods-BootpayUI_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-BootpayUI_Tests"; path = Pods_BootpayUI_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4A52C1327EB8F106FB6777FAF5F5788 /* JGProgressHUDImageIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUDImageIndicatorView.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUDImageIndicatorView.m; sourceTree = "<group>"; };
 		E519AA3C1467BFC1AD303D4E2470339E /* BootpayDefaultHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BootpayDefaultHelper.swift; path = Bootpay/Classes/helper/BootpayDefaultHelper.swift; sourceTree = "<group>"; };
-		E56AC2AEFABD09FACB5D23C068995E0E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		E56AC2AEFABD09FACB5D23C068995E0E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E5C480B894999B8AFBAA153DA01A8143 /* Subtraction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Subtraction.swift; path = Sources/CryptoSwift/CS_BigInt/Subtraction.swift; sourceTree = "<group>"; };
 		E7580C8B055CD3C199EB81E773D1739F /* Mapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mapper.swift; path = Sources/Mapper.swift; sourceTree = "<group>"; };
 		E76A11BDCBCBFE0BA96615FE9B952E3D /* TransformOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformOf.swift; path = Sources/TransformOf.swift; sourceTree = "<group>"; };
@@ -1046,7 +1044,6 @@
 				BA14F12D4A27B07EB4F0DEA32FD75880 /* JGProgressHUDSuccessIndicatorView.m */,
 				05893D3CECF247C9B0979F20311124AE /* Support Files */,
 			);
-			name = JGProgressHUD;
 			path = JGProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -1097,7 +1094,6 @@
 				BC69E179AC663902AA748F6B6D716DCD /* URLTransform.swift */,
 				65658CE08C558A65B865C9BFC04F9267 /* Support Files */,
 			);
-			name = ObjectMapper;
 			path = ObjectMapper;
 			sourceTree = "<group>";
 		};
@@ -1122,7 +1118,6 @@
 			children = (
 				6C6BBDBE871006D2A9408A2460678234 /* BootpayBioWebView.swift */,
 			);
-			name = webview;
 			path = webview;
 			sourceTree = "<group>";
 		};
@@ -1152,7 +1147,6 @@
 				275EA0FFBF4E091541784B1394C41E64 /* BioMetricAuthenticator.swift */,
 				939B7236D81CA1165F42B39D595A0AB3 /* BootpayBio.swift */,
 			);
-			name = core;
 			path = core;
 			sourceTree = "<group>";
 		};
@@ -1198,7 +1192,6 @@
 				8F36ABD99827075530A2B5A15645BBEA /* UILayoutSupport+Extensions.swift */,
 				21C5CBE74F43D348CF59D280288B3F40 /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -1213,7 +1206,6 @@
 				2D6947F37D60C58338CB171EB2E0ED36 /* WalletCardData.swift */,
 				1B1791F6E4EFF43F184EE5DA4EBFBE8E /* WalletData.swift */,
 			);
-			name = models;
 			path = models;
 			sourceTree = "<group>";
 		};
@@ -1338,7 +1330,6 @@
 				2BCECB3E82C5EC740ED28EFFB3B77835 /* ZeroPadding.swift */,
 				C03CCB1217E4BFE3A416F579D0B35E9B /* Support Files */,
 			);
-			name = CryptoSwift;
 			path = CryptoSwift;
 			sourceTree = "<group>";
 		};
@@ -1376,7 +1367,6 @@
 				800C1B8959FEF4E83476618DD1A84FCC /* SwiftyJSON.swift */,
 				F051A5DC1CB990FDEFAC3B67597F28A6 /* Support Files */,
 			);
-			name = SwiftyJSON;
 			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
@@ -1387,7 +1377,6 @@
 				2F89F3BB4F72AA8AEC88D7A84486A8CF /* SCLExtensions.swift */,
 				A97171031797D126A18395636780DADF /* Support Files */,
 			);
-			name = SCLAlertView;
 			path = SCLAlertView;
 			sourceTree = "<group>";
 		};
@@ -1430,7 +1419,6 @@
 				8D7F0FC645BFAC78A56B6CE0159F966A /* BootpayBioController.swift */,
 				C4446A4B1BE14A28E118E00573515200 /* BootpayBioPresenter.swift */,
 			);
-			name = dialog;
 			path = dialog;
 			sourceTree = "<group>";
 		};
@@ -1440,7 +1428,6 @@
 				1E6C2CD95A57CFD84752EADFC46BB961 /* CardSelectView.swift */,
 				085058E7F33C321F4EB8F69ED381139E /* CardViewCell.swift */,
 			);
-			name = card;
 			path = card;
 			sourceTree = "<group>";
 		};
@@ -1508,7 +1495,6 @@
 				64FAE859146CAFEDDF8B3B71FE3249CF /* Validation.swift */,
 				80847F5F5D733725CF9803E41CC78DDE /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1547,7 +1533,6 @@
 				D3E3EF944616FB9CD2395C0048E7ACB8 /* TOTP.swift */,
 				92612A7CC3B866E8A60458633B074291 /* UInt64+Data.swift */,
 			);
-			name = swiftOTP;
 			path = swiftOTP;
 			sourceTree = "<group>";
 		};
@@ -1566,9 +1551,8 @@
 		D1B209563EBAC53FEA37CB3B28A48396 /* swiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				26A928C5AEBE1F6C1D6C62A54E085B83 /* BootpayBioUI.swift */,
 				076E4D9C5051B772030FE44351903EB7 /* BootpayBioUIController.swift */,
-				0E9941A1B718B9B2FDFB048F763DA06B /* BootpayBioUIModal.swift */,
+				0E9941A1B718B9B2FDFB048F763DA06B /* BootpayBioUI.swift */,
 				7F592B20273E27FCE1B8B2A86F2DE169 /* BootpayUI.swift */,
 			);
 			name = swiftUI;
@@ -1614,7 +1598,6 @@
 			children = (
 				3F60D4B955BC9CE17226C38DE18431F8 /* BootpayBuildConfig.swift */,
 			);
-			name = config;
 			path = config;
 			sourceTree = "<group>";
 		};
@@ -1625,7 +1608,6 @@
 				92D97B30B68D45E6D6A43736FD092012 /* CardCode.swift */,
 				9A82F6AD18122224D629B8D8CE1FCDCA /* PG.swift */,
 			);
-			name = constants;
 			path = constants;
 			sourceTree = "<group>";
 		};
@@ -1636,7 +1618,6 @@
 				E161AABB69109F5751DB2881D0A4FFB9 /* UIAlertControllerExtension.swift */,
 				962B3BE102D73D3D3C43B767F3A339C6 /* UIButtonExtension.swift */,
 			);
-			name = extension;
 			path = extension;
 			sourceTree = "<group>";
 		};
@@ -1676,7 +1657,6 @@
 				CF3A3F3718635951C68409EA48DD2DD9 /* URL.Extention.swift */,
 				BACB5D728B7094D52F991F8005AFF91B /* Support Files */,
 			);
-			name = Bootpay;
 			path = Bootpay;
 			sourceTree = "<group>";
 		};
@@ -1687,7 +1667,6 @@
 				933DE8070EFE72CB553036A07D1EABBF /* ScalingCarouselLayout.swift */,
 				3B2D715A7CADA3A3FABE4B8A630A5DEF /* ScalingCarouselView.swift */,
 			);
-			name = scalingCarousel;
 			path = scalingCarousel;
 			sourceTree = "<group>";
 		};
@@ -2345,9 +2324,8 @@
 				FFFF6BF7BB2186528A6CFCFE566689D4 /* BootpayBioController.swift in Sources */,
 				024AB58B9A585A37766C7F29793260DC /* BootpayBioPresenter.swift in Sources */,
 				00021FEBD77723F4CC6CD7778B961BD0 /* BootpayBioPrice.swift in Sources */,
-				D174EE5A226E78884B41948E59C53B7B /* BootpayBioUI.swift in Sources */,
 				645C201B762D4A7FA711EB5C5F5DC848 /* BootpayBioUIController.swift in Sources */,
-				4F7E24F1686CB34C7555E67613546933 /* BootpayBioUIModal.swift in Sources */,
+				4F7E24F1686CB34C7555E67613546933 /* BootpayBioUI.swift in Sources */,
 				1BB8424790750474203DB1340C687318 /* BootpayBioWebView.swift in Sources */,
 				9A5ED2556C9F4432CE100E889790E319 /* BootpayBuildConfig.swift in Sources */,
 				6413342E85A41F747B43A32836781620 /* BootpayUI.swift in Sources */,
@@ -2653,70 +2631,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0478BD2E7167052C269FA9E0C4E58FCB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 59915FADE96246BAE6418FECF8859EF5 /* BootpayUI.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/BootpayUI/BootpayUI-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BootpayUI/BootpayUI-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/BootpayUI/BootpayUI.modulemap";
-				PRODUCT_MODULE_NAME = BootpayUI;
-				PRODUCT_NAME = BootpayUI;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		09A43E50680D90D0AA715A33AB82E290 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E61BBB130BB0DFC073A14A997BFEA21 /* Bootpay.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Bootpay/Bootpay-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Bootpay/Bootpay-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Bootpay/Bootpay.modulemap";
-				PRODUCT_MODULE_NAME = Bootpay;
-				PRODUCT_NAME = Bootpay;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		0A2F206EDB4D11C432FDB5A8F6CA84CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D577884F2B3478F9D9DC65CE8D18F070 /* SCLAlertView.debug.xcconfig */;
@@ -2947,40 +2861,6 @@
 			};
 			name = Debug;
 		};
-		3543FBD22F1A91A9F844551716558700 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4CCD65E65A2BDC0829AA0D48681BBC1 /* BootpayUI.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/BootpayUI/BootpayUI-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BootpayUI/BootpayUI-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/BootpayUI/BootpayUI.modulemap";
-				PRODUCT_MODULE_NAME = BootpayUI;
-				PRODUCT_NAME = BootpayUI;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		365C4A51A9C36C086A9B98A80245036B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 02183860FE6867C6B19562A698313E1F /* Alamofire.debug.xcconfig */;
@@ -3175,6 +3055,39 @@
 			};
 			name = Debug;
 		};
+		784DCF0FDB4E364A1913076193AE4F75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59915FADE96246BAE6418FECF8859EF5 /* BootpayUI.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BootpayUI/BootpayUI-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BootpayUI/BootpayUI-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/BootpayUI/BootpayUI.modulemap";
+				PRODUCT_MODULE_NAME = BootpayUI;
+				PRODUCT_NAME = BootpayUI;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		7C1BF03BEDE8A11D6DECE9E4F2E77D4B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DDAC819E2751DD8DD20C836420B1C38D /* SwiftyJSON.debug.xcconfig */;
@@ -3205,6 +3118,38 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		7FFC59ABCE7777609448BC0749163D4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB67042ACC5C6BF51D6D837823E53BE3 /* Bootpay.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Bootpay/Bootpay-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Bootpay/Bootpay-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Bootpay/Bootpay.modulemap";
+				PRODUCT_MODULE_NAME = Bootpay;
+				PRODUCT_NAME = Bootpay;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		824EAE9A5EAFAD269C768EF8DD497EA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -3292,8 +3237,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -3459,9 +3403,43 @@
 			};
 			name = Release;
 		};
-		F0E17A8EE91F460589C28EA531A9EA22 /* Release */ = {
+		D5F36203F429121F460535047C69235B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB67042ACC5C6BF51D6D837823E53BE3 /* Bootpay.release.xcconfig */;
+			baseConfigurationReference = D4CCD65E65A2BDC0829AA0D48681BBC1 /* BootpayUI.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BootpayUI/BootpayUI-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BootpayUI/BootpayUI-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/BootpayUI/BootpayUI.modulemap";
+				PRODUCT_MODULE_NAME = BootpayUI;
+				PRODUCT_NAME = BootpayUI;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DAC7EFAB93FAE245F7A3357223BF14A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E61BBB130BB0DFC073A14A997BFEA21 /* Bootpay.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -3483,13 +3461,12 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		FC044DB57191A2A398B64AECF95C0565 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -3604,8 +3581,8 @@
 		7F35417863D517B3815938B1CD82A0F0 /* Build configuration list for PBXNativeTarget "BootpayUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0478BD2E7167052C269FA9E0C4E58FCB /* Debug */,
-				3543FBD22F1A91A9F844551716558700 /* Release */,
+				784DCF0FDB4E364A1913076193AE4F75 /* Debug */,
+				D5F36203F429121F460535047C69235B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -3622,8 +3599,8 @@
 		8E4AF82F821343149F4761507486B9B7 /* Build configuration list for PBXNativeTarget "Bootpay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				09A43E50680D90D0AA715A33AB82E290 /* Debug */,
-				F0E17A8EE91F460589C28EA531A9EA22 /* Release */,
+				DAC7EFAB93FAE245F7A3357223BF14A7 /* Debug */,
+				7FFC59ABCE7777609448BC0749163D4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

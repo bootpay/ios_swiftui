@@ -1,9 +1,9 @@
 //
-//  ModalTestView.swift
+//  BioView.swift
 //  BootpayUI_Example
 //
-//  Created by Taesup Yoon on 2022/04/27.
-//  Copyright © 2022 CocoaPods. All rights reserved.
+//  Created by Taesup Yoon on 2021/10/28.
+//  Copyright © 2021 CocoaPods. All rights reserved.
 //
 
 import SwiftUI
@@ -11,7 +11,11 @@ import Alamofire
 import Bootpay
 import BootpayUI
 
-struct ModalTestView: View {
+
+let _unique_user_id = "123456abcdffffe2345678901234561324516789122"
+
+
+struct BootpayBioView: View {
     @ObservedObject private var viewModel = ViewModel()
     private var _payload = BootBioPayload()
     let user = BootUser()
@@ -53,6 +57,7 @@ struct ModalTestView: View {
 
                    payload.extra = BootExtra()
                    payload.extra?.cardQuota = "6"
+                   payload.extra?.displaySuccessResult = true
 
                    let p1 = BootBioPrice()
                    let p2 = BootBioPrice()
@@ -69,18 +74,9 @@ struct ModalTestView: View {
 
                    payload.prices = [p1, p2, p3]
                    viewModel.getUserToken(user: user)
-//                        self.manager.getUserToken(
-//                            restApplicationId: "5b8f6a4d396fa665fdc2b5ea",
-//                            privateKey: "rm6EYECr6aroQVG2ntW0A6LpWnkTgP4uQ3H18sDDUYw=",
-//                            user: user) { result, token in
-//
-//
-//
-////                                self.showingBootpay = true
-//                        }
                }
                .sheet(isPresented: self.$viewModel.showingBootpay) {
-                   BootpayBioUIModal(payload: self.payload, userToken: self.viewModel.easyPayUserToken, showBootpay: self.$viewModel.showingBootpay)
+                   BootpayBioUI(payload: self.payload, userToken: self.viewModel.easyPayUserToken, showBootpay: self.$viewModel.showingBootpay)
                        .onError{ data in
                            print("-- error \(data)")
                        }.onIssued{ data in
@@ -100,68 +96,17 @@ struct ModalTestView: View {
                        }
                        .onClose {
                            print("-- close")
-                           BootpayBio.removePaymentWindow()
-//                           self.viewModel.showingBootpay = false
                        }
                        
                }
-//               } else {
-//                   BootpayBioUI(payload: payload, userToken: viewModel.easyPayUserToken)
-//                       .onError{ data in
-//                           print("error \(data)")
-//                       }.onIssued{ data in
-//                           print("ready \(data)")
-//                       }
-//                       .onConfirm { data in
-//                           print("confirm  \(data)")
-//                           return true
-//                       }
-//                       .onCancel { data in
-//                           print("cancel  \(data)")
-//                       }
-//                       .onDone { data in
-//                           print("done \(data)")
-//                       }
-//                       .onClose {
-//                           print("close")
-////                            self.showingBootpay = false
-//                       }
-//                       .background(Color.red)
-//               }
            }.frame(width: geometry.size.width, height: geometry.size.height)
        }
    }
-    
-//    @State private var showModal = false //상태
-//
-//    var body: some View {
-//        VStack{
-//        Text("Hello, World!")
-//            Button(action: {
-//             print("hello button!!")
-//            self.showModal = true
-//            }){
-//                Text(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/)
-//            }
-//            .sheet(isPresented: self.$showModal) {
-//                BootpayBioUIModal()
-//            }
-//        }
-//    }
 }
 
-//struct BootpayBioUIModal: View {
-//
-//  @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-//
-//  var body: some View {
-//    Group {
-//      Text("Modal view")
-//      Button(action: {
-//         self.presentationMode.wrappedValue.dismiss()
-//      }) {
-//        Text("Dismiss")
-//      }
+//struct BioView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        BioView()
 //    }
-//  }
 //}
+  

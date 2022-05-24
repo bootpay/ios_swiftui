@@ -33,7 +33,7 @@ import Bootpay
     
     var bioPayload: BootBioPayload?
     var bioVc: BootpayBioController?
-    var bioUIModal: BootpayBioUIModal?
+    var bioUIModal: BootpayBioUI?
     
     
     @objc public var error: (([String : Any]) -> Void)?

@@ -13,13 +13,11 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		81994923283C6A0800EAA1FD /* BootpayUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81994922283C6A0800EAA1FD /* BootpayUIView.swift */; };
 		8709BA8B272A882800FD921E /* SwiftUIBootpayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8709BA89272A882800FD921E /* SwiftUIBootpayApp.swift */; };
-		8709BA8C272A882800FD921E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8709BA8A272A882800FD921E /* ContentView.swift */; };
-		8709BA8F272A9BB000FD921E /* BioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8709BA8E272A9BB000FD921E /* BioView.swift */; };
-		87B9188C281F7CFD00980821 /* ModalTestView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B9188B281F7CFD00980821 /* ModalTestView2.swift */; };
+		8709BA8F272A9BB000FD921E /* BootpayBioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8709BA8E272A9BB000FD921E /* BootpayBioView.swift */; };
 		87C115D5272F6735003F07BE /* BootpayRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C115D4272F6735003F07BE /* BootpayRest.swift */; };
 		87C8B3E62818FC5C001F3A2F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C8B3E52818FC5C001F3A2F /* ViewModel.swift */; };
-		87C8B3EA281925DE001F3A2F /* ModalTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C8B3E9281925DE001F3A2F /* ModalTestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,14 +46,12 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		651B37455ED310E59E081C7B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		74DFB62F16684A53723F8091 /* Pods_BootpayUI_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BootpayUI_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81994922283C6A0800EAA1FD /* BootpayUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootpayUIView.swift; sourceTree = "<group>"; };
 		8709BA89272A882800FD921E /* SwiftUIBootpayApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIBootpayApp.swift; sourceTree = "<group>"; };
-		8709BA8A272A882800FD921E /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		8709BA8E272A9BB000FD921E /* BioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioView.swift; sourceTree = "<group>"; };
-		87B9188B281F7CFD00980821 /* ModalTestView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTestView2.swift; sourceTree = "<group>"; };
+		8709BA8E272A9BB000FD921E /* BootpayBioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootpayBioView.swift; sourceTree = "<group>"; };
 		87C115D4272F6735003F07BE /* BootpayRest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BootpayRest.swift; sourceTree = "<group>"; };
 		87C115DF272FD9B6003F07BE /* BootpayUI_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BootpayUI_Example.entitlements; sourceTree = "<group>"; };
 		87C8B3E52818FC5C001F3A2F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		87C8B3E9281925DE001F3A2F /* ModalTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTestView.swift; sourceTree = "<group>"; };
 		A1FFAD2B691E7B21F750C12F /* Pods-BootpayUI_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BootpayUI_Example.release.xcconfig"; path = "Target Support Files/Pods-BootpayUI_Example/Pods-BootpayUI_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F77CB6C8BFA6AD84A82208D7 /* BootpayUI.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BootpayUI.podspec; path = ../BootpayUI.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
@@ -117,16 +113,14 @@
 			isa = PBXGroup;
 			children = (
 				8709BA8D272A9AB200FD921E /* deprecated */,
-				8709BA8A272A882800FD921E /* ContentView.swift */,
-				8709BA8E272A9BB000FD921E /* BioView.swift */,
+				81994922283C6A0800EAA1FD /* BootpayUIView.swift */,
+				8709BA8E272A9BB000FD921E /* BootpayBioView.swift */,
+				87C8B3E52818FC5C001F3A2F /* ViewModel.swift */,
 				8709BA89272A882800FD921E /* SwiftUIBootpayApp.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
-				87C8B3E52818FC5C001F3A2F /* ViewModel.swift */,
-				87C8B3E9281925DE001F3A2F /* ModalTestView.swift */,
-				87B9188B281F7CFD00980821 /* ModalTestView2.swift */,
 			);
 			name = "Example for BootpayUI";
 			path = BootpayUI;
@@ -393,10 +387,8 @@
 			files = (
 				87C8B3E62818FC5C001F3A2F /* ViewModel.swift in Sources */,
 				87C115D5272F6735003F07BE /* BootpayRest.swift in Sources */,
-				87C8B3EA281925DE001F3A2F /* ModalTestView.swift in Sources */,
-				8709BA8F272A9BB000FD921E /* BioView.swift in Sources */,
-				87B9188C281F7CFD00980821 /* ModalTestView2.swift in Sources */,
-				8709BA8C272A882800FD921E /* ContentView.swift in Sources */,
+				8709BA8F272A9BB000FD921E /* BootpayBioView.swift in Sources */,
+				81994923283C6A0800EAA1FD /* BootpayUIView.swift in Sources */,
 				8709BA8B272A882800FD921E /* SwiftUIBootpayApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

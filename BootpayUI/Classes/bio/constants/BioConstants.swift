@@ -51,8 +51,8 @@ let kDefaultFaceIDAuthenticationFailedReason = "Face ID does not recognize your 
 
 
 struct BioConstants {
-    static let CDN_URL = "https://webview.bootpay.co.kr/4.0.0";
-    static let BRIDGE_NAME = "Bootpay_Bio_iOS"
+    static let CDN_URL = "https://webview.bootpay.co.kr/4.0.6";
+//    static let BRIDGE_NAME = "Bootpay_Bio_iOS"
  
     public static let REQUEST_TYPE_NONE = -1
     public static let REQUEST_PASSWORD_TOKEN = 10 //최초요청시 - 비밀번호 설정하기
@@ -140,6 +140,7 @@ struct BioConstants {
         #if os(iOS)
         array.append("Bootpay.setDevice('IOS');")
         array.append("Bootpay.setLogLevel(4);")
+        array.append("Bootpay.setVersion('\(BootpayBuildConfig.VERSION)', 'ios')")
         array.append("BootpaySDK.setDevice('IOS');")
         array.append("BootpaySDK.setLogLevel(4);")
         array.append("BootpaySDK.setUUID('\(Bootpay.getUUID())');")
@@ -194,7 +195,7 @@ struct BioConstants {
             ")",
             ".then( function (data) {",
             confirm(),
-            "else { webkit.messageHandlers.\(self.BRIDGE_NAME).postMessage(data); }",
+            "else { webkit.messageHandlers.\(BootpayConstant.BRIDGE_NAME).postMessage(data); }",
             "}, function (data) {",
             cancel(),
             easyError(),
@@ -340,35 +341,35 @@ struct BioConstants {
     
     
     static func easySuccess() -> String {
-        return "webkit.messageHandlers.\(self.BRIDGE_NAME).postMessage(data);"
+        return "webkit.messageHandlers.\(BootpayConstant.BRIDGE_NAME).postMessage(data);"
     }
     
     static func easyError() -> String {
-        return "else { webkit.messageHandlers.\(self.BRIDGE_NAME).postMessage(data); }"
+        return "else { webkit.messageHandlers.\(BootpayConstant.BRIDGE_NAME).postMessage(data); }"
     }
     
     static func confirm() -> String {
-        return "if (data.event === 'confirm') { webkit.messageHandlers.\(self.BRIDGE_NAME).postMessage(data); }"
+        return "if (data.event === 'confirm') { webkit.messageHandlers.\(BootpayConstant.BRIDGE_NAME).postMessage(data); }"
     }
     
     static func done() -> String {
-        return "else if (data.event === 'done') { webkit.messageHandlers.\(self.BRIDGE_NAME).postMessage(data); }"
+        return "else if (data.event === 'done') { webkit.messageHandlers.\(BootpayConstant.BRIDGE_NAME).postMessage(data); }"
     }
     
     static func issued() -> String {
-        return "else if (data.event === 'issued') { webkit.messageHandlers.\(self.BRIDGE_NAME).postMessage(data); }"
+        return "else if (data.event === 'issued') { webkit.messageHandlers.\(BootpayConstant.BRIDGE_NAME).postMessage(data); }"
     }
     
     static func error() -> String {
-        return "else if (data.event === 'error') { webkit.messageHandlers.\(self.BRIDGE_NAME).postMessage(data); }"
+        return "else if (data.event === 'error') { webkit.messageHandlers.\(BootpayConstant.BRIDGE_NAME).postMessage(data); }"
     }
     
     static func cancel() -> String {
-        return "if (data.event === 'cancel') { webkit.messageHandlers.\(self.BRIDGE_NAME).postMessage(data); }"
+        return "if (data.event === 'cancel') { webkit.messageHandlers.\(BootpayConstant.BRIDGE_NAME).postMessage(data); }"
     }
     
     static func close() -> String {
-        return "document.addEventListener('bootpayclose', function (e) { webkit.messageHandlers.\(self.BRIDGE_NAME).postMessage('close'); });"
+        return "document.addEventListener('bootpayclose', function (e) { webkit.messageHandlers.\(BootpayConstant.BRIDGE_NAME).postMessage('close'); });"
     }
 //    private static String easyError() { return " else { Android.easyError(JSON.stringify(res)); }"; }
     
