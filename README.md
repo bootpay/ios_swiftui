@@ -151,7 +151,7 @@ struct BootpayUIView: View {
 
 ## 생체인증 결제시 
 
-![bootpay_bio_400](https://raw.githubusercontent.com/bootpay/git-open-resources/main/swift-bio.gif)
+![bootpay_bio_400](https://raw.githubusercontent.com/bootpay/git-open-resources/main/swift-bio.gif | width=300)
 
  
 ```swift
