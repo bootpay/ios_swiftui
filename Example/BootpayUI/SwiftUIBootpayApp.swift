@@ -11,8 +11,8 @@ import SwiftUI
 struct BootpayUIApp: App {
     var body: some Scene {
         WindowGroup {
-            BootpayUIView()
-//            BootpayBioView()
+//            BootpayUIView()
+            BootpayBioView()
         }
     }
 }
