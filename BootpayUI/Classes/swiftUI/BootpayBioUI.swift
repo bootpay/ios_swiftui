@@ -13,7 +13,7 @@ public struct BootpayBioUI: View {
   public var bioPayload: BootBioPayload
 //  @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-  public init(payload: BootBioPayload, userToken: String, showBootpay:  Binding<Bool>) {
+    public init(payload: BootBioPayload, userToken: String, showBootpay:  Binding<Bool>) {
       self.bioPayload = payload
       self.bioPayload.userToken = userToken
       
@@ -25,12 +25,6 @@ public struct BootpayBioUI: View {
   public var body: some View {
     Group {
         BootpayBioUIController(payload: self.bioPayload)
-//        Text("dismiss")
-//      Button(action: {
-//         self.presentationMode.wrappedValue.dismiss()
-//      }) {
-//        Text("Dismiss")
-//      }
     }
   }
 }

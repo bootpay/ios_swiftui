@@ -36,7 +36,7 @@ import Bootpay
                 BootpayDefaultHelper.setValue("biometric_device_uuid", value: biometric_device_uuid)
                 BootpayDefaultHelper.setValue("biometric_secret_key", value: biometric_secret_key)
             }
-            print(dic)
+//            print(dic)
             //next job
             if let nextType = dic["nextType"] as? Int {
                 if(nextType == BioConstants.NEXT_JOB_RETRY_PAY) {
@@ -45,6 +45,8 @@ import Bootpay
                     self.addNewCard(nil)
                 } else if(nextType == BioConstants.NEXT_JOB_ADD_DELETE_CARD) {
                     self.requestDeleteCard()
+                } else if(nextType == BioConstants.REQUEST_PASSWORD_FOR_PAY) {
+                    self.requestPasswordForPay()
                 } else if(nextType == BioConstants.NEXT_JOB_GET_WALLET_LIST) {
                     if let type = dic["type"] as? Int, type == BioConstants.REQUEST_ADD_BIOMETRIC_FOR_PAY {
                         self.getWalletList(true)
@@ -134,6 +136,12 @@ extension BootpayBioPresenter {
         if !walletId.isEmpty {
             BootpayBio.sharedBio.bioPayload?.walletId = walletId
 //            self.bioWebView.
+        }
+        
+        if(BootpayBio.sharedBio.bioPayload?.isPasswordMode == true) {
+            setRequestType(BioConstants.REQUEST_PASSWORD_FOR_PAY)
+            requestPasswordForPay()
+            return;
         }
         
         
@@ -319,6 +327,11 @@ extension BootpayBioPresenter {
     }
     
     func requestPasswordForPay() {
+        if(!isAblePasswordToken()) {
+            requestPasswordToken(BioConstants.REQUEST_PASSWORD_TOKEN_FOR_PASSWORD_FOR_PAY)
+            return
+        }
+        
         if(!isShowWebView()) {
             showWebview()
         }

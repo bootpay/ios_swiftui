@@ -189,6 +189,7 @@ import Bootpay
         if(BootpayBio.sharedBio.requestType == BioConstants.REQUEST_PASSWORD_TOKEN ||
            BootpayBio.sharedBio.requestType == BioConstants.REQUEST_PASSWORD_TOKEN_FOR_ADD_CARD ||
            BootpayBio.sharedBio.requestType == BioConstants.REQUEST_PASSWORD_TOKEN_FOR_BIO_FOR_PAY ||
+           BootpayBio.sharedBio.requestType == BioConstants.REQUEST_PASSWORD_TOKEN_FOR_PASSWORD_FOR_PAY ||
            BootpayBio.sharedBio.requestType == BioConstants.REQUEST_PASSWORD_TOKEN_DELETE_CARD) {
             scriptPay = BioConstants.getJSPasswordToken(payload: payload)
         } else if(BootpayBio.sharedBio.requestType == BioConstants.REQUEST_ADD_CARD) {
@@ -435,22 +436,34 @@ extension BootpayBioWebView {
 
 extension BootpayBioWebView {
     func onError(data: [String: Any], isRedirect: Bool) {
-//        print("onError: \(data)")
+        print("onError: \(data)")
         
-        let dic = [
-            "type": BioConstants.REQUEST_TYPE_NONE,
-            "initToken": true
-        ] as [String : Any]
-        onNextJob?(dic)  // error_code을때가 있어 강제 예외처리
+//        BootpayBio.sharedBio.requestType = BioConstants.REQUEST_TYPE_NONE
+//        BootpayBio.sharedBio.error?(data)
+//        if(payload?.extra?.displayErrorResult != true && isRedirect) {
+//            BootpayBio.sharedBio.close?()
+//            BootpayBio.removePaymentWindow()
+//        } else {
+//            BootpayBio.removePaymentWindow()
+//        }
+        
 //
-    
         if let error_code = data["error_code"], error_code as! String == "USER_PW_TOKEN_NOT_FOUND" || error_code as! String == "USER_PW_TOKEN_EXPIRED" {
+            
+            
             let dic = [
-                "nextType": BioConstants.REQUEST_PASSWORD_FOR_PAY
-            ]
+                "nextType": BioConstants.REQUEST_PASSWORD_FOR_PAY,
+                "initToken": true
+            ] as [String : Any]
+            onNextJob?(dic)  // error_code을때가 있어 강제 예외처리
+
+        } else {
+            let dic = [
+                "type": BioConstants.REQUEST_TYPE_NONE,
+                "initToken": true
+            ] as [String : Any]
             onNextJob?(dic)  // error_code을때가 있어 강제 예외처리
             
-        } else {
             BootpayBio.sharedBio.requestType = BioConstants.REQUEST_TYPE_NONE
             BootpayBio.sharedBio.error?(data)
             if(payload?.extra?.displayErrorResult != true && isRedirect) {
@@ -554,16 +567,29 @@ extension BootpayBioWebView {
     
     
     func onEasyError(data: [String: Any]) {
-//        print("onEasyError: \(data)")
+        print("onEasyError: \(data)")
         let dic = [
             "type": BioConstants.REQUEST_TYPE_NONE,
             "initToken": true
         ] as [String : Any]
-
-        onNextJob?(dic)  // error_code을때가 있어 강제 예외처리
         
+        onNextJob?(dic)  // error_code을때가 있어 강제 예외처리
+//
         BootpayBio.sharedBio.requestType = BioConstants.REQUEST_TYPE_NONE
         BootpayBio.sharedBio.error?(data)
+        
+//        if let error_code = data["error_code"], error_code as! String == "USER_PW_TOKEN_NOT_FOUND" || error_code as! String == "USER_PW_TOKEN_EXPIRED" {
+//            let dic = [
+//                "nextType": BioConstants.REQUEST_PASSWORD_FOR_PAY,
+//                "initToken": true
+//            ] as [String : Any]
+//            onNextJob?(dic)  // error_code을때가 있어 강제 예외처리
+//
+//        } else {
+//            BootpayBio.sharedBio.requestType = BioConstants.REQUEST_TYPE_NONE
+//            BootpayBio.sharedBio.error?(data)
+//        }
+        
     }
     
     //onEasuSuccess 먼저 수행 후 onEasyError로 보내주자
@@ -573,7 +599,9 @@ extension BootpayBioWebView {
         if([BioConstants.REQUEST_PASSWORD_TOKEN,
             BioConstants.REQUEST_PASSWORD_TOKEN_FOR_ADD_CARD,
             BioConstants.REQUEST_PASSWORD_TOKEN_DELETE_CARD,
-            BioConstants.REQUEST_PASSWORD_TOKEN_FOR_BIO_FOR_PAY].contains(BootpayBio.sharedBio.requestType)) {
+            BioConstants.REQUEST_PASSWORD_TOKEN_FOR_BIO_FOR_PAY,
+            BioConstants.REQUEST_PASSWORD_TOKEN_FOR_PASSWORD_FOR_PAY
+           ].contains(BootpayBio.sharedBio.requestType)) {
             let dic = [
                 "type": BootpayBio.sharedBio.requestType,
                 "token": data as? String ?? ""
