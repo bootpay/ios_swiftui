@@ -17,14 +17,13 @@ public class BootBioPayload: NSObject, Codable  {
     @objc public var authenticationId = ""
     
     @objc public var params: String?
-    
-    @objc public var showAgreeWindow = false
+     
     @objc public var isPasswordMode = false 
     @objc public var walletId = "";
     @objc public var token = "";
     @objc public var authenticateType = "";
     @objc public var userToken = "";
-    @objc public var metadata = "";
+    @objc public var metadata: [String:String]?
     
     @objc public var names = [String]()
     @objc public var prices = [BootBioPrice]()

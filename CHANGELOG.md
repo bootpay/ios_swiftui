@@ -1,3 +1,7 @@
+
+## 4.2.0
+* metadata data type changed dic -> string 
+
 ## 4.1.9
 * onReady -> onIsseud renamed 
 
