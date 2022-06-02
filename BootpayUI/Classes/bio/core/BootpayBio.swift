@@ -151,7 +151,7 @@ extension BootpayBio {
         return self
     }
 
-    @objc public static func onReady(_ action: @escaping ([String : Any]) -> Void) -> BootpayBio.Type {
+    @objc public static func onIssued(_ action: @escaping ([String : Any]) -> Void) -> BootpayBio.Type {
         sharedBio.issued = action
         return self
     }
