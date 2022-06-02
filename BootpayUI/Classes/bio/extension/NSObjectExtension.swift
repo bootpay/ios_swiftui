@@ -43,20 +43,7 @@ public extension NSObject {
     @objc func associatedObject() -> Any? {
         return objc_getAssociatedObject(self, &AssociatedKeys.descriptiveName)
     }
-}
-
-public extension String {
-    func convertToDictionary() -> [String: Any]? {
-        if let data = self.data(using: .utf8) {
-            do {
-                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-        return nil
-    }
-}
+} 
 
 public extension UIImage {
     static func fromBundle(_ name: String) -> UIImage? {

@@ -78,7 +78,7 @@ struct BootpayBioView: View {
         payload.applicationId = "5b8f6a4d396fa665fdc2b5e9" //ios application id
         #endif
 
-        payload.pg = "nicepay"
+        payload.pg = "나이스페이"
 
         payload.price = 1000
         payload.orderId = String(NSTimeIntervalSince1970)
