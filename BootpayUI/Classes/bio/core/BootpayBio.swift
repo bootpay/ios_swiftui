@@ -8,10 +8,11 @@
 import SwiftUI
 import Foundation
 import WebKit
-import Bootpay 
+import Bootpay
+
 
 @objc public class BootpayBio: NSObject {
-    @objc public static let sharedBio = BootpayBio() 
+    @objc public static let sharedBio = BootpayBio()
     var showBootpay: Binding<Bool>?
     
     public var uuid = ""
@@ -47,6 +48,22 @@ import Bootpay
 //    @objc public var easyError: (([String : Any]) -> Void)?
 //    @objc public var easySuccess: (([String : Any]) -> Void)?
     
+    public func debounceClose() {
+        DispatchQueue.main.asyncDeduped(target: self, after: 0.25) { [] in
+            print("debounceClose")
+            BootpayBio.sharedBio.close?()
+            
+            BootpayBio.sharedBio.error = nil
+            BootpayBio.sharedBio.issued = nil
+            BootpayBio.sharedBio.close = nil
+            BootpayBio.sharedBio.confirm = nil
+            BootpayBio.sharedBio.done = nil
+            BootpayBio.sharedBio.cancel = nil
+//             self?.findPlaces()
+        }
+        
+    }
+    
     
     public override init() {
         super.init()
@@ -57,12 +74,13 @@ import Bootpay
     @objc(requestPayment:::::)
     public static func requestBioPayment(viewController: UIViewController,
                                       payload: BootBioPayload,
-                                      _ useViewController: Bool = false,
-                                      _ animated: Bool = true, 
+                                      _ useViewController: Bool = true,
+                                      _ animated: Bool = true,
                                       _ modalPresentationStyle: UIModalPresentationStyle = .fullScreen) -> BootpayBio.Type {
         
         sharedBio.bioVc = BootpayBioController()
-//        sharedBio.bioVc?.bioPayload = payload
+        sharedBio.bioPayload = payload
+        sharedBio.bioVc?.bioWebView.payload = payload
         sharedBio.bioVc?.useViewController = useViewController
         
         
@@ -106,31 +124,24 @@ import Bootpay
         }
         
         if sharedBio.showBootpay != nil {
-            print("presentationMode dismiss")
-            sharedBio.showBootpay?.wrappedValue = false 
+//            print("presentationMode dismiss")
+            sharedBio.showBootpay?.wrappedValue = false
 //            sharedBio.bioUIModal?.presentationMode.wrappedValue.dismiss()
             
         }
-        
-//        else if sharedBio.ENV_TYPE == BootpayConstants.ENV_SWIFT_UI {
-//            sharedBio.close?()
-//        }
-//        sharedBio.webview = nil
+         
         sharedBio.bioPayload = BootBioPayload()
         
         
         sharedBio.requestType = BioConstants.REQUEST_TYPE_NONE
         sharedBio.walletList = []
         
-        sharedBio.error = nil
-        sharedBio.issued = nil
-        sharedBio.close = nil
-        sharedBio.confirm = nil
-        sharedBio.done = nil
-        sharedBio.cancel = nil
-//        sharedBio.nextJob = nil
-//        sharedBio.easyError = nil
-//        sharedBio.easySuccess = nil
+//        sharedBio.error = nil
+//        sharedBio.issued = nil
+//        sharedBio.close = nil
+//        sharedBio.confirm = nil
+//        sharedBio.done = nil
+//        sharedBio.cancel = nil
     }
     
     
@@ -193,7 +204,7 @@ extension BootpayBio {
 //    }
 }
 
-extension BootpayBio {    
+extension BootpayBio {
     public static func getUUId() -> String {
         if sharedBio.uuid == "" { sharedBio.uuid = BootpayDefaultHelper.getString(key: "uuid") }
         return sharedBio.uuid

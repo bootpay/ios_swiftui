@@ -9,5 +9,5 @@ import Foundation
 
 struct BootpayBuildConfig {
     static let DEBUG = false
-    static let VERSION = "4.2.0"
+    static let VERSION = "4.2.3"
 }

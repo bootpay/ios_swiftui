@@ -20,6 +20,7 @@ public class BootpayConstant {
     public static let REQUEST_TYPE_PAYMENT = 1 // 일반 결제
     public static let REQUEST_TYPE_SUBSCRIPT = 2 // 정기 결제
     public static let REQUEST_TYPE_AUTH = 3 // 본인인증
+    public static let REQUEST_TYPE_PASSWORD = 4 // 비밀번호 결제
     
     static func dicToJsonString(_ data: [String: Any]) -> String {
         do {
@@ -41,10 +42,16 @@ public class BootpayConstant {
         #if os(iOS)
         array.append("Bootpay.setDevice('IOS');")
         array.append("Bootpay.setVersion('\(BootpayBuildConfig.VERSION)', 'ios')")
+        
+        array.append("BootpaySDK.setDevice('IOS');")
+        array.append("BootpaySDK.setUUID('\(Bootpay.getUUID())');")
         #endif
 //        array.append("Bootpay.setLogLevel(4);")
         array.append(getAnalyticsData())
-        if(BootpayBuildConfig.DEBUG) { array.append("Bootpay.setEnvironmentMode('development');") }
+        if(BootpayBuildConfig.DEBUG) {
+            array.append("Bootpay.setEnvironmentMode('development');")
+            array.append("BootpaySDK.setEnvironmentMode('development');")
+        }
         array.append(close())
         return array
     }
@@ -93,6 +100,8 @@ public class BootpayConstant {
         } else if(requestType == BootpayConstant.REQUEST_TYPE_AUTH) {
             requestMethod = "requestAuthentication"
             if(payload.authenticationId.count == 0) { payload.authenticationId = payload.orderId }
+        } else if(requestType == BootpayConstant.REQUEST_TYPE_PASSWORD) {
+           return getJSPasswordPayment(payload: payload)
         }
         
         
@@ -111,6 +120,24 @@ public class BootpayConstant {
         ].reduce("", +)
     }
     
+    
+    public static func getJSPasswordPayment(payload: Payload) -> String {
+        payload.method = "카드간편"
+        
+        return [
+            "Bootpay.requestPayment(",
+            getPayloadJson(payload),
+            ")",
+            ".then( function (res) {",
+            confirm(),
+            issued(),
+            done(),
+            "}, function (res) {",
+            error(),
+            cancel(),
+            "})"
+        ].reduce("", +)
+    }
     
     static func confirm() -> String {
 //        return ".confirm(function (data) {webkit.messageHandlers.\(BootpayConstants.BRIDGE_NAME).postMessage(data);})"
@@ -146,6 +173,4 @@ public class BootpayConstant {
         encoder.keyEncodingStrategy = .convertToSnakeCase
         return String(data: try! encoder.encode(payload), encoding: .utf8)!
     }
-    
-
 }

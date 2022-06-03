@@ -6,7 +6,7 @@
 //
 
 import WebKit
-import Bootpay 
+import Bootpay
  
 
 @objc open class BootpayBioWebView: BTView, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
@@ -38,8 +38,10 @@ import Bootpay
         #if os(macOS)
         super.init(frame: NSScreen.main!.frame)
         #elseif os(iOS)
+//        super.init()
         super.init(frame: UIScreen.main.bounds)
         #endif
+//        super.init()
         
         initComponent()
     }
@@ -59,7 +61,7 @@ import Bootpay
 //            }
 //            return
 //        }
-//        
+//
 //        self.webview.frame = CGRect(x: 0,
 //                                 y: 0,
 //                                 width: UIScreen.main.bounds.size.width,
@@ -80,23 +82,25 @@ import Bootpay
         //            webview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
          
         #elseif os(iOS)
-            webview = WKWebView(frame: CGRect(x: 0,
-                                              y: 0,
-                                              width: self.frame.width,
-                                              height: self.frame.height - 80),
-                                configuration: configuration)
         
-//        webview = WKWebView(frame: CGRect(x: 0,
-//                                          y: 0,
-//                                          width: UIScreen.main.bounds.width,
-//                                          height: UIScreen.main.bounds.height),
-//                            configuration: configuration)
+        webview = WKWebView(frame: self.frame, configuration: configuration)
 
         #endif
-        
+         
+        self.addSubview(webview)
         webview.uiDelegate = self
         webview.navigationDelegate = self
-        self.addSubview(webview)
+        webview.translatesAutoresizingMaskIntoConstraints = false
+        
+        let constrains = [
+            webview.topAnchor.constraint(equalTo: self.safeTopAnchor),
+            webview.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            webview.bottomAnchor.constraint(equalTo: self.safeBottomAnchor),
+            webview.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+ 
+            ]
+        NSLayoutConstraint.activate(constrains)
+        
         if(self.payload == nil) {
             self.payload = BootpayBio.sharedBio.bioPayload
         }
@@ -104,7 +108,7 @@ import Bootpay
 //        BootpayBio.sharedBio.bioVc?.bioWebView = webview
     }
     
-    func startBootpay() { 
+    func startBootpay() {
         if let url = URL(string: BioConstants.CDN_URL) {
 //        if let url = URL(string: "https://www.google.com") {
             webview.load(URLRequest(url: url))
@@ -457,6 +461,10 @@ extension BootpayBioWebView {
             ] as [String : Any]
             onNextJob?(dic)  // error_code을때가 있어 강제 예외처리
 
+        } else if let error_code = data["error_code"], error_code as! String == "PASSWORD_TOKEN_STOP" {
+            BootpayBio.sharedBio.debounceClose()
+//            BootpayBio.sharedBio.close?()
+            BootpayBio.removePaymentWindow()
         } else {
             let dic = [
                 "type": BioConstants.REQUEST_TYPE_NONE,
@@ -467,7 +475,8 @@ extension BootpayBioWebView {
             BootpayBio.sharedBio.requestType = BioConstants.REQUEST_TYPE_NONE
             BootpayBio.sharedBio.error?(data)
             if(payload?.extra?.displayErrorResult != true && isRedirect) {
-                BootpayBio.sharedBio.close?()
+                BootpayBio.sharedBio.debounceClose()
+//                BootpayBio.sharedBio.close?()
                 BootpayBio.removePaymentWindow()
             } else {
                 BootpayBio.removePaymentWindow()
@@ -504,7 +513,8 @@ extension BootpayBioWebView {
             onNextJob?(dic)
         } else {
             if(BioConstants.REQUEST_BIO_FOR_PAY != BootpayBio.sharedBio.requestType) {
-                BootpayBio.sharedBio.close?()
+                BootpayBio.sharedBio.debounceClose()
+//                BootpayBio.sharedBio.close?()
                 BootpayBio.removePaymentWindow()
             }
         }
@@ -517,7 +527,8 @@ extension BootpayBioWebView {
         BootpayBio.sharedBio.issued?(data)
         
         if(payload?.extra?.displaySuccessResult != true && isRedirect) {
-            BootpayBio.sharedBio.close?()
+            BootpayBio.sharedBio.debounceClose()
+//            BootpayBio.sharedBio.close?()
             BootpayBio.removePaymentWindow()
         }
     }
@@ -541,7 +552,8 @@ extension BootpayBioWebView {
         BootpayBio.sharedBio.cancel?(data)
         
         if(isRedirect) {
-            BootpayBio.sharedBio.close?()
+            BootpayBio.sharedBio.debounceClose()
+//            BootpayBio.sharedBio.close?()
             BootpayBio.removePaymentWindow()
         }
         
@@ -560,7 +572,8 @@ extension BootpayBioWebView {
 //        print("onDone: \(data)")
         BootpayBio.sharedBio.done?(data)
         if(payload?.extra?.displaySuccessResult != true && isRedirect) {
-            BootpayBio.sharedBio.close?()
+            BootpayBio.sharedBio.debounceClose()
+//            BootpayBio.sharedBio.close?()
             BootpayBio.removePaymentWindow()
         }
     }
@@ -625,32 +638,8 @@ extension BootpayBioWebView {
             if(BioConstants.REQUEST_ADD_CARD != BootpayBio.sharedBio.requestType) {
                 BootpayBio.sharedBio.requestType = BioConstants.REQUEST_TYPE_NONE
             }
-            
-//            print("onEasySuccess Done: \(data), type: \(BootpayBio.sharedBio.requestType)")
-            
+             
             BootpayBio.sharedBio.done?(data as? [String:Any] ?? [String:Any]())
         }
-        
-        
-        
-//        else if(BioConstants.REQUEST_PASSWORD_TOKEN == BootpayBio.sharedBio.requestType) {
-//            let dic = [
-//                "type": BootpayBio.sharedBio.requestType,
-//                "token": data as? String ?? ""
-//            ] as [String : Any]
-//            onNextJob?(dic)
-//        } else {
-//            if(BioConstants.REQUEST_PASSWORD_FOR_PAY == BootpayBio.sharedBio.requestType) {
-//                let dic = [
-//                    "initToken": true
-//                ] as [String : Any]
-//                onNextJob?(dic)
-//            }
-//            if(BioConstants.REQUEST_ADD_CARD != BootpayBio.sharedBio.requestType) {
-//                BootpayBio.sharedBio.requestType = BioConstants.REQUEST_TYPE_NONE
-//            }
-//
-//            BootpayBio.sharedBio.done?(data as? [String:Any] ?? [String:Any]())
-//        }
     }
 }

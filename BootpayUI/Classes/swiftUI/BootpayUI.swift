@@ -37,11 +37,7 @@ public struct BootpayUI: BTViewRepresentable {
     #elseif os(iOS)
     // 뷰 객체를 생성하고 초기 상태를 구성합니다. 딱 한 번만 호출됩니다.
     public func makeUIView(context: Context) -> BootpayWebView {
-       let webView = BootpayWebView()        
-        webView.webview.frame = CGRect(x: 0,
-                               y: 0,
-                               width: UIScreen.main.bounds.width,
-                               height: UIScreen.main.bounds.height - 80)
+       let webView = BootpayWebView()     
         webView.startBootpay()
        return webView
     }

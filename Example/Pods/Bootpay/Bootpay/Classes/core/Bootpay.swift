@@ -42,6 +42,19 @@ import WebKit
         self.iv = getRandomKey(16)
     }
     
+    public func debounceClose() {
+        DispatchQueue.main.asyncDeduped(target: self, after: 0.25) { [] in 
+            Bootpay.shared.close?()
+            
+            Bootpay.shared.error = nil
+            Bootpay.shared.issued = nil
+            Bootpay.shared.close = nil
+            Bootpay.shared.confirm = nil
+            Bootpay.shared.done = nil
+            Bootpay.shared.cancel = nil
+        }
+    }
+    
     
     #if os(macOS)
     @objc(requestPayment::)
@@ -92,6 +105,20 @@ import WebKit
                                       _ animated: Bool = true,
                                       _ modalPresentationStyle: UIModalPresentationStyle = .fullScreen) -> Bootpay.Type {
         shared.request_type = BootpayConstant.REQUEST_TYPE_AUTH
+        presentBootpayController(viewController: viewController,
+                                 payload: payload,
+                                 animated,
+                                 modalPresentationStyle
+        )
+        return self
+    }
+    
+    @objc(requestPassword::::)
+    public static func requestPassword(viewController: UIViewController,
+                                      payload: Payload,
+                                      _ animated: Bool = true,
+                                      _ modalPresentationStyle: UIModalPresentationStyle = .fullScreen) -> Bootpay.Type {
+        shared.request_type = BootpayConstant.REQUEST_TYPE_PASSWORD
         presentBootpayController(viewController: viewController,
                                  payload: payload,
                                  animated,

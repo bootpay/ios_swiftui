@@ -10,6 +10,7 @@ import Alamofire
 import JGProgressHUD
 import LocalAuthentication
 import ObjectMapper
+import Bootpay
 
 public protocol BootpayBioProtocol {
     func clickCard(_ index: Int)
@@ -31,7 +32,7 @@ public protocol BootpayBioProtocol {
 //    var bioPayload = BootBioPayload()
     var bioTheme = BootBioTheme()
     var bioWebView = BootpayBioWebView()
-    var useViewController = false 
+    var useViewController = false
     
 //    var bgView = UIView()
     var toolBar = UIToolbar()
@@ -94,12 +95,24 @@ public protocol BootpayBioProtocol {
     func initBioAuthenticate() {
         currentDeviceBioType = BioMetricAuthenticator.canAuthenticate()
     }
+    
+    open override func viewWillDisappear(_ animated: Bool) {
+        BootpayBio.sharedBio.debounceClose()
+        super.viewWillDisappear(animated)
+    }
+    
+//    open override func viewwil(_ animated: Bool) {
+//        print("")
+//        BootpayBio.sharedBio.debounceClose()
+//        super.viewWillAppear(animated)
+//    }
 }
 
 //init UI
 extension BootpayBioController {
     
     func initUI() {
+        self.view.backgroundColor = .white
         
 //        bgView.backgroundColor = .black
 //        bgView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
@@ -144,6 +157,17 @@ extension BootpayBioController {
 //        bioWebView.resizeFrame()
         
         self.view.addSubview(bioWebView)
+        
+        bioWebView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let constrains = [
+            bioWebView.topAnchor.constraint(equalTo: self.view.safeTopAnchor),
+            bioWebView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            bioWebView.bottomAnchor.constraint(equalTo: self.view.safeBottomAnchor),
+            bioWebView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+ 
+        ]
+        NSLayoutConstraint.activate(constrains)
     }
     
     func getPickerTitle(row: Int) -> String {
@@ -170,7 +194,8 @@ extension BootpayBioController {
             "event": "cancel"
         ]
         BootpayBio.sharedBio.cancel?(dic)
-        BootpayBio.sharedBio.close?()
+        BootpayBio.sharedBio.debounceClose()
+//        BootpayBio.sharedBio.close?()
         BootpayBio.removePaymentWindow()
         
         if(useViewController == false) {
@@ -600,11 +625,13 @@ extension BootpayBioController {
         payButton.setBackgroundColor(bioTheme.blueColor,  cornerRadius: 6.0, for: .normal)
         payButton.addTarget(self, action: #selector(clickPayButton), for: .touchUpInside)
         actionView.addSubview(payButton)
+        payButton.bottomAnchor.constraint(equalTo: self.view.safeBottomAnchor).isActive = true
         payButton.snp.makeConstraints{ (make) -> Void in
 //            make.centerX.equalToSuperview()
             make.left.equalTo(15)
             make.right.equalToSuperview().offset(-15)
-            make.bottom.equalTo(self.view).offset(-10)
+//            make.bottom.a
+//            make.bottom.equalTo(self.view).offset(-10)
 //            if(isShowQuota) {
 //                make.top.equalTo(cardSelectView).offset(300)
 //            } else {
@@ -613,6 +640,7 @@ extension BootpayBioController {
             
             make.height.equalTo(60)
         }
+        
 
 //        let bottomTitle = UILabel()
 //        bottomTitle.text = self.bt2
@@ -693,7 +721,7 @@ extension BootpayBioController: UIPickerViewDataSource, UIPickerViewDelegate {
 //        if let payload = bioPayload {
 //            btnPicker.setTitle("\(row)", for: .normal)
 //
-//        } 
+//        }
         BootpayBio.sharedBio.selectedCardQuota = row
         btnPicker.setTitle(getPickerTitle(row: row), for: .normal)
     }
@@ -752,7 +780,7 @@ extension BootpayBioController {
 //            if btnTitle == OKTitle {
 //                self.bioWebView.requestType = BioConstants.REQUEST_ADD_BIOMETRIC
 ////                self.goBiometricAuth()
-//                
+//
 ////                self.bioWebView.requestType = BioConstants.REQUEST_TYPE_ENABLE_DEVICE
 ////                self.slideLeftCardUI()
 ////                if let bioPayload = self.bioPayload { self.bioWebView.verifyPassword(bioPayload) }
