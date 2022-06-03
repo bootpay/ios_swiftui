@@ -50,7 +50,6 @@ import Bootpay
     
     public func debounceClose() {
         DispatchQueue.main.asyncDeduped(target: self, after: 0.25) { [] in
-            print("debounceClose")
             BootpayBio.sharedBio.close?()
             
             BootpayBio.sharedBio.error = nil

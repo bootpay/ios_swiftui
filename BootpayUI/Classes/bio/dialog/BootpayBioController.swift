@@ -399,7 +399,7 @@ extension BootpayBioController {
             make.height.equalTo(30)
         }
         
-        let btnImage = UIImage(named: "close")
+        let btnImage = UIImage.fromBundle("close")
         let btnCancel = UIButton()
         btnCancel.setImage(btnImage , for: .normal)
 //        btnCancel.setTitle("취소", for: .normal)
