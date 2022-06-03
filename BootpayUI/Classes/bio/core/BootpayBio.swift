@@ -70,31 +70,56 @@ import Bootpay
         self.iv = getRandomKey(16)
     }
     
-    @objc(requestPayment:::::)
+    @objc(requestBioPayment::::)
     public static func requestBioPayment(viewController: UIViewController,
                                       payload: BootBioPayload,
-                                      _ useViewController: Bool = true,
-                                      _ animated: Bool = true,
-                                      _ modalPresentationStyle: UIModalPresentationStyle = .fullScreen) -> BootpayBio.Type {
+                                      animated: Bool = true,
+                                      modalPresentationStyle: UIModalPresentationStyle = .fullScreen) -> BootpayBio.Type {
         
+        return presentBootpayController(
+            payload: payload,
+            isPasswordMode: false,
+            animated: animated,
+            viewController: viewController,
+            modalPresentationStyle: modalPresentationStyle
+        )
+    }
+    
+    
+    @objc(requestUIPasswordPayment::::)
+    public static func requestUIPasswordPayment(viewController: UIViewController,
+                                      payload: BootBioPayload,
+                                      animated: Bool = true,
+                                      modalPresentationStyle: UIModalPresentationStyle = .fullScreen) -> BootpayBio.Type {
+        
+        return presentBootpayController(
+            payload: payload,
+            isPasswordMode: true,
+            animated: animated,
+            viewController: viewController,
+            modalPresentationStyle: modalPresentationStyle
+        )
+    }
+    
+    
+    fileprivate static func presentBootpayController(payload: BootBioPayload, isPasswordMode: Bool, animated: Bool, viewController: UIViewController, modalPresentationStyle: UIModalPresentationStyle = .fullScreen) -> BootpayBio.Type {
         sharedBio.bioVc = BootpayBioController()
         sharedBio.bioPayload = payload
         sharedBio.bioVc?.bioWebView.payload = payload
-        sharedBio.bioVc?.useViewController = useViewController
+        sharedBio.bioPayload?.isPasswordMode = isPasswordMode
         
-        
-        if(useViewController == false) {
-            viewController.view.addSubview(sharedBio.bioVc!.view)
+        if(modalPresentationStyle == .fullScreen) {
+            viewController.navigationController?.pushViewController(sharedBio.bioVc!, animated: animated)
         } else {
-            viewController.modalPresentationStyle = .fullScreen
-            viewController.present(sharedBio.bioVc!, animated: true, completion: nil)
+            sharedBio.bioVc!.modalPresentationStyle = modalPresentationStyle //or .overFullScreen for transparency
+            viewController.present(sharedBio.bioVc!, animated: animated, completion: nil)
         }
         
         return self
     }
     
     
-    @objc(transactionConfirm)
+    @objc(transactionConfirmUI)
     public static func transactionConfirm() {
         print("bootpayBio transactionConfirm")
         
@@ -105,20 +130,27 @@ import Bootpay
         }
     }
     
-    @objc(removePaymentWindow)
+    @objc(removePaymentWindowUI)
     public static func removePaymentWindow() {
         print("removePaymentWindow")
         
         if sharedBio.bioVc != nil {
-            if(sharedBio.bioVc!.useViewController) {
-                #if os(macOS)
-                    sharedBio.bioVc!.dismiss(nil)
-                #elseif os(iOS)
-                    sharedBio.bioVc!.dismiss(animated: true, completion: nil)
-                #endif
-            } else {
-                sharedBio.bioVc?.view.removeFromSuperview()
-            }
+//            if(sharedBio.bioVc!.useViewController) {
+//                #if os(macOS)
+//                    sharedBio.bioVc!.dismiss(nil)
+//                #elseif os(iOS)
+//                    sharedBio.bioVc!.dismiss(animated: true, completion: nil)
+//                #endif
+//            } else {
+//                sharedBio.bioVc?.view.removeFromSuperview()
+//            }
+            #if os(macOS)
+                sharedBio.bioVc!.dismiss(nil)
+            #elseif os(iOS)
+                sharedBio.bioVc!.dismiss(animated: true, completion: nil)
+            #endif
+            sharedBio.bioVc!.navigationController?.popViewController(animated: true)
+//            sharedBio.bioVc?.view.removeFromSuperview()
             sharedBio.bioVc = nil
         }
         

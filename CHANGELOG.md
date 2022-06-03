@@ -1,4 +1,6 @@
-
+## 4.2.5
+* debounce event 적용 
+* bootpay 4.2.5 적용 
 
 ## 4.2.0
 * metadata data type changed dic -> string 

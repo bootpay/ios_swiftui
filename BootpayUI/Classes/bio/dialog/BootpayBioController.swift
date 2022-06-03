@@ -32,7 +32,7 @@ public protocol BootpayBioProtocol {
 //    var bioPayload = BootBioPayload()
     var bioTheme = BootBioTheme()
     var bioWebView = BootpayBioWebView()
-    var useViewController = false
+//    var useViewController = false
     
 //    var bgView = UIView()
     var toolBar = UIToolbar()
@@ -142,8 +142,17 @@ extension BootpayBioController {
     }
     
     func initCardUI() {
-        actionView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+//        actionView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         self.view.addSubview(actionView)
+        actionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let constrains = [
+            actionView.topAnchor.constraint(equalTo: self.view.safeTopAnchor),
+            actionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            actionView.bottomAnchor.constraint(equalTo: self.view.safeBottomAnchor),
+            actionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+        ]
+        NSLayoutConstraint.activate(constrains)
     }
     
     func initWebViewUI() {
@@ -165,7 +174,6 @@ extension BootpayBioController {
             bioWebView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             bioWebView.bottomAnchor.constraint(equalTo: self.view.safeBottomAnchor),
             bioWebView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
- 
         ]
         NSLayoutConstraint.activate(constrains)
     }
@@ -198,21 +206,24 @@ extension BootpayBioController {
 //        BootpayBio.sharedBio.close?()
         BootpayBio.removePaymentWindow()
         
-        if(useViewController == false) {
-//            bgView.alpha = 0
-            bioWebView.alpha = 0
-            UIView.animate(withDuration: 0.25, animations: {
-                self.actionView.frame = CGRect(x: self.actionView.frame.origin.x,
-                                               y: self.view.frame.height,
-                                               width: self.view.frame.width,
-                                               height: self.actionView.frame.height)
-             
-            }, completion: { finish in
-                self.view.removeFromSuperview()
-            })
-        } else {
-            self.dismiss(animated: true, completion: nil)
-        }
+        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
+        
+//        if(useViewController == false) {
+////            bgView.alpha = 0
+//            bioWebView.alpha = 0
+//            UIView.animate(withDuration: 0.25, animations: {
+//                self.actionView.frame = CGRect(x: self.actionView.frame.origin.x,
+//                                               y: self.view.frame.height,
+//                                               width: self.view.frame.width,
+//                                               height: self.actionView.frame.height)
+//
+//            }, completion: { finish in
+//                self.view.removeFromSuperview()
+//            })
+//        } else {
+//            self.dismiss(animated: true, completion: nil)
+//        }
     }
     
 }

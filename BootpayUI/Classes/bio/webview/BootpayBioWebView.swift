@@ -83,7 +83,10 @@ import Bootpay
          
         #elseif os(iOS)
         
-        webview = WKWebView(frame: self.frame, configuration: configuration)
+        webview = WKWebView(frame: CGRect(x: 0,
+                                          y: 0,
+                                          width: UIScreen.main.bounds.width,
+                                          height: UIScreen.main.bounds.height), configuration: configuration)
 
         #endif
          

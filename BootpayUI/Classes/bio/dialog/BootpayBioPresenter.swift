@@ -374,7 +374,7 @@ extension BootpayBioPresenter {
         let alertController = bioController.getAlertViewController(
             type: .alert,
             with: "인식 실패",
-            message: "Touch ID 인식에 여러 번 실패하여, 비밀번호로 결제합니다.",
+            message: "Touch ID 인식을 진행할 수 없어, 비밀번호 인증방식으로 결제합니다.",
             actions: [okAction], showCancel: true) { (btnTitle) in                                
                 if btnTitle == OKTitle {
                     self.requestPasswordForPay()
