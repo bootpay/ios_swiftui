@@ -35,6 +35,7 @@ TODO: Add long description of the pod here.
    s.resource_bundles = {
      'BootpayUI' => ['BootpayUI/*.xcassets']
    }
+   s.swift_versions = ['5.0']
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
@@ -42,7 +43,7 @@ TODO: Add long description of the pod here.
   
   
   s.static_framework = true
-  s.dependency 'Bootpay', '~> 4.2.5'
+  s.dependency 'Bootpay', '~> 4.2.6'
   s.dependency 'SCLAlertView'
   s.dependency 'CryptoSwift'
   s.dependency 'Alamofire'

@@ -96,10 +96,20 @@ public protocol BootpayBioProtocol {
         currentDeviceBioType = BioMetricAuthenticator.canAuthenticate()
     }
     
-    open override func viewWillDisappear(_ animated: Bool) {
+//    open override func viewWil(_ animated: Bool) {
+//        BootpayBio.sharedBio.debounceClose()
+//        super.viewWillDisappear(animated)
+//    }
+    
+    open override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         BootpayBio.sharedBio.debounceClose()
-        super.viewWillDisappear(animated)
     }
+    
+//    open override func viewWillDisappear(_ animated: Bool) {
+//        BootpayBio.sharedBio.debounceClose()
+//        super.viewWillDisappear(animated)
+//    }
     
 //    open override func viewwil(_ animated: Bool) {
 //        print("")

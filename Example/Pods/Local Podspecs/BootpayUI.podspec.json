@@ -24,10 +24,13 @@
       "BootpayUI/*.xcassets"
     ]
   },
+  "swift_versions": [
+    "5.0"
+  ],
   "static_framework": true,
   "dependencies": {
     "Bootpay": [
-      "~> 4.2.5"
+      "~> 4.2.6"
     ],
     "SCLAlertView": [
 
@@ -50,5 +53,6 @@
     "SwiftyJSON": [
 
     ]
-  }
+  },
+  "swift_version": "5.0"
 }

@@ -1,3 +1,8 @@
+## 4.2.6
+* bootpay 4.2.6 적용
+* swift version 명시 
+* debounceClose event 적용시점 변경 viewWilldisappear -> viewDidappear
+
 ## 4.2.5
 * debounce event 적용 
 * bootpay 4.2.5 적용 
