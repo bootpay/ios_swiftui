@@ -22,7 +22,7 @@ struct BootpayUIView: View {
             VStack {
                 
                 if(self.showingBootpay) {
-                    BootpayUI(payload: payload)
+                    BootpayUI(payload: payload, requestType: BootpayRequest.TYPE_SUBSCRIPTION)
                         .onCancel { data in
                             print("-- cancel: \(data)")
                         }
@@ -48,7 +48,6 @@ struct BootpayUIView: View {
                         }
                 } else {
                     Button("부트페이 결제테스트") {
-                        showingBootpay = true
 
                         #if os(macOS)
                         payload.applicationId = "5b8f6a4d396fa665fdc2b5e7" //web application id
@@ -56,8 +55,8 @@ struct BootpayUIView: View {
                         payload.applicationId = "5b8f6a4d396fa665fdc2b5e9" //ios application id
                         #endif
 
-                        payload.pg = "나이스페이"
-                        payload.method = "네이버페이"
+                        payload.pg = "페이레터"
+                        payload.method = "카드자동"
 
                         payload.price = 1000
                         payload.orderId = String(NSTimeIntervalSince1970)
@@ -70,6 +69,7 @@ struct BootpayUIView: View {
                         user.username = "테스트 유저"
                         user.phone = "01012345678"
                         payload.user = user
+                        showingBootpay = true
                     }.sheet(isPresented: self.$showingBootpay) {
                     }
                 }
