@@ -18,7 +18,7 @@ public typealias BTViewRepresentable = UIViewRepresentable
 public struct BootpayUI: BTViewRepresentable {
     public var payload: Payload
 
-    public init(payload: Payload, requestType: Int) {
+    public init(payload: Payload, requestType: Int, userToken: String? = nil) {
         self.payload = payload
         Bootpay.shared.payload = payload
         
@@ -28,6 +28,12 @@ public struct BootpayUI: BTViewRepresentable {
             Bootpay.shared.requestType = BootpayConstant.REQUEST_TYPE_SUBSCRIPT
         } else if(requestType == BootpayRequest.TYPE_AUTHENTICATION) {
             Bootpay.shared.requestType = BootpayConstant.REQUEST_TYPE_AUTH
+        }  else if(requestType == BootpayRequest.TYPE_PASSWORD) {
+            Bootpay.shared.requestType = BootpayConstant.REQUEST_TYPE_PASSWORD
+        }
+        
+        if(userToken != nil) {
+            Bootpay.shared.payload?.userToken = userToken 
         }
     }
      
