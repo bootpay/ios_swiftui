@@ -43,6 +43,7 @@ public struct BootpayUI: BTViewRepresentable {
     func makeNSView(context: Context) -> BootpayWebView {
         let webView = BootpayWebView()
         webView.startBootpay()
+        Bootpay.shared.webview = webView.webview
        return webView
     }
 
@@ -53,6 +54,7 @@ public struct BootpayUI: BTViewRepresentable {
     public func makeUIView(context: Context) -> BootpayWebView {
        let webView = BootpayWebView()     
         webView.startBootpay()
+        Bootpay.shared.webview = webView.webview
        return webView
     }
     

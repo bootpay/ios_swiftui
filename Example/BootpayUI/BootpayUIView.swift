@@ -22,7 +22,7 @@ struct BootpayUIView: View {
             VStack {
                 
                 if(self.showingBootpay) {
-                    BootpayUI(payload: payload, requestType: BootpayRequest.TYPE_SUBSCRIPTION)
+                    BootpayUI(payload: payload, requestType: BootpayRequest.TYPE_PAYMENT)
                         .onCancel { data in
                             print("-- cancel: \(data)")
                         }
@@ -55,8 +55,8 @@ struct BootpayUIView: View {
                         payload.applicationId = "5b8f6a4d396fa665fdc2b5e9" //ios application id
                         #endif
 
-                        payload.pg = "페이레터"
-                        payload.method = "카드자동"
+                        payload.pg = "웰컴"
+                        payload.method = "디지털카드"
 
                         payload.price = 1000
                         payload.orderId = String(NSTimeIntervalSince1970)

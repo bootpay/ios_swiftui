@@ -165,6 +165,8 @@ import WebKit
                 "})"
             ].reduce("", +)
             
+            print(script)
+            
             webView.evaluateJavaScript(script)
         }
     }

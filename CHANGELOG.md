@@ -1,3 +1,6 @@
+## 4.3.0
+* bootpay webview transactionConfirm 작동되지 않는 버그 수정 
+
 ## 4.2.9
 * 비밀번호 간편결제 적용 
 

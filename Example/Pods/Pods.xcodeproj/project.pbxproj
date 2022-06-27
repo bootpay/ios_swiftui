@@ -507,7 +507,7 @@
 		153E2007FB36A499CB2111DA96695C8C /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Sources/LayoutConstraint.swift; sourceTree = "<group>"; };
 		15C173CC9CB06E27378DE6ADCE5AF03A /* SCLAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SCLAlertView.swift; path = SCLAlertView/SCLAlertView.swift; sourceTree = "<group>"; };
 		1611CE96E9C3F9827380AFC406DF34E4 /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
-		161836E1BCD3ADBD4B2CAE9E866CA439 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		161836E1BCD3ADBD4B2CAE9E866CA439 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		17201CDC7DC70DC1E2331A07E1E6E992 /* BioConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BioConstants.swift; sourceTree = "<group>"; };
 		17A01CD1F4C3DD135594032EB76257AE /* BootpayUI-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BootpayUI-prefix.pch"; sourceTree = "<group>"; };
 		17D4A4999B0E35B7C8836A1F259794C9 /* TOTP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TOTP.swift; sourceTree = "<group>"; };
@@ -631,7 +631,7 @@
 		6888A159C4CFBFA3995CCB682736FE9D /* JGProgressHUDSuccessIndicatorView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUDSuccessIndicatorView.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUDSuccessIndicatorView.m; sourceTree = "<group>"; };
 		68D1CFD5227701AF02071B4D01A76DC8 /* DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateTransform.swift; path = Sources/DateTransform.swift; sourceTree = "<group>"; };
 		68D61E28EEE6121EBFB59401C39BE0C0 /* StringEncoding+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StringEncoding+Alamofire.swift"; path = "Source/StringEncoding+Alamofire.swift"; sourceTree = "<group>"; };
-		6AAEA889A886277E6398B6002546BF36 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6AAEA889A886277E6398B6002546BF36 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		6BC31D77058D773FBE68395ABF339F0A /* Data Conversion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data Conversion.swift"; path = "Sources/CryptoSwift/CS_BigInt/Data Conversion.swift"; sourceTree = "<group>"; };
 		6C1A137E1BEEE8DBA8CED940F92DF577 /* BlockEncryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlockEncryptor.swift; path = Sources/CryptoSwift/BlockEncryptor.swift; sourceTree = "<group>"; };
 		6C7A4251DA72DF8181D4AF79B7160A79 /* UIView.Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIView.Extension.swift; path = Bootpay/Classes/extension/UIView.Extension.swift; sourceTree = "<group>"; };
@@ -672,7 +672,6 @@
 		7FBAFAA66E9C7401884F439AE8BC662C /* JGProgressHUD */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JGProgressHUD; path = JGProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80CCE0F546B82BB20903C67DEED9581D /* Pods-BootpayUI_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BootpayUI_Example-resources.sh"; sourceTree = "<group>"; };
 		80CFA77C26C53F13645471451130877B /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Sources/ConstraintDescription.swift; sourceTree = "<group>"; };
-		818BC7A92851CAD20021D1B0 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		81C8B0B9C1F20C9A6911306C77C479EB /* ObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-umbrella.h"; sourceTree = "<group>"; };
 		821AD1F848B5DB1F1672CF179556D11E /* CTR.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CTR.swift; path = Sources/CryptoSwift/BlockMode/CTR.swift; sourceTree = "<group>"; };
 		821FCD02A8922D4FA27E7DC29012BBFE /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Sources/ConstraintViewDSL.swift; sourceTree = "<group>"; };
@@ -713,7 +712,7 @@
 		9A8A013F5198F10EEE18A2E65FF92EA9 /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
 		9B5ECFA6B53224C87ADF837E866910D4 /* JGProgressHUDShadow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JGProgressHUDShadow.m; path = JGProgressHUD/JGProgressHUD/JGProgressHUDShadow.m; sourceTree = "<group>"; };
 		9D52999B90BE20EDAA3D044734F9959E /* Pods-BootpayUI_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BootpayUI_Example-frameworks.sh"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EC0787CF7C0D2A54EB94194758C3D2F /* Shifts.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Shifts.swift; path = Sources/CryptoSwift/CS_BigInt/Shifts.swift; sourceTree = "<group>"; };
 		9FF5E078593D9F90C7ABDD4AE97C2AD7 /* Data+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+Extension.swift"; path = "Sources/CryptoSwift/Foundation/Data+Extension.swift"; sourceTree = "<group>"; };
 		A14C4A0C6AC75D1F457F69C0F566EC3F /* BiometricData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BiometricData.swift; sourceTree = "<group>"; };
@@ -743,7 +742,7 @@
 		AF61A7BE09F234BAD908E2116AC02061 /* HOTP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HOTP.swift; sourceTree = "<group>"; };
 		AFB4B5CB84F7BD4453BDEE3ECCC4EBFF /* Blowfish.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Blowfish.swift; path = Sources/CryptoSwift/Blowfish.swift; sourceTree = "<group>"; };
 		B03F1794C842E5A6F40776493449A8AE /* Pods-BootpayUI_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BootpayUI_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		B10CA0B7CDA41D31D24B9A157D81D5BE /* BootpayUI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = BootpayUI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B10CA0B7CDA41D31D24B9A157D81D5BE /* BootpayUI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = BootpayUI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B1FD4F8BA0D551A5AB50C6D302CD9AA5 /* JGProgressHUDFadeAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JGProgressHUDFadeAnimation.h; path = JGProgressHUD/JGProgressHUD/include/JGProgressHUDFadeAnimation.h; sourceTree = "<group>"; };
 		B33747A969D07CF6A068E906F4788C2E /* UInt8+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt8+Extension.swift"; path = "Sources/CryptoSwift/UInt8+Extension.swift"; sourceTree = "<group>"; };
 		B35BCBAD93835DB46874C903FA4A4564 /* Pods-BootpayUI_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BootpayUI_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -1015,6 +1014,7 @@
 				409A0EA46465E0F0FDB7BD4ACDAD4CCF /* SwiftyJSON.swift */,
 				D25764F41416A7425C026E60B88F2796 /* Support Files */,
 			);
+			name = SwiftyJSON;
 			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
@@ -1025,6 +1025,7 @@
 				7C3C6CAAA59C09893E0EE35B4156201E /* BioMetricAuthenticator.swift */,
 				7AF114B6C78299CC7E525234CB6A6016 /* BootpayBio.swift */,
 			);
+			name = core;
 			path = core;
 			sourceTree = "<group>";
 		};
@@ -1036,6 +1037,7 @@
 				440B8CC6FE21B23E3E4407B36F3BBC08 /* CardCode.swift */,
 				F765385DAC9AD248340578F9A339D2EE /* PG.swift */,
 			);
+			name = constants;
 			path = constants;
 			sourceTree = "<group>";
 		};
@@ -1044,7 +1046,6 @@
 			children = (
 				B10CA0B7CDA41D31D24B9A157D81D5BE /* BootpayUI.podspec */,
 				161836E1BCD3ADBD4B2CAE9E866CA439 /* LICENSE */,
-				818BC7A92851CAD20021D1B0 /* CHANGELOG.md */,
 				6AAEA889A886277E6398B6002546BF36 /* README.md */,
 			);
 			name = Pod;
@@ -1071,6 +1072,7 @@
 				097766A1BCD1EE2069E2E7858673FBFA /* CardSelectView.swift */,
 				1B323536D0BC22CBF951E6A28AC9AA78 /* CardViewCell.swift */,
 			);
+			name = card;
 			path = card;
 			sourceTree = "<group>";
 		};
@@ -1103,6 +1105,7 @@
 			children = (
 				C63C5BF1888FEFB9FE7632F45ACF81A9 /* BootpayBuildConfig.swift */,
 			);
+			name = config;
 			path = config;
 			sourceTree = "<group>";
 		};
@@ -1259,6 +1262,7 @@
 				4E8B6544B38562A3B69AA860C08BD080 /* ZeroPadding.swift */,
 				03405983CE3E80FEEA16A90AD1572E41 /* Support Files */,
 			);
+			name = CryptoSwift;
 			path = CryptoSwift;
 			sourceTree = "<group>";
 		};
@@ -1315,6 +1319,7 @@
 				62395BCFC2A1F69680EDA6773638F5BA /* UILayoutSupport+Extensions.swift */,
 				42538A265F782612DC0D7182C449E891 /* Support Files */,
 			);
+			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -1325,6 +1330,7 @@
 				AA43418C3CFFE1A531F0873E0224D5FD /* ScalingCarouselLayout.swift */,
 				7360BF5783CDA6CB98137993C740DF42 /* ScalingCarouselView.swift */,
 			);
+			name = scalingCarousel;
 			path = scalingCarousel;
 			sourceTree = "<group>";
 		};
@@ -1351,6 +1357,7 @@
 				7E497307F8F8EC2AD69BB6E7EE78FBC6 /* URL.Extention.swift */,
 				2AFE53B07828B1738F6A87F9EC8FB811 /* Support Files */,
 			);
+			name = Bootpay;
 			path = Bootpay;
 			sourceTree = "<group>";
 		};
@@ -1413,6 +1420,7 @@
 				C069B952B6236E28DB2A8E22BC8062A9 /* URLTransform.swift */,
 				D8462D0EA6F14BC0E889F19C70F599AA /* Support Files */,
 			);
+			name = ObjectMapper;
 			path = ObjectMapper;
 			sourceTree = "<group>";
 		};
@@ -1458,6 +1466,7 @@
 				17D4A4999B0E35B7C8836A1F259794C9 /* TOTP.swift */,
 				CB58BB0743133134DB6A56FB01A70280 /* UInt64+Data.swift */,
 			);
+			name = swiftOTP;
 			path = swiftOTP;
 			sourceTree = "<group>";
 		};
@@ -1506,6 +1515,7 @@
 				6888A159C4CFBFA3995CCB682736FE9D /* JGProgressHUDSuccessIndicatorView.m */,
 				A01232A83A8C5A915C1160D5EC3FAAFE /* Support Files */,
 			);
+			name = JGProgressHUD;
 			path = JGProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -1516,6 +1526,7 @@
 				D38147246FBF66C01F0985DE03E222E1 /* UIAlertControllerExtension.swift */,
 				3A52F9610024B3A843BFC5CD912F5BA3 /* UIButtonExtension.swift */,
 			);
+			name = extension;
 			path = extension;
 			sourceTree = "<group>";
 		};
@@ -1530,6 +1541,7 @@
 				CF0F76C317023DAEC1EA218E97F8D2C1 /* WalletCardData.swift */,
 				32EFCBE063F78C759C8F48DE40EA9DF1 /* WalletData.swift */,
 			);
+			name = models;
 			path = models;
 			sourceTree = "<group>";
 		};
@@ -1574,6 +1586,7 @@
 				5BDEB5EE5902BC1D39E7CB5F4D829A23 /* Validation.swift */,
 				7A97D702B3BB0D815CB780CCA6026306 /* Support Files */,
 			);
+			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1599,6 +1612,7 @@
 			children = (
 				0B3F3D5909363E21B70FFF36C4B2C7FE /* BootpayBioWebView.swift */,
 			);
+			name = webview;
 			path = webview;
 			sourceTree = "<group>";
 		};
@@ -1668,6 +1682,7 @@
 				CD82DB783011ABA10EFDC4DE88C004A7 /* BootpayBioController.swift */,
 				0385A0ED759B2947FAD3AFF9130E7D53 /* BootpayBioPresenter.swift */,
 			);
+			name = dialog;
 			path = dialog;
 			sourceTree = "<group>";
 		};
@@ -1678,6 +1693,7 @@
 				4A02CC1179E75FB851F5185F96800519 /* SCLExtensions.swift */,
 				8B34D4AAE89B390819911412F2095C29 /* Support Files */,
 			);
+			name = SCLAlertView;
 			path = SCLAlertView;
 			sourceTree = "<group>";
 		};
@@ -3219,7 +3235,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
