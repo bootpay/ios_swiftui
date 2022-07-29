@@ -51,7 +51,7 @@ let kDefaultFaceIDAuthenticationFailedReason = "Face ID does not recognize your 
 
 
 struct BioConstants {
-    static let CDN_URL = "https://webview.bootpay.co.kr/4.0.6";
+    static let CDN_URL = "https://webview.bootpay.co.kr/4.2.0";
 //    static let BRIDGE_NAME = "Bootpay_Bio_iOS"
  
     public static let REQUEST_TYPE_NONE = -1
@@ -282,6 +282,7 @@ struct BioConstants {
         } else if(payload.price < 50000) {
             payload.extra?.cardQuota = "0"
         }
+//        payload.easyType = "easy_subscribe"
         
         return [
             "BootpaySDK.requestWalletPayment(",

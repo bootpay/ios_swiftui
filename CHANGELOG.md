@@ -1,3 +1,7 @@
+## 4.3.1
+* bootpay 4.3.1 적용 
+* bootpay js 4.2.0 적용 
+
 ## 4.3.0
 * bootpay webview transactionConfirm 작동되지 않는 버그 수정 
 

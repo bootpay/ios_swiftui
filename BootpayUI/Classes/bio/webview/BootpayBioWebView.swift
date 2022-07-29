@@ -214,7 +214,7 @@ import Bootpay
             scriptPay = BioConstants.getJSDestroyWallet(payload: payload)
         }
         
-//        print("scriptPay: \(scriptPay), requestType: \(BootpayBio.sharedBio.requestType)")
+        print("scriptPay: \(scriptPay), requestType: \(BootpayBio.sharedBio.requestType)")
          
         if(!scriptPay.isEmpty) { webview.evaluateJavaScript(scriptPay, completionHandler: nil) }
     }
@@ -436,6 +436,7 @@ extension BootpayBioWebView {
             "})"
         ].reduce("", +)
         
+        print(script)
         
         webview.evaluateJavaScript(script, completionHandler: nil)
     }

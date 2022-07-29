@@ -15,6 +15,7 @@ public class BootBioPayload: NSObject, Codable  {
     @objc public var orderId = ""
     @objc public var subscriptionId = ""
     @objc public var authenticationId = ""
+    @objc public var easyType = "" //생체인증 결제, 비밀번호 결제 시 사용됨 
     
     @objc public var params: String?
      

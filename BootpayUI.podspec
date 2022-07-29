@@ -17,9 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description      = 'Bootpay에서 지원하는 공식 SwiftUI 및 생체인증 결제 라이브러리 입니다. ios 14 이상부터 사용가능합니다.'
 
   s.homepage         = 'https://github.com/bootpay/ios_swiftui'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
@@ -43,7 +41,7 @@ TODO: Add long description of the pod here.
   
   
   s.static_framework = true
-  s.dependency 'Bootpay', '~> 4.2.8'
+  s.dependency 'Bootpay', '~> 4.3.1'
   s.dependency 'SCLAlertView'
   s.dependency 'CryptoSwift'
   s.dependency 'Alamofire'

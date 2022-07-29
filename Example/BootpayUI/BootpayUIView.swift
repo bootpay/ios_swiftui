@@ -49,13 +49,18 @@ struct BootpayUIView: View {
                 } else {
                     Button("부트페이 결제테스트") {
 
+//                        #if os(macOS)
+//                        payload.applicationId = "5b8f6a4d396fa665fdc2b5e7" //web application id
+//                        #elseif os(iOS)
+//                        payload.applicationId = "5b8f6a4d396fa665fdc2b5e9" //ios application id
+//                        #endif
+
                         #if os(macOS)
                         payload.applicationId = "5b8f6a4d396fa665fdc2b5e7" //web application id
                         #elseif os(iOS)
-                        payload.applicationId = "5b8f6a4d396fa665fdc2b5e9" //ios application id
+                        payload.applicationId = "59bfc733e13f337dbd6ca489" //ios application id
                         #endif
-
-                        payload.pg = "웰컴"
+                        payload.pg = "웰컴페이먼츠"
                         payload.method = "디지털카드"
 
                         payload.price = 1000
@@ -63,6 +68,7 @@ struct BootpayUIView: View {
                         payload.orderName = "테스트 아이템"
 
                         payload.extra = BootExtra()
+//                        payload.extra?.separatelyConfirmed = false
 //                        payload.extra?.cardQuota = "6"
 
                         let user = BootUser()

@@ -88,10 +88,10 @@ import Bootpay
             showWebview()
         }
         
-        if(!isAblePasswordToken()) {
-            requestPasswordToken(BioConstants.REQUEST_PASSWORD_TOKEN_FOR_ADD_CARD)
-            return
-        }
+//        if(!isAblePasswordToken()) {
+//            requestPasswordToken(BioConstants.REQUEST_PASSWORD_TOKEN_FOR_ADD_CARD)
+//            return
+//        }
         
         requestAddCard()
     }
