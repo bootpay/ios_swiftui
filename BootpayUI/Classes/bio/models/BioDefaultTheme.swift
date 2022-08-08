@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class BootBioTheme: NSObject {
+public class BioDefaultTheme: NSObject {
     @objc public var fontInfoColor = UIColor.init(red: 0.38, green: 0.38, blue: 0.38, alpha: 1.0)
     @objc public var fontColor = UIColor.init(red: 0.11, green: 0.11, blue: 0.16, alpha: 1.0)
     @objc public var fontOptionColor = UIColor.init(red: 0.65, green: 0.65, blue: 0.65, alpha: 1.0)

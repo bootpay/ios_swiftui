@@ -19,6 +19,7 @@ struct BootpayBioView: View {
     @ObservedObject private var viewModel = ViewModel()
     let _user = BootUser()
     private var _bioPayload = BootBioPayload()
+    private var _bioTheme = BioThemeData()
 //    private var _payload = Payload()
     @State private var showingBootpay = false
     
@@ -41,7 +42,8 @@ struct BootpayBioView: View {
                    BootpayBioUI(
                     payload: self._bioPayload,
                     userToken: self.viewModel.easyPayUserToken,
-                    showBootpay: self.$viewModel.showingBootpay
+                    showBootpay: self.$viewModel.showingBootpay,
+                    bioTheme: self._bioTheme
                    )
                        .onError{ data in
                            print("-- error \(data)")
@@ -61,77 +63,13 @@ struct BootpayBioView: View {
                        .onClose {
                            print("-- close")
                        }
-                       
+                       .edgesIgnoringSafeArea(.all)
                }
-//               .sheet(isPresented: self.$showingBootpay) {
-//                   
-//                          BootpayUI(payload: _payload, requestType: BootpayRequest.TYPE_PAYMENT)
-//                              .onCancel { data in
-//                                  print("-- cancel: \(data)")
-//                              }
-//                              .onIssued { data in
-//                                  print("-- ready: \(data)")
-//                              }
-//                              .onConfirm { data in
-//                                  print("-- confirm: \(data)")
-//                                  return true //재고가 있어서 결제를 최종 승인하려 할 경우
-//                  //                            return true //재고가 없어서 결제를 승인하지 않을때
-//                  //                            return false
-//                              }
-//                              .onDone { data in
-//                                  print("-- done: \(data)")
-//                              }
-//                              .onError { data in
-//                                  print("-- error: \(data)")
-//                                  self.showingBootpay = false
-//                              }
-//                              .onClose {
-//                                  print("-- close")
-//                                  self.showingBootpay = false
-//                              }
-//                   
-//               }
+               
            }.frame(width: geometry.size.width, height: geometry.size.height)
        }
    }
-    
-//    func bootpayDefaultStart() {
-//
-//
-//            _user.id = _unique_user_id
-//            _user.area = "서울"
-//            _user.gender = 1
-//            _user.email = "test1234@gmail.com"
-//            _user.phone = "01012344567"
-//            _user.birth = "1988-06-10"
-//            _user.username = "홍길동"
-//
-////
-//            #if os(macOS)
-//            _payload.applicationId = "5b8f6a4d396fa665fdc2b5e7" //web application id
-//            #elseif os(iOS)
-//            _payload.applicationId = "5b8f6a4d396fa665fdc2b5e9" //ios application id
-//            #endif
-//
-//            _payload.pg = "나이스페이"
-//
-//            _payload.price = 1000
-//            _payload.orderId = String(NSTimeIntervalSince1970)
-//            //                        payload.name = "테스트 아이템"
-//            _payload.orderName = "Touch ID 인증 결제 테스트"
-//
-////            payload.names = ["플리츠레이어 카라숏원피스", "블랙 (COLOR)", "55 (SIZE)"]
-//
-//    //                        payload.userToken = token
-//            _payload.user = _user
-////            payload.isPasswordMode = isPasswordMode
-//
-//            _payload.extra = BootExtra()
-//            _payload.extra?.cardQuota = "6"
-//            _payload.extra?.displaySuccessResult = true
-//            showingBootpay = true
-//
-//    }
+     
     
     func bootpayStart(isPasswordMode: Bool) {
         
@@ -158,13 +96,25 @@ struct BootpayBioView: View {
 
         _bioPayload.names = ["플리츠레이어 카라숏원피스", "블랙 (COLOR)", "55 (SIZE)"]
            
-//                        payload.userToken = token
         _bioPayload.user = _user
         _bioPayload.isPasswordMode = isPasswordMode
 
         _bioPayload.extra = BootExtra()
         _bioPayload.extra?.cardQuota = "6"
         _bioPayload.extra?.displaySuccessResult = true
+        
+//        _bioTheme.bgColor = UIColor.init(red: 253 / 255, green: 250 / 255, blue: 247 / 255, alpha: 1)
+//        _bioTheme.textColor = UIColor.init(red: 40 / 255, green: 40 / 255, blue: 40 / 255, alpha: 1)
+//        _bioTheme.priceColor = UIColor.init(red: 1, green: 160 / 255, blue: 197 / 255, alpha: 1)
+//        _bioTheme.cardText1Color = UIColor.init(red: 1, green: 160 / 255, blue: 197 / 255, alpha: 1)
+//
+//        _bioTheme.card2Color = UIColor.init(red: 246 / 255, green: 202 / 255, blue: 217 / 255, alpha: 1)
+//        _bioTheme.cardIconColor = UIColor.init(red: 246 / 255, green: 202 / 255, blue: 217 / 255, alpha: 1)
+//
+//        _bioTheme.buttonBgColor = UIColor.init(red: 244 / 255, green: 215 / 255, blue: 130 / 255, alpha: 1.0)
+//        _bioTheme.logoImageView = UIImageView(image: UIImage.init(named: "logo"))
+        
+          
 
         let p1 = BootBioPrice()
         let p2 = BootBioPrice()
@@ -183,10 +133,4 @@ struct BootpayBioView: View {
         viewModel.getUserToken(user: _user)
     }
 }
-
-//struct BioView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BioView()
-//    }
-//}
-  
+ 

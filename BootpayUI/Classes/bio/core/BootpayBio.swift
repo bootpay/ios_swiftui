@@ -35,6 +35,7 @@ import Bootpay
     var bioPayload: BootBioPayload?
     var bioVc: BootpayBioController?
     var bioUIModal: BootpayBioUI?
+    var bioTheme: BioThemeData?
     
     
     @objc public var error: (([String : Any]) -> Void)?
@@ -70,14 +71,16 @@ import Bootpay
         self.iv = getRandomKey(16)
     }
     
-    @objc(requestBioPayment::::)
+    @objc(requestBioPayment:::::)
     public static func requestBioPayment(viewController: UIViewController,
                                       payload: BootBioPayload,
+                                      bioTheme: BioThemeData? = nil,
                                       animated: Bool = true,
                                       modalPresentationStyle: UIModalPresentationStyle = .fullScreen) -> BootpayBio.Type {
         
         return presentBootpayController(
             payload: payload,
+            bioTheme: bioTheme,
             isPasswordMode: false,
             animated: animated,
             viewController: viewController,
@@ -86,14 +89,16 @@ import Bootpay
     }
     
     
-    @objc(requestUIPasswordPayment::::)
+    @objc(requestUIPasswordPayment:::::)
     public static func requestUIPasswordPayment(viewController: UIViewController,
                                       payload: BootBioPayload,
+                                      bioTheme: BioThemeData? = nil,
                                       animated: Bool = true,
                                       modalPresentationStyle: UIModalPresentationStyle = .fullScreen) -> BootpayBio.Type {
         
         return presentBootpayController(
             payload: payload,
+            bioTheme: bioTheme,
             isPasswordMode: true,
             animated: animated,
             viewController: viewController,
@@ -102,9 +107,17 @@ import Bootpay
     }
     
     
-    fileprivate static func presentBootpayController(payload: BootBioPayload, isPasswordMode: Bool, animated: Bool, viewController: UIViewController, modalPresentationStyle: UIModalPresentationStyle = .fullScreen) -> BootpayBio.Type {
+    fileprivate static func presentBootpayController(
+        payload: BootBioPayload,
+        bioTheme: BioThemeData? = nil,
+        isPasswordMode: Bool,
+        animated: Bool,
+        viewController: UIViewController,
+        modalPresentationStyle: UIModalPresentationStyle = .fullScreen) -> BootpayBio.Type {
+            
         sharedBio.bioVc = BootpayBioController()
         sharedBio.bioPayload = payload
+        sharedBio.bioTheme = bioTheme
         sharedBio.bioVc?.bioWebView.payload = payload
         sharedBio.bioPayload?.isPasswordMode = isPasswordMode
         

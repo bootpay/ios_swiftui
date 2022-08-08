@@ -13,13 +13,15 @@ public struct BootpayBioUI: View {
   public var bioPayload: BootBioPayload
 //  @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    public init(payload: BootBioPayload, userToken: String, showBootpay:  Binding<Bool>) {
+    public init(payload: BootBioPayload, userToken: String, showBootpay:  Binding<Bool>, bioTheme: BioThemeData? = nil) {
       self.bioPayload = payload
       self.bioPayload.userToken = userToken
-      
+       
+        
       BootpayBio.sharedBio.bioPayload = self.bioPayload
       BootpayBio.sharedBio.bioUIModal = self
       BootpayBio.sharedBio.showBootpay = showBootpay
+      BootpayBio.sharedBio.bioTheme = bioTheme
   }
     
   public var body: some View {

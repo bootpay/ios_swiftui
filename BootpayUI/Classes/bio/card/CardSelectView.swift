@@ -31,6 +31,7 @@ class CardCell: ScalingCarouselCell {
 @objc public class CardSelectView: UIView {
     
     var data: [WalletData]?
+    var bioTheme: BioThemeData?
     
     // MARK: - Properties (Private)
     public var scalingCarousel: ScalingCarouselView!
@@ -49,6 +50,10 @@ class CardCell: ScalingCarouselCell {
      
     public func setData(_ data: [WalletData]) {
         self.data = data 
+    }
+    
+    public func setBioThemeData(_ data: BioThemeData) {
+        self.bioTheme = data
     }
     
     // MARK: - Configuration
@@ -91,6 +96,12 @@ extension CardSelectView: UICollectionViewDataSource {
         
         
         if let scalingCell = cell as? CardViewCell {
+            
+            if let data = bioTheme {
+                scalingCell.setBioThemeData(data)
+            }
+            
+            
             if indexPath.row < data?.count ?? 0 {
                 if let data = self.data {
                     scalingCell.setData(data: data[indexPath.row], tag: indexPath.row)

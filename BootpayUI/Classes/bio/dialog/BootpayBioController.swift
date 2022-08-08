@@ -30,7 +30,7 @@ public protocol BootpayBioProtocol {
     
     
 //    var bioPayload = BootBioPayload()
-    var bioTheme = BootBioTheme()
+    var bioTheme = BioDefaultTheme()
     var bioWebView = BootpayBioWebView()
 //    var useViewController = false
     
@@ -84,7 +84,7 @@ public protocol BootpayBioProtocol {
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-//        self.view.backgroundColor = .darkGray
+        self.view.backgroundColor = .darkGray
         BootpayBio.sharedBio.selectedCardQuota = -1
         initPresenter()
         initBioAuthenticate()
@@ -122,7 +122,7 @@ public protocol BootpayBioProtocol {
 extension BootpayBioController {
     
     func initUI() {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = BootpayBio.sharedBio.bioTheme?.bgColor ?? .white
         
 //        bgView.backgroundColor = .black
 //        bgView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
@@ -367,8 +367,9 @@ extension BootpayBioController {
         let bgWhite = UIView()
         actionView.addSubview(roundHeader)
         actionView.addSubview(bgWhite)
-        roundHeader.backgroundColor = bioTheme.bgColor
-        bgWhite.backgroundColor = bioTheme.bgColor
+         
+        roundHeader.backgroundColor = BootpayBio.sharedBio.bioTheme?.bgColor ?? bioTheme.bgColor
+        bgWhite.backgroundColor = BootpayBio.sharedBio.bioTheme?.bgColor ?? bioTheme.bgColor
         
         roundHeader.layer.cornerRadius = 16
         roundHeader.snp.makeConstraints { (make) -> Void in
@@ -407,20 +408,37 @@ extension BootpayBioController {
 //                make.height.equalTo(30)
 //            }
 //        }
-        let pgLabel = UILabel()
-        pgLabel.text = PG.getName(BootpayBio.sharedBio.bioPayload?.pg ?? "")
-        pgLabel.textColor = bioTheme.fontColor
-        actionView.addSubview(pgLabel)
-        pgLabel.textAlignment = .center
-        pgLabel.font = .boldSystemFont(ofSize: 20.0)
-        pgLabel.snp.makeConstraints { (make) -> Void in
-            make.left.equalToSuperview()
-            make.top.equalToSuperview().offset(15)
-            make.width.equalToSuperview()
-            make.height.equalTo(30)
+        
+        if let logoImageView = BootpayBio.sharedBio.bioTheme?.logoImageView {
+            
+            actionView.addSubview(logoImageView)
+            
+            let imageHeight = min(logoImageView.frame.size.height, 60)
+             
+            logoImageView.contentMode = .scaleAspectFit
+            logoImageView.snp.makeConstraints { (make) -> Void in
+                make.centerX.equalToSuperview()
+                make.top.equalToSuperview().offset((60 - imageHeight) / 2)
+            }
+        } else {
+            let pgLabel = UILabel()
+            pgLabel.text = "등록된 결제수단"
+            pgLabel.textColor = BootpayBio.sharedBio.bioTheme?.textColor ?? bioTheme.fontColor
+            actionView.addSubview(pgLabel)
+            pgLabel.textAlignment = .center
+            pgLabel.font = .boldSystemFont(ofSize: 20.0)
+            pgLabel.snp.makeConstraints { (make) -> Void in
+                make.left.equalToSuperview()
+                make.top.equalToSuperview().offset(15)
+                make.width.equalToSuperview()
+                make.height.equalTo(30)
+            }
         }
         
-        let btnImage = UIImage.fromBundle("close")
+        
+        
+        
+        let btnImage = UIImage.fromBundle("close")?.withTintColor(BootpayBio.sharedBio.bioTheme?.textColor ?? .black, renderingMode: .alwaysOriginal)
         let btnCancel = UIButton()
         btnCancel.setImage(btnImage , for: .normal)
 //        btnCancel.setTitle("취소", for: .normal)
@@ -437,7 +455,7 @@ extension BootpayBioController {
         }
         
         let line1 = UIView()
-        line1.backgroundColor = bioTheme.fontColor.withAlphaComponent(0.1)
+        line1.backgroundColor = BootpayBio.sharedBio.bioTheme?.textColor?.withAlphaComponent(0.1) ?? bioTheme.fontColor.withAlphaComponent(0.1)
         actionView.addSubview(line1)
         line1.snp.makeConstraints{ (make) -> Void in
             make.left.equalToSuperview()
@@ -461,7 +479,7 @@ extension BootpayBioController {
             if index == 0 {
                 let left = UILabel()
                 left.text = "결제정보"
-                left.textColor = bioTheme.fontInfoColor
+                left.textColor = BootpayBio.sharedBio.bioTheme?.textColor ?? bioTheme.fontInfoColor
                 left.font = left.font.withSize(15.0)
                 actionView.addSubview(left)
                 left.snp.makeConstraints { (make) -> Void in
@@ -473,8 +491,11 @@ extension BootpayBioController {
 
             let right = UILabel()
             right.text = value
-            right.textColor = bioTheme.fontColor
-            if (index != 0) { right.textColor = bioTheme.fontOptionColor }
+            right.textColor = BootpayBio.sharedBio.bioTheme?.textColor ?? bioTheme.fontColor
+            if (index != 0) {
+                right.textColor = BootpayBio.sharedBio.bioTheme?.textColor ?? bioTheme.fontOptionColor
+                right.alpha = 0.5
+            }
             right.font = right.font.withSize(15.0)
             actionView.addSubview(right)
             right.snp.makeConstraints { (make) -> Void in
@@ -500,7 +521,7 @@ extension BootpayBioController {
         for (index, priceInfo) in (BootpayBio.sharedBio.bioPayload?.prices ?? []).enumerated() {
             let left = UILabel()
             left.text = priceInfo.name
-            left.textColor = bioTheme.fontInfoColor
+            left.textColor =  BootpayBio.sharedBio.bioTheme?.textColor ?? bioTheme.fontInfoColor
             left.font = left.font.withSize(15.0)
             actionView.addSubview(left)
             left.snp.makeConstraints { (make) -> Void in
@@ -511,7 +532,7 @@ extension BootpayBioController {
            
             let right = UILabel()
             right.text = priceInfo.price.comma() + "원"
-            right.textColor = bioTheme.fontColor
+            right.textColor = BootpayBio.sharedBio.bioTheme?.textColor ?? bioTheme.fontColor
             right.font = right.font.withSize(15.0)
             actionView.addSubview(right)
             right.snp.makeConstraints { (make) -> Void in
@@ -523,7 +544,7 @@ extension BootpayBioController {
          
         let left = UILabel()
         left.text = "총 결제금액"
-        left.textColor = bioTheme.fontInfoColor
+        left.textColor = BootpayBio.sharedBio.bioTheme?.textColor ?? bioTheme.fontInfoColor
         left.font = left.font.withSize(16.0)
         actionView.addSubview(left)
         left.snp.makeConstraints { (make) -> Void in
@@ -534,7 +555,7 @@ extension BootpayBioController {
 
         let right = UILabel()
         right.text = (BootpayBio.sharedBio.bioPayload?.price ?? Double(0)).comma() + "원"
-        right.textColor = bioTheme.blueColor
+        right.textColor = BootpayBio.sharedBio.bioTheme?.priceColor ?? bioTheme.blueColor
         right.textAlignment = .right
         right.font = UIFont.boldSystemFont(ofSize: 20.0)
         actionView.addSubview(right)
@@ -562,7 +583,7 @@ extension BootpayBioController {
 //        }
         
         let cardBGView = UIView()
-        cardBGView.backgroundColor = bioTheme.cardBgColor
+        cardBGView.backgroundColor = BootpayBio.sharedBio.bioTheme?.cardBgColor ?? bioTheme.cardBgColor
         actionView.addSubview(cardBGView)
         cardBGView.snp.makeConstraints{ (make) -> Void in
 //            make.centerX.equalToSuperview()
@@ -574,6 +595,7 @@ extension BootpayBioController {
          
         cardSelectView = CardSelectView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 160))
         cardSelectView.sendable = self
+        if let bioTheme = BootpayBio.sharedBio.bioTheme { cardSelectView.setBioThemeData(bioTheme) }
         actionView.addSubview(cardSelectView)
         cardSelectView.snp.makeConstraints{ (make) -> Void in
 //            make.centerX.equalToSuperview()
@@ -623,11 +645,11 @@ extension BootpayBioController {
             btnPicker.titleLabel?.font = UIFont.systemFont(ofSize: 14)
             btnPicker.addTarget(self, action: #selector(showQuotaPicker), for: .touchUpInside)
             btnPicker.contentHorizontalAlignment = .center
-            btnPicker.layer.borderColor = bioTheme.fontColor.withAlphaComponent(0.1).cgColor
+            btnPicker.layer.borderColor = BootpayBio.sharedBio.bioTheme?.textColor?.withAlphaComponent(0.1).cgColor ?? bioTheme.fontColor.withAlphaComponent(0.1).cgColor
             btnPicker.layer.borderWidth = 1
             btnPicker.layer.cornerRadius = 5
             btnPicker.setTitle("일시불", for: .normal)
-            btnPicker.setTitleColor(bioTheme.fontColor, for: .normal)
+            btnPicker.setTitleColor(BootpayBio.sharedBio.bioTheme?.textColor?.withAlphaComponent(0.1) ?? bioTheme.fontColor, for: .normal)
             btnPicker.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 15)
             actionView.addSubview(btnPicker)
             btnPicker.snp.makeConstraints{ (make) -> Void in
@@ -642,8 +664,9 @@ extension BootpayBioController {
         
         payButton = UIButton()
         payButton.setTitle(self.bt2, for: .normal)
+        payButton.setTitleColor(BootpayBio.sharedBio.bioTheme?.buttonTextColor ?? .white, for: .normal)
         payButton.layer.cornerRadius = 5
-        payButton.setBackgroundColor(bioTheme.blueColor,  cornerRadius: 6.0, for: .normal)
+        payButton.setBackgroundColor(BootpayBio.sharedBio.bioTheme?.buttonBgColor ?? bioTheme.blueColor,  cornerRadius: 6.0, for: .normal)
         payButton.addTarget(self, action: #selector(clickPayButton), for: .touchUpInside)
         actionView.addSubview(payButton)
         payButton.bottomAnchor.constraint(equalTo: self.view.safeBottomAnchor).isActive = true
@@ -661,6 +684,8 @@ extension BootpayBioController {
             
             make.height.equalTo(60)
         }
+        
+//        self.view.backgroundColor = .green
         
 
 //        let bottomTitle = UILabel()

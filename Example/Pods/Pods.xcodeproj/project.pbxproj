@@ -186,6 +186,7 @@
 		805DBA12B77F37D1377BC608156BFD9E /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410439E7B7229BC46FFE129349F55DF /* Mappable.swift */; };
 		808C960C82D708FC1A42C581D6CB4940 /* URLSessionConfiguration+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C8E67E31FB52C50F014660E07373A9 /* URLSessionConfiguration+Alamofire.swift */; };
 		811BAB76796DDD47C96DC49536E8DDE2 /* SHA3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906B2C8BE053578D6C0B895D7AEDD224 /* SHA3.swift */; };
+		817464E828A094FA00403C42 /* BioThemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817464E728A094FA00403C42 /* BioThemeData.swift */; };
 		81B8D2B7CEB25C2448B0BC9B33591A65 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF4CCE5B9B56B01F047CCDD499DDD7E /* Session.swift */; };
 		824D816B1EE404F2DD400EE678695CBE /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54ABC598F8716CDD144ABE1481DE312D /* ResponseSerialization.swift */; };
 		827DFA20E72D3CDE7CE116DD8B041BB1 /* UIView.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACC368E463810DAF4EED2A61CB55DBC /* UIView.Extension.swift */; };
@@ -239,7 +240,7 @@
 		A099ACEC30CF24547D09D9EAF8B11DBE /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AE7DD4483332DBC117BC46624D5BCD /* SwiftyJSON-dummy.m */; };
 		A29100AA1876DDEFF6F54694A51FDB0E /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29016914F8C1A9D6D7A9E8C8D02753C3 /* NetworkReachabilityManager.swift */; };
 		A3D511A49DB480EF0518C8F35DCD729B /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89967F6DD33BE923EDC56B39392D1A1 /* Authenticator.swift */; };
-		A3FDE7E618365DD66019DC952668A897 /* BootBioTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3BD494CB29CF5CE76703BA0E4B53EF /* BootBioTheme.swift */; };
+		A3FDE7E618365DD66019DC952668A897 /* BioDefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3BD494CB29CF5CE76703BA0E4B53EF /* BioDefaultTheme.swift */; };
 		A435CB3581FAD7DF4BF31FB76CFD0DB4 /* NVActivityIndicatorView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D1F59C42E5231C573481060172C050F /* NVActivityIndicatorView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A45D48E08E22EA27B3F8450FE8025FB7 /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D19C8C79368AF825386B7FA1AA5C7959 /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4D4A9A490AC0E628FFB4D1A6E22A90D /* BootpayUI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7366F49BA30CBCA1DF720B168B3F60DE /* BootpayUI-dummy.m */; };
@@ -568,7 +569,7 @@
 		139B20FF16AB25AEA30BE371C4BF0048 /* CCM.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CCM.swift; path = Sources/CryptoSwift/BlockMode/CCM.swift; sourceTree = "<group>"; };
 		148D9524711B80B150F5A0ED1BCC9D64 /* Padding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Padding.swift; path = Sources/CryptoSwift/Padding.swift; sourceTree = "<group>"; };
 		14E8BC4BBC42CD988BA61C7D7EF3B861 /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Sources/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
-		161836E1BCD3ADBD4B2CAE9E866CA439 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		161836E1BCD3ADBD4B2CAE9E866CA439 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1644825F982CEC308F1A91DBD7621EA1 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationLineScalePulseOutRapid.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationLineScalePulseOutRapid.swift; sourceTree = "<group>"; };
 		17130A7F7BBD7E5C8AE2EF2307E74042 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		17201CDC7DC70DC1E2331A07E1E6E992 /* BioConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BioConstants.swift; sourceTree = "<group>"; };
@@ -602,7 +603,7 @@
 		29016914F8C1A9D6D7A9E8C8D02753C3 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		2ACC368E463810DAF4EED2A61CB55DBC /* UIView.Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIView.Extension.swift; path = Bootpay/Classes/extension/UIView.Extension.swift; sourceTree = "<group>"; };
 		2BFAEDD28B9F86F13E596EB8EBF032E2 /* BootpayUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BootpayUI.debug.xcconfig; sourceTree = "<group>"; };
-		2C3BD494CB29CF5CE76703BA0E4B53EF /* BootBioTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BootBioTheme.swift; sourceTree = "<group>"; };
+		2C3BD494CB29CF5CE76703BA0E4B53EF /* BioDefaultTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BioDefaultTheme.swift; sourceTree = "<group>"; };
 		2D06663C66BFB8B1AC6FF5F945031461 /* SCLAlertView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SCLAlertView-dummy.m"; sourceTree = "<group>"; };
 		2DF4CCE5B9B56B01F047CCDD499DDD7E /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
 		2E1363FBB54B393E9A0155F1D79A8CE4 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallClipRotateMultiple.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallClipRotateMultiple.swift; sourceTree = "<group>"; };
@@ -705,7 +706,7 @@
 		673DC54734AD387070FC47C592213DD9 /* UInt8+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt8+Extension.swift"; path = "Sources/CryptoSwift/UInt8+Extension.swift"; sourceTree = "<group>"; };
 		69E35EA99BFD305AE49DF1448F031232 /* NVActivityIndicatorAnimationPacman.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationPacman.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationPacman.swift; sourceTree = "<group>"; };
 		6A9B15F6694E859020717179F9130E87 /* NVActivityIndicatorAnimationBlank.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBlank.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBlank.swift; sourceTree = "<group>"; };
-		6AAEA889A886277E6398B6002546BF36 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		6AAEA889A886277E6398B6002546BF36 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6AF341D6995F58A4737E1990FB297945 /* BootpayAnalytics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BootpayAnalytics.swift; path = Bootpay/Classes/analytics/BootpayAnalytics.swift; sourceTree = "<group>"; };
 		6BAD08DCC8B247F1B1A9A948DB070A8F /* Words and Bits.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Words and Bits.swift"; path = "Sources/CryptoSwift/CS_BigInt/Words and Bits.swift"; sourceTree = "<group>"; };
 		6C0461FB434EBDE2373F726E7924F8D2 /* CS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CS.swift; path = Sources/CryptoSwift/CS_BigInt/CS.swift; sourceTree = "<group>"; };
@@ -747,6 +748,7 @@
 		806F71002BBC76911F219F458E3AE28E /* JGProgressHUD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JGProgressHUD.debug.xcconfig; sourceTree = "<group>"; };
 		80CCE0F546B82BB20903C67DEED9581D /* Pods-BootpayUI_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BootpayUI_Example-resources.sh"; sourceTree = "<group>"; };
 		8125F3349B019DF3E9626F4C93803628 /* NVActivityIndicatorAnimationSquareSpin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationSquareSpin.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationSquareSpin.swift; sourceTree = "<group>"; };
+		817464E728A094FA00403C42 /* BioThemeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioThemeData.swift; sourceTree = "<group>"; };
 		81FE28A186179D667BF1B65CE128DE32 /* BlockEncryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlockEncryptor.swift; path = Sources/CryptoSwift/BlockEncryptor.swift; sourceTree = "<group>"; };
 		82CA90512BBEA81D8D25FF1B48D69534 /* Pods-BootpayUI_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BootpayUI_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		83274A62E33B4118E3FD20F66C745F5F /* NVActivityIndicatorAnimationBallRotate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallRotate.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallRotate.swift; sourceTree = "<group>"; };
@@ -798,7 +800,7 @@
 		9CF4E04299702500D010A925F60BAFFD /* DigestType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DigestType.swift; path = Sources/CryptoSwift/DigestType.swift; sourceTree = "<group>"; };
 		9D1609786EBD140F7DA470828FBBA255 /* SCLAlertView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView-umbrella.h"; sourceTree = "<group>"; };
 		9D52999B90BE20EDAA3D044734F9959E /* Pods-BootpayUI_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BootpayUI_Example-frameworks.sh"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9D9F1293990BE1626684B438E4C259E4 /* JGProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JGProgressHUD-umbrella.h"; sourceTree = "<group>"; };
 		9E584C98560FF742EDF9FC78C3C5E240 /* HMAC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HMAC.swift; path = Sources/CryptoSwift/HMAC.swift; sourceTree = "<group>"; };
 		9E79BAC4E32647E5AD6A2D0D395717AE /* SCLAlertView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SCLAlertView-prefix.pch"; sourceTree = "<group>"; };
@@ -837,7 +839,7 @@
 		B00095C9AF3B49808D6DF5510D55396E /* SHA1.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA1.swift; path = Sources/CryptoSwift/SHA1.swift; sourceTree = "<group>"; };
 		B03E89F0B94F7A0566A039EECBC77D0C /* CFB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CFB.swift; path = Sources/CryptoSwift/BlockMode/CFB.swift; sourceTree = "<group>"; };
 		B03F1794C842E5A6F40776493449A8AE /* Pods-BootpayUI_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BootpayUI_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		B10CA0B7CDA41D31D24B9A157D81D5BE /* BootpayUI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = BootpayUI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B10CA0B7CDA41D31D24B9A157D81D5BE /* BootpayUI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = BootpayUI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B222181E32A6E2008870CE4B3C8DD881 /* ObjectMapper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ObjectMapper-Info.plist"; sourceTree = "<group>"; };
 		B2D824EDD551C4DABF0A221013CEF2DE /* BootOneStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BootOneStore.swift; path = Bootpay/Classes/models/BootOneStore.swift; sourceTree = "<group>"; };
 		B31DEFF6748CBB42AF673D16B07A13FB /* SwiftyJSON.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.release.xcconfig; sourceTree = "<group>"; };
@@ -1105,7 +1107,6 @@
 				49ACC99786CD8C9AF27D56559A7A42CF /* JGProgressHUDSuccessIndicatorView.m */,
 				E9770431D93B21E4D5FF1EF7673DCF2F /* Support Files */,
 			);
-			name = JGProgressHUD;
 			path = JGProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -1145,7 +1146,6 @@
 				7C3C6CAAA59C09893E0EE35B4156201E /* BioMetricAuthenticator.swift */,
 				7AF114B6C78299CC7E525234CB6A6016 /* BootpayBio.swift */,
 			);
-			name = core;
 			path = core;
 			sourceTree = "<group>";
 		};
@@ -1157,7 +1157,6 @@
 				440B8CC6FE21B23E3E4407B36F3BBC08 /* CardCode.swift */,
 				F765385DAC9AD248340578F9A339D2EE /* PG.swift */,
 			);
-			name = constants;
 			path = constants;
 			sourceTree = "<group>";
 		};
@@ -1229,7 +1228,6 @@
 				83483F4E8B32ACB364B3A072107AA39A /* UILayoutSupport+Extensions.swift */,
 				4F97FAD883FA7A843D190F4CF5F0AB87 /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -1259,7 +1257,6 @@
 				097766A1BCD1EE2069E2E7858673FBFA /* CardSelectView.swift */,
 				1B323536D0BC22CBF951E6A28AC9AA78 /* CardViewCell.swift */,
 			);
-			name = card;
 			path = card;
 			sourceTree = "<group>";
 		};
@@ -1307,7 +1304,6 @@
 			children = (
 				C63C5BF1888FEFB9FE7632F45ACF81A9 /* BootpayBuildConfig.swift */,
 			);
-			name = config;
 			path = config;
 			sourceTree = "<group>";
 		};
@@ -1357,7 +1353,6 @@
 				AA43418C3CFFE1A531F0873E0224D5FD /* ScalingCarouselLayout.swift */,
 				7360BF5783CDA6CB98137993C740DF42 /* ScalingCarouselView.swift */,
 			);
-			name = scalingCarousel;
 			path = scalingCarousel;
 			sourceTree = "<group>";
 		};
@@ -1420,7 +1415,6 @@
 				0A996BD2E922AECA07B5E48663F333ED /* URLTransform.swift */,
 				E1FAA40730349A546A9F2921A2F76C26 /* Support Files */,
 			);
-			name = ObjectMapper;
 			path = ObjectMapper;
 			sourceTree = "<group>";
 		};
@@ -1451,7 +1445,6 @@
 				17D4A4999B0E35B7C8836A1F259794C9 /* TOTP.swift */,
 				CB58BB0743133134DB6A56FB01A70280 /* UInt64+Data.swift */,
 			);
-			name = swiftOTP;
 			path = swiftOTP;
 			sourceTree = "<group>";
 		};
@@ -1561,7 +1554,6 @@
 				1AE383154E78D88C822E85BAC0A3A339 /* ZeroPadding.swift */,
 				3825B29F2FBCDF904C1A3D8FF0A7B16F /* Support Files */,
 			);
-			name = CryptoSwift;
 			path = CryptoSwift;
 			sourceTree = "<group>";
 		};
@@ -1572,7 +1564,6 @@
 				D38147246FBF66C01F0985DE03E222E1 /* UIAlertControllerExtension.swift */,
 				3A52F9610024B3A843BFC5CD912F5BA3 /* UIButtonExtension.swift */,
 			);
-			name = extension;
 			path = extension;
 			sourceTree = "<group>";
 		};
@@ -1581,13 +1572,13 @@
 			children = (
 				A14C4A0C6AC75D1F457F69C0F566EC3F /* BiometricData.swift */,
 				93AC900CD293A69624F79D6E285E4417 /* BootBioPayload.swift */,
-				2C3BD494CB29CF5CE76703BA0E4B53EF /* BootBioTheme.swift */,
+				2C3BD494CB29CF5CE76703BA0E4B53EF /* BioDefaultTheme.swift */,
 				B4A0ADD57E11E6C9BD1260C4A10A8FC7 /* BootpayBioPrice.swift */,
 				59F642117E811AB12B0F4DFB66D897D9 /* CardInfo.swift */,
 				CF0F76C317023DAEC1EA218E97F8D2C1 /* WalletCardData.swift */,
 				32EFCBE063F78C759C8F48DE40EA9DF1 /* WalletData.swift */,
+				817464E728A094FA00403C42 /* BioThemeData.swift */,
 			);
-			name = models;
 			path = models;
 			sourceTree = "<group>";
 		};
@@ -1597,7 +1588,6 @@
 				7E3F737C32B26C87E02AFA195714EC67 /* SwiftyJSON.swift */,
 				C88E45E6157243AE4998774C901D6A4C /* Support Files */,
 			);
-			name = SwiftyJSON;
 			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
@@ -1667,7 +1657,6 @@
 			children = (
 				0B3F3D5909363E21B70FFF36C4B2C7FE /* BootpayBioWebView.swift */,
 			);
-			name = webview;
 			path = webview;
 			sourceTree = "<group>";
 		};
@@ -1736,7 +1725,6 @@
 				868EA79412FAF341B89A9059FBC4B66F /* URL.Extention.swift */,
 				CA58602F752D5BB0B2F10D2BE9E3FDD2 /* Support Files */,
 			);
-			name = Bootpay;
 			path = Bootpay;
 			sourceTree = "<group>";
 		};
@@ -1796,7 +1784,6 @@
 				2840FB70B16E3D69E00A262ED1F3715F /* Validation.swift */,
 				76116B5A440EADA7DACABA94DA94510E /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1824,7 +1811,6 @@
 				CD82DB783011ABA10EFDC4DE88C004A7 /* BootpayBioController.swift */,
 				0385A0ED759B2947FAD3AFF9130E7D53 /* BootpayBioPresenter.swift */,
 			);
-			name = dialog;
 			path = dialog;
 			sourceTree = "<group>";
 		};
@@ -1834,7 +1820,6 @@
 				B4BE43BBE6E9BEB0A4B4248C9B5B70AE /* Base */,
 				D4540441CF8A2C9F98783D1C103B7769 /* Support Files */,
 			);
-			name = NVActivityIndicatorView;
 			path = NVActivityIndicatorView;
 			sourceTree = "<group>";
 		};
@@ -1875,7 +1860,6 @@
 				995EA584774BEBFFFD3DB10771A0A337 /* SCLExtensions.swift */,
 				69E3F09E210F6BA75EB3E52631D0ABEA /* Support Files */,
 			);
-			name = SCLAlertView;
 			path = SCLAlertView;
 			sourceTree = "<group>";
 		};
@@ -2629,7 +2613,7 @@
 				B5C5EFA5B3E9D4C15399171AA68CAE38 /* BioMetricAuthenticator.swift in Sources */,
 				0A1480A701EAB0F2B639C466BD722859 /* BiometricData.swift in Sources */,
 				DC57FC3E1A506F4698AF183B18F6E171 /* BootBioPayload.swift in Sources */,
-				A3FDE7E618365DD66019DC952668A897 /* BootBioTheme.swift in Sources */,
+				A3FDE7E618365DD66019DC952668A897 /* BioDefaultTheme.swift in Sources */,
 				2572F0806B30D630E938655AA64F9A38 /* BootpayBio.swift in Sources */,
 				DFEE6E3CE38ABF268284F57F80134C37 /* BootpayBioController.swift in Sources */,
 				448FD190E2EA91BE0CF6E3C5739CE344 /* BootpayBioPresenter.swift in Sources */,
@@ -2647,6 +2631,7 @@
 				5463EC6BB43A8CA537EA5645BC849C90 /* CardViewCell.swift in Sources */,
 				36D611E9095626382830D2EF92DBD0ED /* Generator.swift in Sources */,
 				F83A1F1B3318F5C95DAA0AF542A1D494 /* HOTP.swift in Sources */,
+				817464E828A094FA00403C42 /* BioThemeData.swift in Sources */,
 				9C99F91E1C0CCD27B79BFC74196A9AC9 /* NSObjectExtension.swift in Sources */,
 				2E05F8DF0919CAF82A61339342FEE84F /* OTPAlgorithm.swift in Sources */,
 				B995DDC34D6727C6E34DC892A71D4A4E /* PG.swift in Sources */,
@@ -3579,8 +3564,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

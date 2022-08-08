@@ -34,8 +34,10 @@ public class BootBioPayload: NSObject, Codable  {
     @objc public var user: BootUser? = BootUser()
     @objc public var items: [BootItem]?
      
+     
     
     fileprivate func methodsToJson() -> String {
+        
         guard let methods = self.methods else {return "" }
         var result = ""
         for v in methods {
