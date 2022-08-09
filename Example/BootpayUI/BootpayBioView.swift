@@ -101,19 +101,7 @@ struct BootpayBioView: View {
 
         _bioPayload.extra = BootExtra()
         _bioPayload.extra?.cardQuota = "6"
-        _bioPayload.extra?.displaySuccessResult = true
-        
-//        _bioTheme.bgColor = UIColor.init(red: 253 / 255, green: 250 / 255, blue: 247 / 255, alpha: 1)
-//        _bioTheme.textColor = UIColor.init(red: 40 / 255, green: 40 / 255, blue: 40 / 255, alpha: 1)
-//        _bioTheme.priceColor = UIColor.init(red: 1, green: 160 / 255, blue: 197 / 255, alpha: 1)
-//        _bioTheme.cardText1Color = UIColor.init(red: 1, green: 160 / 255, blue: 197 / 255, alpha: 1)
-//
-//        _bioTheme.card2Color = UIColor.init(red: 246 / 255, green: 202 / 255, blue: 217 / 255, alpha: 1)
-//        _bioTheme.cardIconColor = UIColor.init(red: 246 / 255, green: 202 / 255, blue: 217 / 255, alpha: 1)
-//
-//        _bioTheme.buttonBgColor = UIColor.init(red: 244 / 255, green: 215 / 255, blue: 130 / 255, alpha: 1.0)
-//        _bioTheme.logoImageView = UIImageView(image: UIImage.init(named: "logo"))
-        
+        _bioPayload.extra?.displaySuccessResult = true 
           
 
         let p1 = BootBioPrice()
