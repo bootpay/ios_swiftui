@@ -80,7 +80,12 @@ class CardViewCell: ScalingCarouselCell {
         cardLabel.font =  UIFont.boldSystemFont(ofSize: 16.0)
         cardLabel.textAlignment = .center
         cardLabel.text = "다른 결제수단"
+        
+//        if(BootpayBio.sharedBio.bioPayload?.isEditdMode == false) {
+//            mainView.addSubview(cardLabel)
+//        }
         mainView.addSubview(cardLabel)
+        
         
         btnClick = UIButton()
 //        mainView.addSubview(btnClick)
@@ -150,6 +155,7 @@ class CardViewCell: ScalingCarouselCell {
                 make.width.height.equalTo(40)
                 make.width.height.equalToSuperview()
             }
+            
             
             btnClick.tag = tag
             

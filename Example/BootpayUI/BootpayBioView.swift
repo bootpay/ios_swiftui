@@ -35,6 +35,9 @@ struct BootpayBioView: View {
                Button("비밀번호 간편결제 테스트") {
                    bootpayStart(isPasswordMode: true)
                }.padding()
+               Button("등록된 결제수단 편집") {
+                   bootpayStart(isEditMode: true)
+               }.padding()
 //               Button("비밀번호 일반결제 테스트") {
 //                   bootpayDefaultStart()
 //               }
@@ -71,7 +74,7 @@ struct BootpayBioView: View {
    }
      
     
-    func bootpayStart(isPasswordMode: Bool) {
+    func bootpayStart(isPasswordMode: Bool? = false, isEditMode: Bool? = false) {
         
         _user.id = _unique_user_id
         _user.area = "서울"
@@ -97,7 +100,8 @@ struct BootpayBioView: View {
         _bioPayload.names = ["플리츠레이어 카라숏원피스", "블랙 (COLOR)", "55 (SIZE)"]
            
         _bioPayload.user = _user
-        _bioPayload.isPasswordMode = isPasswordMode
+        _bioPayload.isPasswordMode = isPasswordMode ?? false
+        _bioPayload.isEditdMode = isEditMode ?? false 
 
         _bioPayload.extra = BootExtra()
         _bioPayload.extra?.cardQuota = "6"

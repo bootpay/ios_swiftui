@@ -49,9 +49,11 @@ public protocol BootpayBioProtocol {
     var bottomTitle: UILabel?
     var payButton = UIButton()
     
-    private let bt1 = "이 카드로 결제합니다"
-    private let bt2 = "새로운 카드를 등록합니다"
-    private let bt3 = "다른 결제수단으로 결제합니다"
+    private let bt1 = "이 카드로 결제하기"
+    private let bt1_edit = "이 카드를 편집하기"
+    
+    private let bt2 = "새로운 카드를 등록하기"
+    private let bt3 = "다른 결제수단으로 결제하기"
     var selectedCardIndex = 0
 //    var actionViewHeight = CGFloat(0)
     var walletList = [WalletData]()
@@ -270,8 +272,11 @@ extension BootpayBioController: BootpayBioProtocol {
     
     public func lastIndexChanged(_ index: Int) {
         if index < walletList.count {
-            payButton.setTitle(self.bt1, for: .normal)
-            //self.bottomTitle?.text = self.bt1
+            if(BootpayBio.sharedBio.bioPayload?.isEditdMode == true) {
+                payButton.setTitle(self.bt1_edit, for: .normal)
+            } else {
+                payButton.setTitle(self.bt1, for: .normal)
+            }
         } else if index == walletList.count {
             payButton.setTitle(self.bt2, for: .normal)
 //            self.bottomTitle?.text = self.bt2
@@ -351,7 +356,12 @@ extension BootpayBioController {
         if walletList.count == 0 {
             self.payButton.setTitle(self.bt2, for: .normal)
         } else {
-            self.payButton.setTitle(self.bt1, for: .normal)
+            if(BootpayBio.sharedBio.bioPayload?.isEditdMode == false) {
+                self.payButton.setTitle(self.bt1, for: .normal)
+            } else {
+                self.payButton.setTitle(self.bt1_edit, for: .normal)
+            }
+            
         }
     }
     
@@ -465,15 +475,16 @@ extension BootpayBioController {
         }
         
 //        print(payload.names.cou)
-        
-        if(BootpayBio.sharedBio.bioPayload?.names.count == 0) {
-            addPriceView(index: 0, value: BootpayBio.sharedBio.bioPayload?.orderName ?? "")
-        } else {
-            for (index, value) in (BootpayBio.sharedBio.bioPayload?.names ?? []).enumerated() {
-                addPriceView(index: index, value: value)
+        if(BootpayBio.sharedBio.bioPayload?.isEditdMode == false) {
+            if(BootpayBio.sharedBio.bioPayload?.names.count == 0) {
+                addPriceView(index: 0, value: BootpayBio.sharedBio.bioPayload?.orderName ?? "")
+            } else {
+                for (index, value) in (BootpayBio.sharedBio.bioPayload?.names ?? []).enumerated() {
+                    addPriceView(index: index, value: value)
+                }
             }
+            
         }
-        
         //sub function start
         func addPriceView(index: Int, value: String) {
             if index == 0 {
@@ -504,90 +515,65 @@ extension BootpayBioController {
                 make.height.equalTo(20)
             }
         }
-        //sub function end
         
-        
-//        let view2 = UIView()
-//        //        view.frame = CGRect(x: 0, y: 40, width: self.view.frame.width, height: 1)
-//        view2.backgroundColor = bioTheme.fontColor.withAlphaComponent(0.1)
-//        actionView.addSubview(view2)
-//        view2.snp.makeConstraints{ (make) -> Void in
-//            make.left.equalToSuperview()
-//            make.right.equalToSuperview()
-//            make.top.equalTo(line1).offset(21 + max(payload.names.count, 1) * 25)
-//            make.height.equalTo(1)
-//        }
-        
-        for (index, priceInfo) in (BootpayBio.sharedBio.bioPayload?.prices ?? []).enumerated() {
+        if(BootpayBio.sharedBio.bioPayload?.isEditdMode == false) {
+            for (index, priceInfo) in (BootpayBio.sharedBio.bioPayload?.prices ?? []).enumerated() {
+                let left = UILabel()
+                left.text = priceInfo.name
+                left.textColor =  BootpayBio.sharedBio.bioTheme?.textColor ?? bioTheme.fontInfoColor
+                left.font = left.font.withSize(15.0)
+                actionView.addSubview(left)
+                left.snp.makeConstraints { (make) -> Void in
+                    make.left.equalToSuperview().offset(15)
+                    make.top.equalTo(line1).offset(10 + max(BootpayBio.sharedBio.bioPayload?.names.count ?? 0, 1) * 23 + 16 + 30 * index)
+                    make.height.equalTo(20)
+                }
+               
+                let right = UILabel()
+                right.text = priceInfo.price.comma() + "원"
+                right.textColor = BootpayBio.sharedBio.bioTheme?.textColor ?? bioTheme.fontColor
+                right.font = right.font.withSize(15.0)
+                actionView.addSubview(right)
+                right.snp.makeConstraints { (make) -> Void in
+                    make.right.equalToSuperview().offset(-15)
+                    make.top.equalTo(line1).offset(10 + max(BootpayBio.sharedBio.bioPayload?.names.count ?? 0, 1) * 23 + 16 + index * 30)
+                    make.height.equalTo(20)
+                }
+            }
+             
             let left = UILabel()
-            left.text = priceInfo.name
-            left.textColor =  BootpayBio.sharedBio.bioTheme?.textColor ?? bioTheme.fontInfoColor
-            left.font = left.font.withSize(15.0)
+            left.text = "총 결제금액"
+            left.textColor = BootpayBio.sharedBio.bioTheme?.textColor ?? bioTheme.fontInfoColor
+            left.font = left.font.withSize(16.0)
             actionView.addSubview(left)
             left.snp.makeConstraints { (make) -> Void in
                 make.left.equalToSuperview().offset(15)
-                make.top.equalTo(line1).offset(10 + max(BootpayBio.sharedBio.bioPayload?.names.count ?? 0, 1) * 23 + 16 + 30 * index)
-                make.height.equalTo(20)
+                make.top.equalTo(line1).offset(11 + max(BootpayBio.sharedBio.bioPayload?.names.count ?? 0, 1) * 23 + 16 + 30 * (BootpayBio.sharedBio.bioPayload?.prices.count ?? 0))
+                make.height.equalTo(25)
             }
-           
+
             let right = UILabel()
-            right.text = priceInfo.price.comma() + "원"
-            right.textColor = BootpayBio.sharedBio.bioTheme?.textColor ?? bioTheme.fontColor
-            right.font = right.font.withSize(15.0)
+            right.text = (BootpayBio.sharedBio.bioPayload?.price ?? Double(0)).comma() + "원"
+            right.textColor = BootpayBio.sharedBio.bioTheme?.priceColor ?? bioTheme.blueColor
+            right.textAlignment = .right
+            right.font = UIFont.boldSystemFont(ofSize: 20.0)
             actionView.addSubview(right)
             right.snp.makeConstraints { (make) -> Void in
                 make.right.equalToSuperview().offset(-15)
-                make.top.equalTo(line1).offset(10 + max(BootpayBio.sharedBio.bioPayload?.names.count ?? 0, 1) * 23 + 16 + index * 30)
-                make.height.equalTo(20)
+                make.top.equalTo(left)
+                make.height.equalTo(25)
             }
         }
-         
-        let left = UILabel()
-        left.text = "총 결제금액"
-        left.textColor = BootpayBio.sharedBio.bioTheme?.textColor ?? bioTheme.fontInfoColor
-        left.font = left.font.withSize(16.0)
-        actionView.addSubview(left)
-        left.snp.makeConstraints { (make) -> Void in
-            make.left.equalToSuperview().offset(15)
-            make.top.equalTo(line1).offset(11 + max(BootpayBio.sharedBio.bioPayload?.names.count ?? 0, 1) * 23 + 16 + 30 * (BootpayBio.sharedBio.bioPayload?.prices.count ?? 0))
-            make.height.equalTo(25)
-        }
-
-        let right = UILabel()
-        right.text = (BootpayBio.sharedBio.bioPayload?.price ?? Double(0)).comma() + "원"
-        right.textColor = BootpayBio.sharedBio.bioTheme?.priceColor ?? bioTheme.blueColor
-        right.textAlignment = .right
-        right.font = UIFont.boldSystemFont(ofSize: 20.0)
-        actionView.addSubview(right)
-        right.snp.makeConstraints { (make) -> Void in
-            make.right.equalToSuperview().offset(-15)
-            make.top.equalTo(left)
-            make.height.equalTo(25)
-        }
-             
        
-        
-
-//        let view3 = UIView()
-//        view3.backgroundColor = bioTheme.fontColor.withAlphaComponent(0.1)
-//        actionView.addSubview(view3)
-//        view3.snp.makeConstraints{ (make) -> Void in
-//            make.left.equalToSuperview()
-//            make.right.equalToSuperview()
-//            if isShowQuota {
-//                make.top.equalTo(left).offset(105)
-//            } else {
-//                make.top.equalTo(left).offset(45)
-//            }
-//            make.height.equalTo(1)
-//        }
+              
         
         let cardBGView = UIView()
         cardBGView.backgroundColor = BootpayBio.sharedBio.bioTheme?.cardBgColor ?? bioTheme.cardBgColor
         actionView.addSubview(cardBGView)
         cardBGView.snp.makeConstraints{ (make) -> Void in
 //            make.centerX.equalToSuperview()
-            make.top.equalTo(left).offset(45)
+            make.top.equalTo(line1).offset(11 + max(BootpayBio.sharedBio.bioPayload?.names.count ?? 0, 1) * 23 + 16 + 30 * (BootpayBio.sharedBio.bioPayload?.prices.count ?? 0) + 45)
+//            make.top.equalTo(left).offset(45)
             make.width.equalToSuperview()
             make.height.equalTo(200)
         }

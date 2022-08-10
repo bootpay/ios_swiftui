@@ -65,6 +65,9 @@ import Bootpay
     
     func goClickCard(_ index: Int) {
         if index < self.walletList?.count ?? 0 {
+            if(BootpayBio.sharedBio.bioPayload?.isEditdMode == true) {
+                return
+            }
 //            if(requestType != BioConstants.REQUEST_TYPE_NONE) { return }
             self.selectedCardIndex = index
             startPayWithSelectedCard()

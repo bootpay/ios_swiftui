@@ -106,11 +106,32 @@ import Bootpay
         )
     }
     
+    @objc(requestEidtPayment:::::)
+    public static func requestEidtPayment(viewController: UIViewController,
+                                          userToken: String,
+                                          bioTheme: BioThemeData? = nil,
+                                          animated: Bool = true,
+                                          modalPresentationStyle: UIModalPresentationStyle = .fullScreen) -> BootpayBio.Type {
+        
+        let payload = BootBioPayload()
+        payload.userToken = userToken
+        
+        return presentBootpayController(
+            payload: payload,
+            bioTheme: bioTheme,
+            isEditMode: true,
+            animated: animated,
+            viewController: viewController,
+            modalPresentationStyle: modalPresentationStyle
+        )
+    }
+    
     
     fileprivate static func presentBootpayController(
         payload: BootBioPayload,
         bioTheme: BioThemeData? = nil,
-        isPasswordMode: Bool,
+        isEditMode: Bool? = false,
+        isPasswordMode: Bool? = false,
         animated: Bool,
         viewController: UIViewController,
         modalPresentationStyle: UIModalPresentationStyle = .fullScreen) -> BootpayBio.Type {
@@ -119,7 +140,8 @@ import Bootpay
         sharedBio.bioPayload = payload
         sharedBio.bioTheme = bioTheme
         sharedBio.bioVc?.bioWebView.payload = payload
-        sharedBio.bioPayload?.isPasswordMode = isPasswordMode
+        sharedBio.bioPayload?.isPasswordMode = isPasswordMode ?? false
+        sharedBio.bioPayload?.isEditdMode = isEditMode ?? false
         
         if(modalPresentationStyle == .fullScreen) {
             viewController.navigationController?.pushViewController(sharedBio.bioVc!, animated: animated)

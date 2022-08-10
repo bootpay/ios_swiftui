@@ -87,6 +87,7 @@ extension CardSelectView: UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let count = data?.count ?? 0
+        if(BootpayBio.sharedBio.bioPayload?.isEditdMode == true) { return count + 1 }
         return count + 2
     }
     
