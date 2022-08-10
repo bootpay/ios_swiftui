@@ -96,6 +96,8 @@ import Bootpay
         requestAddCard()
     }
     
+    
+    var alertController: UIAlertController?
     func deleteCard(_ index: Int) {
         if(index >= walletList?.count ?? 0) { return }
             //popup
@@ -103,29 +105,50 @@ import Bootpay
             
         guard let bioController = bioController else { return }
         let okAction = AlertAction(title: OKTitle)
-        let alertController = bioController.getAlertViewController(
+        
+        alertController = bioController.getAlertViewController(
             type: .alert,
             with: "결제수단 삭제",
             message: "선택하신 결제수단을 삭제하시겠습니까?",
-            actions: [okAction], showCancel: true) { (btnTitle) in
+            actions: [okAction],
+            showCancel: true) { (btnTitle) in
+                print("btnTitle : \(btnTitle)")
+//                alertController.dismiss(animated: true)
+
+                self.hideAlert()
+                if(btnTitle != "확인") {
+
+                    return
+                }
+
                 self.selectedCardIndex = index
                 let walletId = self.walletList?[self.selectedCardIndex].wallet_id ?? ""
                 if !walletId.isEmpty {
                     BootpayBio.sharedBio.bioPayload?.walletId = walletId
                 }
-                if(!self.isShowWebView()) {
-                    self.showWebview()
-                }
                 
                 
-                if(!self.isAblePasswordToken()) {
-                    self.requestPasswordToken(BioConstants.REQUEST_PASSWORD_TOKEN_DELETE_CARD)
-                    return
-                }
-                
-                self.requestDeleteCard()
+                self.requestPasswordToken(BioConstants.REQUEST_PASSWORD_TOKEN_DELETE_CARD)
+//                if(!self.isAblePasswordToken()) {
+//                    self.requestPasswordToken(BioConstants.REQUEST_PASSWORD_TOKEN_DELETE_CARD)
+//                    return
+//                }
+//
+//
+//                if(!self.isShowWebView()) {
+//                    self.setRequestType(BioConstants.REQUEST_DELETE_CARD)
+//                    self.showWebview()
+//                }
+//
+//
+//                self.requestDeleteCard()
             }
-        bioController.present(alertController, animated: true, completion: nil)
+        bioController.present(alertController!, animated: true, completion: nil)
+    }
+    
+    func hideAlert() { 
+        alertController?.dismiss(animated: true)
+        alertController = nil
     }
 }
 

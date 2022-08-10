@@ -313,10 +313,10 @@ extension BootpayBioController {
     func hideCardView() {
         UIView.animate(withDuration: 0.3, animations: {
             self.actionView.alpha = 0
-            self.actionView.frame = CGRect(x: 0,
-                                           y: self.view.frame.height,
-                                           width: self.view.frame.width,
-                                           height: self.view.frame.height)
+//            self.actionView.frame = CGRect(x: 0,
+//                                           y: self.view.frame.height,
+//                                           width: self.view.frame.width,
+//                                           height: self.view.frame.height)
         })
     }
     

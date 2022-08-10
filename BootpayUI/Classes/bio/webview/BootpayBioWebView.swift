@@ -282,10 +282,14 @@ import Bootpay
     }
      
     open func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-//        print("action = \(message.body), type = \(BootpayBio.sharedBio.requestType)")
+        print("action = \(message.body), type = \(BootpayBio.sharedBio.requestType)")
+        
+        
         if(message.name == BootpayConstant.BRIDGE_NAME) {
             guard let body = message.body as? [String: Any] else {
                 if message.body as? String == "close" {
+                    self.onClose()
+                } else if  "\(message.body)" == "1" && BootpayBio.sharedBio.requestType == BioConstants.REQUEST_DELETE_CARD {
                     self.onClose()
                 } else {
 //                    self.onEasySuccess(data: message.body)
