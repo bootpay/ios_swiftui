@@ -1,22 +1,23 @@
 //
-//  BootExtra.swift
-//  SwiftUIBootpay
+//  BootBioExtra.swift
+//  BootpayUI
 //
-//  Created by Taesup Yoon on 2021/05/10.
+//  Created by Taesup Yoon on 2022/08/30.
 //
+
 import ObjectMapper
 
 
-public class BootExtra: NSObject, Mappable, Codable {
+public class BootBioExtra: NSObject, Mappable, Codable {
     
     
     public override init() {
         super.init()
-        self.appScheme = self.externalURLScheme() 
+        self.appScheme = self.externalURLScheme()
 //        self.appScheme = (self.externalURLScheme() ?? "") + "://"
     }
     public required init?(map: Map) {
-        super.init() 
+        super.init()
         mapping(map: map)
     }
     
@@ -50,6 +51,7 @@ public class BootExtra: NSObject, Mappable, Codable {
         testDeposit <- map["test_deposit"]
         enableErrorWebhook <- map["enable_error_webhook"]
         separatelyConfirmed <- map["separately_confirmed"]
+        separatelyConfirmedBio <- map["separately_confirmed_bio"]
         confirmOnlyRestApi <- map["confirm_only_rest_api"]
         openType <- map["open_type"]
         redirectUrl <- map["redirect_url"]
@@ -85,7 +87,10 @@ public class BootExtra: NSObject, Mappable, Codable {
     @objc public var testDeposit = false //가상계좌 모의 입금
     @objc public var enableErrorWebhook = false //결제 오류시 Feedback URL로 webhook
 //    @objc public var popup = true //네이버페이 등 특정 PG 일 경우 popup을 true로 해야함
-    @objc public var separatelyConfirmed = true // confirm 이벤트를 호출할지 말지, false일 경우 자동승인
+    @objc public var separatelyConfirmed = true // confirm 이벤트를 호출할지 말지, false일 경우 자동승인, 간편결제에선 적용되지 않음
+    @objc public var separatelyConfirmedBio = false // 중요 - 간편결제에서 true면 무조건 서버 승인(분리승인), false면 바로 승인
+    @objc var separatelyConfirmedValue = false //separatelyConfirmed 또는 separatelyConfirmedBio 값으로 적용, 내부적으로 사용됨
+    
     @objc public var confirmOnlyRestApi = false //REST API로만 승인 처리
     @objc public var openType = "redirect" //페이지 오픈 type, [iframe, popup, redirect] 중 택 1
     @objc public var useBootpayInappSdk = true //native app에서는 redirect를 완성도있게 지원하기 위한 옵션
@@ -107,5 +112,45 @@ public class BootExtra: NSObject, Mappable, Codable {
     
     @objc public var confirmGraceSeconds: Int = 10 //결제승인 유예시간 ( 승인 요청을 여러번하더라도 승인 이후 특정 시간동안 계속해서 결제 response_data 를 리턴한다 )
     
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encodeIfPresent(cardQuota, forKey: .cardQuota)
+        try container.encodeIfPresent(sellerName, forKey: .sellerName)
+        try container.encodeIfPresent(deliveryDay, forKey: .deliveryDay)
+        try container.encodeIfPresent(locale, forKey: .locale)
+        try container.encodeIfPresent(offerPeriod, forKey: .offerPeriod)
+        try container.encodeIfPresent(displayCashReceipt, forKey: .displayCashReceipt)
+        try container.encodeIfPresent(depositExpiration, forKey: .depositExpiration)
+        try container.encodeIfPresent(appScheme, forKey: .appScheme)
+        try container.encodeIfPresent(useCardPoint, forKey: .useCardPoint)
+        try container.encodeIfPresent(directCard, forKey: .directCard)
+        try container.encodeIfPresent(useOrderId, forKey: .useOrderId)
+        try container.encodeIfPresent(internationalCardOnly, forKey: .internationalCardOnly)
+        try container.encodeIfPresent(phoneCarrier, forKey: .phoneCarrier)
+        try container.encodeIfPresent(directAppCard, forKey: .directAppCard)
+        try container.encodeIfPresent(directSamsungpay, forKey: .directSamsungpay)
+        try container.encodeIfPresent(testDeposit, forKey: .testDeposit)
+        try container.encodeIfPresent(enableErrorWebhook, forKey: .enableErrorWebhook)
+        try container.encodeIfPresent(separatelyConfirmedValue, forKey: .separatelyConfirmed)
+        try container.encodeIfPresent(confirmOnlyRestApi, forKey: .confirmOnlyRestApi)
+        try container.encodeIfPresent(openType, forKey: .openType)
+        try container.encodeIfPresent(useBootpayInappSdk, forKey: .useBootpayInappSdk)
+        try container.encodeIfPresent(redirectUrl, forKey: .redirectUrl)
+        try container.encodeIfPresent(displaySuccessResult, forKey: .displaySuccessResult)
+        try container.encodeIfPresent(displayErrorResult, forKey: .displayErrorResult)
+        try container.encodeIfPresent(useWelcomepayment, forKey: .useWelcomepayment)
+        
+        try container.encodeIfPresent(disposableCupDeposit, forKey: .disposableCupDeposit)
+        try container.encodeIfPresent(timeout, forKey: .timeout)
+        try container.encodeIfPresent(commonEventWebhook, forKey: .commonEventWebhook)
+        
+        try container.encodeIfPresent(enableCardCompanies, forKey: .enableCardCompanies)
+        try container.encodeIfPresent(exceptCardCompanies, forKey: .exceptCardCompanies)
+        try container.encodeIfPresent(enableEasyPayments, forKey: .enableEasyPayments)
+        try container.encodeIfPresent(firstSubscriptionComment, forKey: .firstSubscriptionComment)
+        try container.encodeIfPresent(confirmGraceSeconds, forKey: .confirmGraceSeconds)
+    }
     
 }

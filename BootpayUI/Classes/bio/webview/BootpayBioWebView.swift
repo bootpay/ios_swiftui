@@ -647,7 +647,12 @@ extension BootpayBioWebView {
                 BootpayBio.sharedBio.requestType = BioConstants.REQUEST_TYPE_NONE
             }
              
-            BootpayBio.sharedBio.done?(data as? [String:Any] ?? [String:Any]())
+            
+            if(BootpayBio.sharedBio.bioPayload?.extra?.separatelyConfirmedBio == true) {
+                BootpayBio.sharedBio.confirm?(data as? [String:Any] ?? [String:Any]())
+            } else {
+                BootpayBio.sharedBio.done?(data as? [String:Any] ?? [String:Any]())
+            }
         }
     }
 }

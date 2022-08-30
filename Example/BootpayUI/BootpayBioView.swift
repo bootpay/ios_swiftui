@@ -103,7 +103,7 @@ struct BootpayBioView: View {
         _bioPayload.isPasswordMode = isPasswordMode ?? false
         _bioPayload.isEditdMode = isEditMode ?? false 
 
-        _bioPayload.extra = BootExtra()
+        _bioPayload.extra = BootBioExtra()
         _bioPayload.extra?.cardQuota = "6"
         _bioPayload.extra?.displaySuccessResult = true 
           

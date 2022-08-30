@@ -182,7 +182,7 @@ struct BioConstants {
                 payload.extra = extra
             }
         } else {
-            let extra = BootExtra()
+            let extra = BootBioExtra()
             extra.appScheme = getURLSchema()
             payload.extra = extra
         }
@@ -251,13 +251,13 @@ struct BioConstants {
             payload.token = BootpayDefaultHelper.getString(key: "password_token")
         }
         if(payload.price < 50000) {
-            if(payload.extra == nil) { payload.extra = BootExtra() }
+            if(payload.extra == nil) { payload.extra = BootBioExtra() }
             payload.extra?.cardQuota = "0"
         }
         
         return [
             "BootpaySDK.requestWalletPayment(",
-            getPayloadJson(payload),
+            getPayloadJsonEasyPay(payload),
             ")",
             ".then( function (data) {",
             easySuccess(),
@@ -272,7 +272,7 @@ struct BioConstants {
         payload.authenticateType = "otp"
         if(BootpayBio.sharedBio.selectedCardQuota != -1 && payload.price >= 50000) {
             if(payload.extra == nil) {
-                payload.extra = BootExtra()
+                payload.extra = BootBioExtra()
             }
             if(BootpayBio.sharedBio.selectedCardQuota == 0) {
                 payload.extra?.cardQuota = "\(BootpayBio.sharedBio.selectedCardQuota)"
@@ -286,7 +286,7 @@ struct BioConstants {
         
         return [
             "BootpaySDK.requestWalletPayment(",
-            getPayloadJson(payload),
+            getPayloadJsonEasyPay(payload),
             ")",
             ".then( function (data) {",
             easySuccess(),
@@ -397,6 +397,17 @@ struct BioConstants {
 //    }
         
     static private func getPayloadJson(_ payload: BootBioPayload) -> String {
+        payload.extra?.separatelyConfirmedValue = payload.extra?.separatelyConfirmed ?? false
+        
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+        encoder.keyEncodingStrategy = .convertToSnakeCase
+        return String(data: try! encoder.encode(payload), encoding: .utf8)!
+    }
+    
+    static private func getPayloadJsonEasyPay(_ payload: BootBioPayload) -> String {
+        payload.extra?.separatelyConfirmedValue = payload.extra?.separatelyConfirmedBio ?? false
+        
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
         encoder.keyEncodingStrategy = .convertToSnakeCase
