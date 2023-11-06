@@ -11,7 +11,7 @@ import Foundation
 
 public class BootpayConstant {
     
-    public static let CDN_URL = "https://webview.bootpay.co.kr/4.2.2";
+    public static let CDN_URL = "https://webview.bootpay.co.kr/4.3.3";
     public static let BRIDGE_NAME = "Bootpay";
     
     public static let ENV_SWIFT = 0
@@ -132,9 +132,11 @@ public class BootpayConstant {
             confirm(),
             issued(),
             done(),
+            resultScreenClose(),
             "}, function (res) {",
             error(),
             cancel(),
+            resultScreenClose(),
             "})"
         ].reduce("", +)
     }
@@ -150,6 +152,10 @@ public class BootpayConstant {
     
     static func issued() -> String {
         return "else if(res.event === 'issued') { webkit.messageHandlers.\(BootpayConstant.BRIDGE_NAME).postMessage(res); }"
+    }
+    
+    static func resultScreenClose() -> String {
+        return "else if(res.event === 'close') { webkit.messageHandlers.\(BootpayConstant.BRIDGE_NAME).postMessage(res); }"
     }
     
     

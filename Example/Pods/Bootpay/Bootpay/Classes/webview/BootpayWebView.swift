@@ -35,12 +35,18 @@ import NVActivityIndicatorView
         super.init(coder: coder)!
     }
     
+    func addBootpayEventListener() {
+        webview.configuration.userContentController.add(self, name: BootpayConstant.BRIDGE_NAME)
+    }
+    
     func initComponent() {
         HTTPCookieStorage.shared.cookieAcceptPolicy = HTTPCookie.AcceptPolicy.always  // 현대카드 등 쿠키설정 이슈 해결을 위해 필요
         
         let configuration = WKWebViewConfiguration()
-        configuration.userContentController.add(self, name: BootpayConstant.BRIDGE_NAME)
-//        configuration.userContentController.add(self, name: "postMessageListener")
+//        configuration.userContentController.add(self, name: BootpayConstant.BRIDGE_NAME)
+        
+        
+//        configuration.
         
         
         
@@ -59,7 +65,12 @@ import NVActivityIndicatorView
         
         
          
-        
+        if #available(iOS 16.4, *) {
+//            webview.isinspe
+//            webview.isInspectable = true
+        } else {
+            // Fallback on earlier versions
+        }
         webview.uiDelegate = self
         webview.navigationDelegate = self
 //        webview.
@@ -170,10 +181,13 @@ extension BootpayWebView: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHan
 //                print(script)
             }
             let scriptPay = BootpayConstant.getJSPay(payload: payload, requestType: Bootpay.shared.requestType)
+            if(scriptPay.count > 0) {
+                self.addBootpayEventListener()
+                webView.evaluateJavaScript(scriptPay, completionHandler: nil)
+            }
 //            print(scriptPay)
             
 
-            webView.evaluateJavaScript(scriptPay, completionHandler: nil)
         }
     }
     
@@ -235,7 +249,7 @@ extension BootpayWebView: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHan
       webView.removeFromSuperview()
     }
     
-    open func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+    open func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) { 
         
         if(message.name == BootpayConstant.BRIDGE_NAME) {
             
@@ -300,13 +314,21 @@ extension BootpayWebView: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHan
         } else if event == "done" {
             showProgressBar(false)
             Bootpay.shared.done?(data)
+            
             if(Bootpay.shared.payload?.extra?.displaySuccessResult != true && isRedirect) {
                 //redirect는 닫기 이벤트를 안줘서 처리해야함
                 Bootpay.shared.debounceClose()
-//                Bootpay.shared.close?()
                 Bootpay.removePaymentWindow()
+            } else {
+                guard let content = data["data"] as? [String : Any], let method_origin_symbol = content["method_origin_symbol"] as? String else { return }
+                if(method_origin_symbol == "card_rebill_rest") {
+                    Bootpay.shared.debounceClose()
+    //                Bootpay.shared.close?()
+                    Bootpay.removePaymentWindow()
+                }
             }
         } else if event == "close" {
+            doJavascript("Bootpay.destroy();") //resultScreen에서 닫기 이벤트를 수행해야함
             showProgressBar(false)
             //결과페이지에서 닫기 버튼 클릭시
             Bootpay.shared.debounceClose()
