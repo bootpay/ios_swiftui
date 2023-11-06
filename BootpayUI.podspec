@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
   # s.dependency 'AFNetworking', '~> 2.3'
   
   
-  s.static_framework = true
+#  s.static_framework = true
   s.dependency 'Bootpay', '~> 4.4.4'
   s.dependency 'SCLAlertView'
   s.dependency 'CryptoSwift'
