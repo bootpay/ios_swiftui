@@ -51,7 +51,7 @@ let kDefaultFaceIDAuthenticationFailedReason = "Face ID does not recognize your 
 
 
 struct BioConstants {
-    static let CDN_URL = "https://webview.bootpay.co.kr/4.2.0";
+    static let CDN_URL = "https://webview.bootpay.co.kr/4.3.3";
 //    static let BRIDGE_NAME = "Bootpay_Bio_iOS"
  
     public static let REQUEST_TYPE_NONE = -1
