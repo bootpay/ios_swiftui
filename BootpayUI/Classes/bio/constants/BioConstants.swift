@@ -5,8 +5,9 @@
 //  Created by Taesup Yoon on 2022/03/10.
 //
 
-import Foundation
-import Bootpay 
+import SwiftUI
+import WebKit
+import Bootpay
 
 
 
