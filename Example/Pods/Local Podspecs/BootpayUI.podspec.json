@@ -27,7 +27,12 @@
   "swift_versions": [
     "5.0"
   ],
-  "static_framework": true,
+  "pod_target_xcconfig": {
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+  },
+  "user_target_xcconfig": {
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+  },
   "dependencies": {
     "Bootpay": [
       "~> 4.4.4"

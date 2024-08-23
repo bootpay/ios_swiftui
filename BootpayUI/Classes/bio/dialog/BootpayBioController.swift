@@ -284,19 +284,8 @@ extension BootpayBioController: BootpayBioProtocol {
             payButton.setTitle(self.bt3, for: .normal)
 //            self.bottomTitle?.text = self.bt3
         }
-//        payButton.setTitle(self.bottomTitle?, for: <#T##UIControl.State#>)
     }
-    
-//    func getOTPValue(_ biometricSecretKey: String, serverTime: Int) -> String {
-//        if let data = biometricSecretKey.base32DecodedData {
-//            if let totp = TOTP(secret: data, digits: 8, timeInterval: 30, algorithm: .sha512) {
-//                if let otpString = totp.generate(secondsPast1970: serverTime) {
-//                    return otpString;
-//                }
-//            }
-//        }
-//        return "";
-//    }
+     
 }
 
 extension BootpayBioController {
@@ -307,12 +296,7 @@ extension BootpayBioController {
                                        width: self.view.frame.width,
                                        height: self.view.frame.height)
         
-//        UIView.animate(withDuration: 0.3, animations: {
-//            self.actionView.frame = CGRect(x: 0,
-//                                           y: self.view.frame.height - self.actionViewHeight,
-//                                           width: self.view.frame.width,
-//                                           height: self.actionViewHeight)
-//        })
+ 
     }
     
     func hideCardView() {
@@ -422,14 +406,22 @@ extension BootpayBioController {
         if let logoImageView = BootpayBio.sharedBio.bioTheme?.logoImageView {
             
             actionView.addSubview(logoImageView)
-            
             let imageHeight = min(logoImageView.frame.size.height, 60)
-             
+            let topOffset = (60 - imageHeight) / 2
+
             logoImageView.contentMode = .scaleAspectFit
-            logoImageView.snp.makeConstraints { (make) -> Void in
+            logoImageView.snp.makeConstraints { make in
                 make.centerX.equalToSuperview()
-                make.top.equalToSuperview().offset((60 - imageHeight) / 2)
+                make.top.equalToSuperview().offset(topOffset)
             }
+
+//            let imageHeight = min(logoImageView.frame.size.height, 60)
+//             
+//            logoImageView.contentMode = .scaleAspectFit
+//            logoImageView.snp.makeConstraints { (make) -> Void in
+//                make.centerX.equalToSuperview()
+//                make.top.equalToSuperview().offset((60 - imageHeight) / 2)
+//            }
         } else {
             let pgLabel = UILabel()
             pgLabel.text = "등록된 결제수단"
@@ -509,11 +501,21 @@ extension BootpayBioController {
             }
             right.font = right.font.withSize(15.0)
             actionView.addSubview(right)
-            right.snp.makeConstraints { (make) -> Void in
-                make.right.equalToSuperview().offset(-15)
-                make.top.equalTo(line1).offset(20 + index * 23)
+            
+            
+            let rightOffset = -15
+            let topOffset = 20 + index * 23
+
+            right.snp.makeConstraints { make in
+                make.right.equalToSuperview().offset(rightOffset)
+                make.top.equalTo(line1).offset(topOffset)
                 make.height.equalTo(20)
             }
+//            right.snp.makeConstraints { (make) -> Void in
+//                make.right.equalToSuperview().offset(-15)
+//                make.top.equalTo(line1).offset(20 + index * 23)
+//                make.height.equalTo(20)
+//            }
         }
         
         if(BootpayBio.sharedBio.bioPayload?.isEditdMode == false) {
@@ -523,22 +525,42 @@ extension BootpayBioController {
                 left.textColor =  BootpayBio.sharedBio.bioTheme?.textColor ?? bioTheme.fontInfoColor
                 left.font = left.font.withSize(15.0)
                 actionView.addSubview(left)
-                left.snp.makeConstraints { (make) -> Void in
-                    make.left.equalToSuperview().offset(15)
-                    make.top.equalTo(line1).offset(10 + max(BootpayBio.sharedBio.bioPayload?.names.count ?? 0, 1) * 23 + 16 + 30 * index)
+                
+                let leftOffset = 15
+                let namesCount = BootpayBio.sharedBio.bioPayload?.names.count ?? 0
+                let topOffset = 10 + max(namesCount, 1) * 23 + 16 + 30 * index
+
+                left.snp.makeConstraints { make in
+                    make.left.equalToSuperview().offset(leftOffset)
+                    make.top.equalTo(line1).offset(topOffset)
                     make.height.equalTo(20)
                 }
+//                left.snp.makeConstraints { (make) -> Void in
+//                    make.left.equalToSuperview().offset(15)
+//                    make.top.equalTo(line1).offset(10 + max(BootpayBio.sharedBio.bioPayload?.names.count ?? 0, 1) * 23 + 16 + 30 * index)
+//                    make.height.equalTo(20)
+//                }
                
                 let right = UILabel()
                 right.text = priceInfo.price.comma() + "원"
                 right.textColor = BootpayBio.sharedBio.bioTheme?.textColor ?? bioTheme.fontColor
                 right.font = right.font.withSize(15.0)
                 actionView.addSubview(right)
-                right.snp.makeConstraints { (make) -> Void in
+                
+//                let namesCount = BootpayBio.sharedBio.bioPayload?.names.count ?? 0
+//                let topOffset = 10 + max(namesCount, 1) * 23 + 16 + index * 30
+
+                right.snp.makeConstraints { make in
                     make.right.equalToSuperview().offset(-15)
-                    make.top.equalTo(line1).offset(10 + max(BootpayBio.sharedBio.bioPayload?.names.count ?? 0, 1) * 23 + 16 + index * 30)
+                    make.top.equalTo(line1).offset(topOffset)
                     make.height.equalTo(20)
                 }
+                
+//                right.snp.makeConstraints { (make) -> Void in
+//                    make.right.equalToSuperview().offset(-15)
+//                    make.top.equalTo(line1).offset(10 + max(BootpayBio.sharedBio.bioPayload?.names.count ?? 0, 1) * 23 + 16 + index * 30)
+//                    make.height.equalTo(20)
+//                }
             }
              
             let left = UILabel()
@@ -546,11 +568,22 @@ extension BootpayBioController {
             left.textColor = BootpayBio.sharedBio.bioTheme?.textColor ?? bioTheme.fontInfoColor
             left.font = left.font.withSize(16.0)
             actionView.addSubview(left)
-            left.snp.makeConstraints { (make) -> Void in
-                make.left.equalToSuperview().offset(15)
-                make.top.equalTo(line1).offset(11 + max(BootpayBio.sharedBio.bioPayload?.names.count ?? 0, 1) * 23 + 16 + 30 * (BootpayBio.sharedBio.bioPayload?.prices.count ?? 0))
+            let leftOffset = 15
+            let namesCount = BootpayBio.sharedBio.bioPayload?.names.count ?? 0
+            let pricesCount = BootpayBio.sharedBio.bioPayload?.prices.count ?? 0
+            let topOffset = 11 + max(namesCount, 1) * 23 + 16 + 30 * pricesCount
+
+            left.snp.makeConstraints { make in
+                make.left.equalToSuperview().offset(leftOffset)
+                make.top.equalTo(line1).offset(topOffset)
                 make.height.equalTo(25)
             }
+            
+//            left.snp.makeConstraints { (make) -> Void in
+//                make.left.equalToSuperview().offset(15)
+//                make.top.equalTo(line1).offset(11 + max(BootpayBio.sharedBio.bioPayload?.names.count ?? 0, 1) * 23 + 16 + 30 * (BootpayBio.sharedBio.bioPayload?.prices.count ?? 0))
+//                make.height.equalTo(25)
+//            }
 
             let right = UILabel()
             right.text = (BootpayBio.sharedBio.bioPayload?.price ?? Double(0)).comma() + "원"
@@ -570,13 +603,21 @@ extension BootpayBioController {
         let cardBGView = UIView()
         cardBGView.backgroundColor = BootpayBio.sharedBio.bioTheme?.cardBgColor ?? bioTheme.cardBgColor
         actionView.addSubview(cardBGView)
-        cardBGView.snp.makeConstraints{ (make) -> Void in
-//            make.centerX.equalToSuperview()
-            make.top.equalTo(line1).offset(11 + max(BootpayBio.sharedBio.bioPayload?.names.count ?? 0, 1) * 23 + 16 + 30 * (BootpayBio.sharedBio.bioPayload?.prices.count ?? 0) + 45)
-//            make.top.equalTo(left).offset(45)
+        let namesCount = BootpayBio.sharedBio.bioPayload?.names.count ?? 0
+        let pricesCount = BootpayBio.sharedBio.bioPayload?.prices.count ?? 0
+        let topOffset = 11 + max(namesCount, 1) * 23 + 16 + 30 * pricesCount + 45
+
+        cardBGView.snp.makeConstraints { make in
+            make.top.equalTo(line1).offset(topOffset)
             make.width.equalToSuperview()
             make.height.equalTo(200)
         }
+        
+//        cardBGView.snp.makeConstraints{ (make) -> Void in
+//            make.top.equalTo(line1).offset(11 + max(BootpayBio.sharedBio.bioPayload?.names.count ?? 0, 1) * 23 + 16 + 30 * (BootpayBio.sharedBio.bioPayload?.prices.count ?? 0) + 45)
+//            make.width.equalToSuperview()
+//            make.height.equalTo(200)
+//        }
         
          
         cardSelectView = CardSelectView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 160))
@@ -584,7 +625,6 @@ extension BootpayBioController {
         if let bioTheme = BootpayBio.sharedBio.bioTheme { cardSelectView.setBioThemeData(bioTheme) }
         actionView.addSubview(cardSelectView)
         cardSelectView.snp.makeConstraints{ (make) -> Void in
-//            make.centerX.equalToSuperview()
             make.top.equalTo(cardBGView).offset(20)
             make.width.equalToSuperview()
             make.height.equalTo(160)
@@ -594,26 +634,6 @@ extension BootpayBioController {
         
         
         if isShowQuota {
-//            let view = UIView()
-//            view.backgroundColor = bioTheme.fontColor.withAlphaComponent(0.1)
-//            actionView.addSubview(view)
-//            view.snp.makeConstraints{ (make) -> Void in
-//                make.left.equalToSuperview()
-//                make.right.equalToSuperview()
-//                make.top.equalTo(cardBGView).offset(220)
-//                make.height.equalTo(1)
-//            }
-            
-//            let left = UILabel()
-//            left.text = "할부설정"
-//            left.textColor = bioTheme.fontColor.withAlphaComponent(0.7)
-//            left.font = left.font.withSize(14.0)
-//            actionView.addSubview(left)
-//            left.snp.makeConstraints { (make) -> Void in
-//                make.left.equalToSuperview().offset(100)
-//                make.top.equalTo(cardBGView).offset(220)
-//                make.height.equalTo(20)
-//            }
             
             let pickerImg = UIImageView()
             pickerImg.image = UIImage.fromBundle("selectbox_icon")
@@ -660,44 +680,10 @@ extension BootpayBioController {
 //            make.centerX.equalToSuperview()
             make.left.equalTo(15)
             make.right.equalToSuperview().offset(-15)
-//            make.bottom.a
-//            make.bottom.equalTo(self.view).offset(-10)
-//            if(isShowQuota) {
-//                make.top.equalTo(cardSelectView).offset(300)
-//            } else {
-//                make.top.equalTo(cardSelectView).offset(200)
-//            }
             
             make.height.equalTo(60)
         }
-        
-//        self.view.backgroundColor = .green
-        
-
-//        let bottomTitle = UILabel()
-//        bottomTitle.text = self.bt2
-//        bottomTitle.font =  bottomTitle.font.withSize(14)
-//        bottomTitle.textColor = bioTheme.fontColor.withAlphaComponent(0.7)
-//        actionView.addSubview(bottomTitle)
-//        self.bottomTitle = bottomTitle
-//        bottomTitle.snp.makeConstraints{ (make) -> Void in
-//            make.centerX.equalToSuperview()
-//            make.top.equalTo(cardSelectView).offset(210)
-//            make.height.equalTo(20)
-//        }
-//
-//        let btnBarcode = UIButton()
-//        if let image =  UIImage.fromBundle("barcode") {
-//            btnBarcode.setImage(image, for: .normal)
-//        }
-//
-//        actionView.addSubview(btnBarcode)
-//        btnBarcode.snp.makeConstraints{ (make) -> Void in
-//            make.centerX.equalToSuperview()
-//            make.top.equalTo(bottomTitle).offset(30)
-//            make.width.height.equalTo(50)
-//        }
-//        btnBarcode.addTarget(self, action: #selector(clickBarcode), for: .touchUpInside)
+         
     }
 }
 
