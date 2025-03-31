@@ -37,12 +37,10 @@
     "Bootpay": [
       "~> 4.4.4"
     ],
-    "SCLAlertView": [],
     "CryptoSwift": [],
     "Alamofire": [],
     "ObjectMapper": [],
     "SnapKit": [],
-    "JGProgressHUD": [],
     "SwiftyJSON": []
   },
   "swift_version": "5"

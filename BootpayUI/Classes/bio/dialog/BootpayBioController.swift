@@ -7,7 +7,7 @@
 
 import UIKit
 import Alamofire
-import JGProgressHUD
+//import JGProgressHUD
 import LocalAuthentication
 import ObjectMapper
 import Bootpay
@@ -62,7 +62,7 @@ public protocol BootpayBioProtocol {
     var currentDeviceBioType = false
     
     var cardSelectView: CardSelectView!
-    let hud = JGProgressHUD()
+//    let hud = JGProgressHUD()
     var isShowCloseMsg = true
     var isWebViewPay = false
     

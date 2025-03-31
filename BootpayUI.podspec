@@ -47,13 +47,13 @@ Pod::Spec.new do |s|
   
 #  s.static_framework = true
   s.dependency 'Bootpay', '~> 4.4.4'
-  s.dependency 'SCLAlertView'
+#  s.dependency 'SCLAlertView'
   s.dependency 'CryptoSwift'
   s.dependency 'Alamofire'
   s.dependency 'ObjectMapper'
 #  pod 'SwiftOTP',  '~> 3.0.0'
   s.dependency 'SnapKit'
-  s.dependency 'JGProgressHUD'
+#  s.dependency 'JGProgressHUD'
   s.dependency 'SwiftyJSON'
   
 end
