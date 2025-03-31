@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27A9BECD8D8D0B7B51BE6E00 /* Pods_BootpayUI_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3616ED6D69584AB1AAF914BE /* Pods_BootpayUI_Example.framework */; };
-		5E27D2CBFBF9DA70EE0848B0 /* Pods_BootpayUI_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74DFB62F16684A53723F8091 /* Pods_BootpayUI_Tests.framework */; };
+		5D8CA7E5EFB50936CACAA521 /* Pods_BootpayUI_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093E00A454B0A1A3531F221D /* Pods_BootpayUI_Example.framework */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
@@ -18,6 +17,7 @@
 		8709BA8F272A9BB000FD921E /* BootpayBioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8709BA8E272A9BB000FD921E /* BootpayBioView.swift */; };
 		87C115D5272F6735003F07BE /* BootpayRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C115D4272F6735003F07BE /* BootpayRest.swift */; };
 		87C8B3E62818FC5C001F3A2F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C8B3E52818FC5C001F3A2F /* ViewModel.swift */; };
+		FFE72B2E434AEC0E983E260D /* Pods_BootpayUI_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17353C3012108955DD6C2C92 /* Pods_BootpayUI_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,11 +31,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		148E97EA640D2FA5EC256AC1 /* Pods-BootpayUI_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BootpayUI_Tests.release.xcconfig"; path = "Target Support Files/Pods-BootpayUI_Tests/Pods-BootpayUI_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		03EB6AA65ECDD9E86D1FDF5D /* Pods-BootpayUI_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BootpayUI_Example.debug.xcconfig"; path = "Target Support Files/Pods-BootpayUI_Example/Pods-BootpayUI_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		093E00A454B0A1A3531F221D /* Pods_BootpayUI_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BootpayUI_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17353C3012108955DD6C2C92 /* Pods_BootpayUI_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BootpayUI_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C790755C98E6D8C5E663312 /* Pods-BootpayUI_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BootpayUI_Tests.release.xcconfig"; path = "Target Support Files/Pods-BootpayUI_Tests/Pods-BootpayUI_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		31503A258999E4E335FECC58 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		3616ED6D69584AB1AAF914BE /* Pods_BootpayUI_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BootpayUI_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CE68BCA63FDE156A639FA86 /* Pods-BootpayUI_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BootpayUI_Example.debug.xcconfig"; path = "Target Support Files/Pods-BootpayUI_Example/Pods-BootpayUI_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		5F93966308948BBCA7C5407E /* Pods-BootpayUI_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BootpayUI_Tests.debug.xcconfig"; path = "Target Support Files/Pods-BootpayUI_Tests/Pods-BootpayUI_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* BootpayUI_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BootpayUI_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -45,14 +45,14 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		651B37455ED310E59E081C7B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		74DFB62F16684A53723F8091 /* Pods_BootpayUI_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BootpayUI_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81994922283C6A0800EAA1FD /* BootpayUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootpayUIView.swift; sourceTree = "<group>"; };
 		8709BA89272A882800FD921E /* SwiftUIBootpayApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIBootpayApp.swift; sourceTree = "<group>"; };
 		8709BA8E272A9BB000FD921E /* BootpayBioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootpayBioView.swift; sourceTree = "<group>"; };
 		87C115D4272F6735003F07BE /* BootpayRest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BootpayRest.swift; sourceTree = "<group>"; };
 		87C115DF272FD9B6003F07BE /* BootpayUI_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BootpayUI_Example.entitlements; sourceTree = "<group>"; };
 		87C8B3E52818FC5C001F3A2F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		A1FFAD2B691E7B21F750C12F /* Pods-BootpayUI_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BootpayUI_Example.release.xcconfig"; path = "Target Support Files/Pods-BootpayUI_Example/Pods-BootpayUI_Example.release.xcconfig"; sourceTree = "<group>"; };
+		DB91114011229548EA4741DE /* Pods-BootpayUI_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BootpayUI_Example.release.xcconfig"; path = "Target Support Files/Pods-BootpayUI_Example/Pods-BootpayUI_Example.release.xcconfig"; sourceTree = "<group>"; };
+		E397568FFDE1081A92B0EF67 /* Pods-BootpayUI_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BootpayUI_Tests.debug.xcconfig"; path = "Target Support Files/Pods-BootpayUI_Tests/Pods-BootpayUI_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F77CB6C8BFA6AD84A82208D7 /* BootpayUI.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BootpayUI.podspec; path = ../BootpayUI.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27A9BECD8D8D0B7B51BE6E00 /* Pods_BootpayUI_Example.framework in Frameworks */,
+				5D8CA7E5EFB50936CACAA521 /* Pods_BootpayUI_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E27D2CBFBF9DA70EE0848B0 /* Pods_BootpayUI_Tests.framework in Frameworks */,
+				FFE72B2E434AEC0E983E260D /* Pods_BootpayUI_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +79,10 @@
 		5850306141C25F908E0D7789 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5CE68BCA63FDE156A639FA86 /* Pods-BootpayUI_Example.debug.xcconfig */,
-				A1FFAD2B691E7B21F750C12F /* Pods-BootpayUI_Example.release.xcconfig */,
-				5F93966308948BBCA7C5407E /* Pods-BootpayUI_Tests.debug.xcconfig */,
-				148E97EA640D2FA5EC256AC1 /* Pods-BootpayUI_Tests.release.xcconfig */,
+				03EB6AA65ECDD9E86D1FDF5D /* Pods-BootpayUI_Example.debug.xcconfig */,
+				DB91114011229548EA4741DE /* Pods-BootpayUI_Example.release.xcconfig */,
+				E397568FFDE1081A92B0EF67 /* Pods-BootpayUI_Tests.debug.xcconfig */,
+				1C790755C98E6D8C5E663312 /* Pods-BootpayUI_Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -96,7 +96,7 @@
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				5850306141C25F908E0D7789 /* Pods */,
-				B76480ADADA76996EA8A5E10 /* Frameworks */,
+				6656739DBB4AA87B016240B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -161,21 +161,21 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		6656739DBB4AA87B016240B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				093E00A454B0A1A3531F221D /* Pods_BootpayUI_Example.framework */,
+				17353C3012108955DD6C2C92 /* Pods_BootpayUI_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8709BA8D272A9AB200FD921E /* deprecated */ = {
 			isa = PBXGroup;
 			children = (
 				87C115D4272F6735003F07BE /* BootpayRest.swift */,
 			);
 			name = deprecated;
-			sourceTree = "<group>";
-		};
-		B76480ADADA76996EA8A5E10 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3616ED6D69584AB1AAF914BE /* Pods_BootpayUI_Example.framework */,
-				74DFB62F16684A53723F8091 /* Pods_BootpayUI_Tests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,11 +185,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "BootpayUI_Example" */;
 			buildPhases = (
-				A70A6DDB4E8CF55EB203D24E /* [CP] Check Pods Manifest.lock */,
+				789CD7E9DDCCA70A8DF00E23 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				B94D2688C2BBCB32ED260B29 /* [CP] Embed Pods Frameworks */,
+				3B566B97FA7AF4CEAFDC3A9A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,7 +204,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "BootpayUI_Tests" */;
 			buildPhases = (
-				E87B08F037D0CE8E2D81323E /* [CP] Check Pods Manifest.lock */,
+				8D838869759018A9F778F734 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
@@ -284,29 +284,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A70A6DDB4E8CF55EB203D24E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BootpayUI_Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B94D2688C2BBCB32ED260B29 /* [CP] Embed Pods Frameworks */ = {
+		3B566B97FA7AF4CEAFDC3A9A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -342,7 +320,29 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BootpayUI_Example/Pods-BootpayUI_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E87B08F037D0CE8E2D81323E /* [CP] Check Pods Manifest.lock */ = {
+		789CD7E9DDCCA70A8DF00E23 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BootpayUI_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D838869759018A9F778F734 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -523,7 +523,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5CE68BCA63FDE156A639FA86 /* Pods-BootpayUI_Example.debug.xcconfig */;
+			baseConfigurationReference = 03EB6AA65ECDD9E86D1FDF5D /* Pods-BootpayUI_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BootpayUI_Example.entitlements;
@@ -543,7 +543,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1FFAD2B691E7B21F750C12F /* Pods-BootpayUI_Example.release.xcconfig */;
+			baseConfigurationReference = DB91114011229548EA4741DE /* Pods-BootpayUI_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BootpayUI_Example.entitlements;
@@ -563,7 +563,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F93966308948BBCA7C5407E /* Pods-BootpayUI_Tests.debug.xcconfig */;
+			baseConfigurationReference = E397568FFDE1081A92B0EF67 /* Pods-BootpayUI_Tests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -590,7 +590,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 148E97EA640D2FA5EC256AC1 /* Pods-BootpayUI_Tests.release.xcconfig */;
+			baseConfigurationReference = 1C790755C98E6D8C5E663312 /* Pods-BootpayUI_Tests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
