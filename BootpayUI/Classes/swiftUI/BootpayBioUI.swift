@@ -8,10 +8,12 @@
 import SwiftUI
 import Bootpay
 
+@available(iOS 13.0, *)
 public struct BootpayBioUI: View {
 
   public var bioPayload: BootBioPayload
 //  @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     
     public init(payload: BootBioPayload, userToken: String, showBootpay:  Binding<Bool>, bioTheme: BioThemeData? = nil) {
       self.bioPayload = payload
@@ -31,7 +33,7 @@ public struct BootpayBioUI: View {
   }
 }
 
-
+@available(iOS 13.0, *)
 extension BootpayBioUI {
     
     public func onError(_ action: @escaping ([String : Any]) -> Void) -> BootpayBioUI {

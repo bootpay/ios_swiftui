@@ -46,6 +46,7 @@ public extension NSObject {
 } 
 
 public extension UIImage {
+    @available(iOS 13.0, *)
     static func fromBundle(_ name: String) -> UIImage? {
         let frameworkBundle = Bundle(for: BootpayBio.self)
         let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("BootpayUI.bundle")

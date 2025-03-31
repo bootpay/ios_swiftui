@@ -28,6 +28,7 @@ class CardCell: ScalingCarouselCell {
     }
 }
 
+@available(iOS 13.0, *)
 @objc public class CardSelectView: UIView {
     
     var data: [WalletData]?
@@ -83,11 +84,16 @@ class CardCell: ScalingCarouselCell {
     }
 }
 
+@available(iOS 13.0, *)
 extension CardSelectView: UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let count = data?.count ?? 0
-        if(BootpayBio.sharedBio.bioPayload?.isEditdMode == true) { return count + 1 }
+        if #available(iOS 13.0, *) {
+            if(BootpayBio.sharedBio.bioPayload?.isEditdMode == true) { return count + 1 }
+        } else {
+            // Fallback on earlier versions
+        }
         return count + 2
     }
     
@@ -161,6 +167,7 @@ extension CardSelectView: UICollectionViewDataSource {
     }
 }
 
+@available(iOS 13.0, *)
 extension CardSelectView: UICollectionViewDelegate {
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {

@@ -1,10 +1,10 @@
 PODS:
-  - Alamofire (5.9.1)
+  - Alamofire (5.10.2)
   - Bootpay (4.4.4):
     - CryptoSwift
     - NVActivityIndicatorView
     - ObjectMapper
-  - BootpayUI (4.4.3):
+  - BootpayUI (4.4.5):
     - Alamofire
     - Bootpay (~> 4.4.4)
     - CryptoSwift
@@ -13,7 +13,7 @@ PODS:
     - SCLAlertView
     - SnapKit
     - SwiftyJSON
-  - CryptoSwift (1.8.3)
+  - CryptoSwift (1.8.4)
   - JGProgressHUD (2.2)
   - NVActivityIndicatorView (5.2.0):
     - NVActivityIndicatorView/Base (= 5.2.0)
@@ -43,10 +43,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
   Bootpay: ed9b04d0061931d4bb0c6a2e14dc44222168fde6
-  BootpayUI: a0f38853a4b87e5819acc9f2d22dc9ad2713d13e
-  CryptoSwift: 967f37cea5a3294d9cce358f78861652155be483
+  BootpayUI: cb075d857139f25d85ab24c955cfc555a1066421
+  CryptoSwift: e64e11850ede528a02a0f3e768cec8e9d92ecb90
   JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
   NVActivityIndicatorView: fe52a6a68664c2df8991d7d9e3d86d8d19453c53
   ObjectMapper: e6e4d91ff7f2861df7aecc536c92d8363f4c9677
@@ -56,4 +56,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 8fc62bf7f956ef4c3b8b59a5d0929cd34e13b4c5
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2

@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 
+@available(iOS 13.0, *)
 class CardViewCell: ScalingCarouselCell {
     var cardName: UILabel!
     var cardNo: UILabel!
@@ -169,13 +170,13 @@ class CardViewCell: ScalingCarouselCell {
             cardLabel.isHidden = data.wallet_type == 0
             
             if(data.wallet_type == 1) {
-                
-//                if let iconColor = bioThemeData?.cardIconColor {
-//                    cardIcon.image = UIImage.fromBundle("ico_plus_outline")?.withTintColor(.white, renderingMode: .alwaysOriginal)
-//                } else {
-//                    cardIcon.image = UIImage.fromBundle("ico_plus_outline")
-//                }
-                cardIcon.image = UIImage.fromBundle("ico_plus_outline")?.withTintColor(.white, renderingMode: .alwaysOriginal)
+          
+                if #available(iOS 13.0, *) {
+                    cardIcon.image = UIImage.fromBundle("ico_plus_outline")?.withTintColor(.white, renderingMode: .alwaysOriginal)
+                } else {
+                    // Fallback on earlier versions
+                    cardIcon.image = UIImage.fromBundle("ico_plus_outline")
+                }
                 
                 cardLabel.text = "새로운 카드 등록"
                 cardLabel.textColor = bioThemeData?.cardText1Color ?? bioTheme.blueColor
@@ -183,7 +184,12 @@ class CardViewCell: ScalingCarouselCell {
                 mainView.layer.borderColor = bioThemeData?.card1Color?.cgColor ?? bioTheme.newCardBorderColor.cgColor
             } else if(data.wallet_type == 2) {
                 if let iconColor = bioThemeData?.cardIconColor {
-                    cardIcon.image = UIImage.fromBundle("ico_card_outline")?.withTintColor(iconColor, renderingMode: .alwaysOriginal)
+                    if #available(iOS 13.0, *) {
+                        cardIcon.image = UIImage.fromBundle("ico_card_outline")?.withTintColor(iconColor, renderingMode: .alwaysOriginal)
+                    } else {
+                        // Fallback on earlier versions
+                        cardIcon.image = UIImage.fromBundle("ico_card_outline")
+                    }
                 } else {
                     cardIcon.image = UIImage.fromBundle("ico_card_outline")
                 }

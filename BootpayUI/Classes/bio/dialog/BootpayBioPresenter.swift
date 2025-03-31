@@ -9,7 +9,7 @@ import Alamofire
 import ObjectMapper
 import Bootpay
 
-
+@available(iOS 13.0, *)
 @objc open class BootpayBioPresenter: NSObject {
 //    var passwordToken: String?
     var biometricData = BiometricData()
@@ -26,7 +26,9 @@ import Bootpay
 //        self.bioPayload = payload
         self.bioWebView?.nextJob{ dic in
             if let initToken = dic["initToken"] as? Bool { //초기화 할 필요가 있다면 초기화
-                if initToken == true { self.setPasswordToken(""); BootpayBio.sharedBio.bioPayload?.token = "" }
+                if initToken == true {
+                    self.setPasswordToken("");
+                    BootpayBio.sharedBio.bioPayload?.token = "" }
             } else if let token = dic["token"] as? String { // 토큰 값 지정
                 self.setPasswordToken(token);
                 BootpayBio.sharedBio.bioPayload?.token = token
@@ -156,6 +158,7 @@ import Bootpay
 }
 
 //biz logic
+@available(iOS 13.0, *)
 extension BootpayBioPresenter {
     func startPayWithSelectedCard() {
         let walletId = self.walletList?[self.selectedCardIndex].wallet_id ?? ""
@@ -198,6 +201,7 @@ extension BootpayBioPresenter {
 }
 
 //ui dispatcher
+@available(iOS 13.0, *)
 extension BootpayBioPresenter {
     func showCardView(_ walletList: [WalletData]) {
 //        if(!walletList.isEmpty) {
@@ -262,6 +266,7 @@ extension BootpayBioPresenter {
 }
 
 //api
+@available(iOS 13.0, *)
 extension BootpayBioPresenter {
     
     func getWalletList(_ requestBioPay: Bool = false) {
@@ -413,6 +418,7 @@ extension BootpayBioPresenter {
 }
 
 //bio
+@available(iOS 13.0, *)
 extension BootpayBioPresenter {
     func goBiometricAuth() {
         BioMetricAuthenticator.shared.allowableReuseDuration = nil
@@ -482,6 +488,7 @@ extension BootpayBioPresenter {
 
 
 //bio
+@available(iOS 13.0, *)
 extension BootpayBioPresenter {
     
     func showAlert(title: String, message: String) {

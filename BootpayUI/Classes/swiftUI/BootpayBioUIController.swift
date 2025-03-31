@@ -11,11 +11,12 @@ import Bootpay
 #if os(macOS)
 public typealias BTViewControllerRepresentable = NSViewControllerRepresentable
 #elseif os(iOS)
+@available(iOS 13.0, *)
 public typealias BTViewControllerRepresentable = UIViewControllerRepresentable
 #endif
 
 
-
+@available(iOS 13.0, *)
 public struct BootpayBioUIController: BTViewControllerRepresentable {
     public var payload: BootBioPayload
     

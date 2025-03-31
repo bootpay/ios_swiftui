@@ -11,6 +11,7 @@ import WebKit
 import Bootpay
 
 
+@available(iOS 13.0, *)
 @objc public class BootpayBio: NSObject {
     @objc public static let sharedBio = BootpayBio()
     var showBootpay: Binding<Bool>?
@@ -222,6 +223,7 @@ import Bootpay
     }
 }
 
+@available(iOS 13.0, *)
 extension BootpayBio {
     @objc public static func onError(_ action: @escaping ([String : Any]) -> Void) -> BootpayBio.Type {
         sharedBio.error = action
@@ -270,6 +272,7 @@ extension BootpayBio {
 //    }
 }
 
+@available(iOS 13.0, *)
 extension BootpayBio {
     public static func getUUId() -> String {
         if sharedBio.uuid == "" { sharedBio.uuid = BootpayDefaultHelper.getString(key: "uuid") }

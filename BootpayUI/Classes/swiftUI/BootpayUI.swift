@@ -11,10 +11,11 @@ import Bootpay
 #if os(macOS)
 public typealias BTViewRepresentable = NSViewRepresentable
 #elseif os(iOS)
+@available(iOS 13.0, *)
 public typealias BTViewRepresentable = UIViewRepresentable
 #endif
 
-
+@available(iOS 13.0, *)
 public struct BootpayUI: BTViewRepresentable {
     public var payload: Payload
 
@@ -69,6 +70,7 @@ public struct BootpayUI: BTViewRepresentable {
     
 }
 
+@available(iOS 13.0, *)
 extension BootpayUI {
     
     public func onError(_ action: @escaping ([String : Any]) -> Void) -> BootpayUI {

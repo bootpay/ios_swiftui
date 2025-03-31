@@ -25,6 +25,7 @@ public protocol BootpayBioProtocol {
                         - ((비밀번호만 수행가능)
  */
 
+@available(iOS 13.0, *)
 @objc open class BootpayBioController: UIViewController {
     var presenter: BootpayBioPresenter?
     
@@ -121,6 +122,7 @@ public protocol BootpayBioProtocol {
 }
 
 //init UI
+@available(iOS 13.0, *)
 extension BootpayBioController {
     
     func initUI() {
@@ -202,6 +204,7 @@ extension BootpayBioController {
     }
 }
 
+@available(iOS 13.0, *)
 extension BootpayBioController {
     
     @objc func hideActionView() {
@@ -240,6 +243,7 @@ extension BootpayBioController {
     
 }
 
+@available(iOS 13.0, *)
 extension BootpayBioController: BootpayBioProtocol {
     public func longClickCard(_ index: Int) {
         deleteCard(cardSelectView.scalingCarousel.lastCurrentCenterCellIndex?.row ?? 0)
@@ -288,6 +292,7 @@ extension BootpayBioController: BootpayBioProtocol {
      
 }
 
+@available(iOS 13.0, *)
 extension BootpayBioController {
     func showCardView() {
         self.actionView.alpha = 1
@@ -691,6 +696,7 @@ extension BootpayBioController {
   
 
 //picker
+@available(iOS 13.0, *)
 extension BootpayBioController: UIPickerViewDataSource, UIPickerViewDelegate {
     @objc func showQuotaPicker() {
         picker = UIPickerView.init()
@@ -745,6 +751,7 @@ extension BootpayBioController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
 }
 
+@available(iOS 13.0, *)
 extension BootpayBioController {
     func showAlert(title: String, message: String) {
         let okAction = AlertAction(title: OKTitle)

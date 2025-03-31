@@ -269,6 +269,7 @@ struct BioConstants {
         ].reduce("", +)
     }
     
+    @available(iOS 13.0, *)
     static func getJSBioOTPPay(payload: BootBioPayload) -> String {
         payload.authenticateType = "otp"
         if(BootpayBio.sharedBio.selectedCardQuota != -1 && payload.price >= 50000) {

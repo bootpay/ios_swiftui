@@ -8,7 +8,7 @@
 import WebKit
 import Bootpay
  
-
+@available(iOS 13.0, *)
 @objc open class BootpayBioWebView: BTView, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
 //    public var requestType = BioConstants.REQUEST_TYPE_NONE
     var webview: WKWebView!
@@ -367,6 +367,7 @@ import Bootpay
     }
 }
  
+@available(iOS 13.0, *)
 extension BootpayBioWebView {
     
     func updateBlindViewIfNaverLogin(_ webView: WKWebView, _ url: String) {
@@ -446,6 +447,7 @@ extension BootpayBioWebView {
     }
 }
 
+@available(iOS 13.0, *)
 extension BootpayBioWebView {
     func onError(data: [String: Any], isRedirect: Bool) {
         print("onError: \(data)")
