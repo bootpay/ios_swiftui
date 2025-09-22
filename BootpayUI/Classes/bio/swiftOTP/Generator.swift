@@ -47,13 +47,13 @@ internal class Generator {
 	/// - returns: One time password string, nil if error
 	func generateOTP(secret: Data, algorithm: OTPAlgorithm = .sha1, counter: UInt64, digits: Int = 6) -> String? {
 		// Get byte array of secret key
-		let key = secret.bytes
+		let key = Array(secret)
 		
 		// HMAC message data from counter as big endian
 		let counterMessage = counter.bigEndian.data
 		
 		// HMAC hash counter data with secret key
-		guard let hmac = try? HMAC(key: key, variant: algorithm.hmacVariant).authenticate(counterMessage.bytes) else { return nil }
+		guard let hmac = try? HMAC(key: key, variant: algorithm.hmacVariant).authenticate(Array(counterMessage)) else { return nil }
 		
 		// Get last 4 bits of hash as offset
 		let offset = Int((hmac.last ?? 0x00) & 0x0f)
