@@ -48,10 +48,47 @@ public extension NSObject {
 public extension UIImage {
     @available(iOS 13.0, *)
     static func fromBundle(_ name: String) -> UIImage? {
+        // 1. First try to load from the module bundle (SPM support)
         let frameworkBundle = Bundle(for: BootpayBio.self)
-        let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("BootpayUI.bundle")
-        let resourceBundle = Bundle(url: bundleURL!)
-        return UIImage(named: name, in: resourceBundle, compatibleWith: nil)
+
+        // 2. Try CocoaPods resource bundle first
+        if let bundleURL = frameworkBundle.url(forResource: "BootpayUI", withExtension: "bundle"),
+           let resourceBundle = Bundle(url: bundleURL) {
+            // Try loading PNG file directly from bundle
+            if let imagePath = resourceBundle.path(forResource: name, ofType: "png"),
+               let image = UIImage(contentsOfFile: imagePath) {
+                return image
+            }
+            // Try loading from Images subfolder
+            if let imagePath = resourceBundle.path(forResource: name, ofType: "png", inDirectory: "Images"),
+               let image = UIImage(contentsOfFile: imagePath) {
+                return image
+            }
+            // Try with UIImage named API
+            if let image = UIImage(named: name, in: resourceBundle, compatibleWith: nil) {
+                return image
+            }
+        }
+
+        // 3. Try loading from resourceURL (for development pods)
+        if let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("BootpayUI.bundle"),
+           let resourceBundle = Bundle(url: bundleURL) {
+            if let imagePath = resourceBundle.path(forResource: name, ofType: "png"),
+               let image = UIImage(contentsOfFile: imagePath) {
+                return image
+            }
+            if let image = UIImage(named: name, in: resourceBundle, compatibleWith: nil) {
+                return image
+            }
+        }
+
+        // 4. Try loading directly from framework bundle
+        if let image = UIImage(named: name, in: frameworkBundle, compatibleWith: nil) {
+            return image
+        }
+
+        // 5. As a last resort, try the main bundle
+        return UIImage(named: name)
     }
 }
 

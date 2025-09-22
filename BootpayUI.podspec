@@ -30,9 +30,12 @@ Pod::Spec.new do |s|
 
   s.source_files = 'BootpayUI/Classes/**/*'
 
-   s.resources = 'BootpayUI/Images.xcassets'
+   # Use direct PNG resources instead of xcassets to avoid Xcode 16 AssetCatalogSimulatorAgent issues
+   s.resource_bundles = {
+     'BootpayUI' => ['BootpayUI/Resources/Images/*.png']
+   }
    s.swift_versions = ['5']
-   
+
    s.pod_target_xcconfig = {
      'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
    }
