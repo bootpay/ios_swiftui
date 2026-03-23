@@ -5,6 +5,7 @@ import ObjectMapper
 public class BootBioPayload: NSObject, Codable  {
     
     @objc public var applicationId = ""
+    @objc public var clientKey = ""
     @objc public var pg: String?
     @objc public var method: String?
     @objc public var methods: [String]?
@@ -38,14 +39,37 @@ public class BootBioPayload: NSObject, Codable  {
      
     
     
+    enum CodingKeys: String, CodingKey {
+        case applicationId = "application_id"
+        case clientKey = "client_key"
+        case pg, method, methods
+        case orderName = "order_name"
+        case price
+        case taxFree = "tax_free"
+        case walletId = "wallet_id"
+        case orderId = "order_id"
+        case subscriptionId = "subscription_id"
+        case authenticationId = "authentication_id"
+        case easyType = "easy_type"
+        case token
+        case authenticateType = "authenticate_type"
+        case userToken = "user_token"
+        case metadata
+        case extra, user, items
+    }
+
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        
-        try container.encodeIfPresent(applicationId, forKey: .applicationId)
+
+        if !clientKey.isEmpty {
+            try container.encode(clientKey, forKey: .clientKey)
+        } else {
+            try container.encodeIfPresent(applicationId, forKey: .applicationId)
+        }
         try container.encodeIfPresent(pg, forKey: .pg)
  
         if (methods?.count ?? 0) > 0 {
-            try container.encodeIfPresent(methods!, forKey: .method)
+            try container.encodeIfPresent(methods!, forKey: .methods)
         } else {
             try container.encodeIfPresent(method, forKey: .method)
         }
@@ -72,6 +96,7 @@ public class BootBioPayload: NSObject, Codable  {
     
     public func mapping(map: Map) {
         applicationId <- map["application_id"]
+        clientKey <- map["client_key"]
         pg <- map["pg"]
         method <- map["method"]
         methods <- map["methods"]

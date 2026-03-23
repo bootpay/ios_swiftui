@@ -1,3 +1,10 @@
+## 4.5.0
+* webview CDN URL을 5.3.0으로 업데이트
+* client_key 인증 방식 추가
+* iOS 최소 지원 버전 14.0 → 16.0으로 상향
+* Swift 버전 명세 5.9, 5.10으로 명확화
+* BootBioPayload methods 배열 인코딩 키 버그 수정 (.method → .methods)
+
 ## 4.4.10
 카드 이미지 나오게 수정 
 
