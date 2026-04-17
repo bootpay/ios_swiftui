@@ -1,6 +1,9 @@
 # macOS
 .DS_Store
 
+# Bootpay 환경 키 (xcconfig)
+Bootpay.xcconfig
+
 # Xcode
 build/
 *.pbxuser

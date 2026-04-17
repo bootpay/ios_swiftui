@@ -56,9 +56,9 @@ struct BootpayUIView: View {
 //                        #endif
 
                         #if os(macOS)
-                        payload.applicationId = "5b8f6a4d396fa665fdc2b5e7" //web application id
+                        payload.applicationId = BootpayConfig.webApplicationId
                         #elseif os(iOS)
-                        payload.applicationId = "59bfc733e13f337dbd6ca489" //ios application id
+                        payload.applicationId = BootpayConfig.applicationId
                         #endif
                         payload.pg = "웰컴페이먼츠"
                         payload.method = "디지털카드"
