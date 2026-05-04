@@ -7,16 +7,18 @@
  
 
 #if os(macOS)
+import AppKit
 public typealias BTNavigationController = NSPageController
 public typealias BTView = NSView
 public typealias BTViewController = NSViewController
 #elseif os(iOS)
+import UIKit
 public typealias BTNavigationController = UINavigationController
 public typealias BTView = UIView
 public typealias BTViewController = UIViewController
 #endif
 
-struct BootpayBuildConfig { 
+struct BootpayBuildConfig {
     static let DEBUG = false
-    static let VERSION = "4.4.0"
+    static let VERSION = "5.1.1"
 }

@@ -4,16 +4,18 @@
 //
 //  Created by Taesup Yoon on 2021/05/12.
 //
- 
-import WebKit
-import NVActivityIndicatorView
 
+#if os(macOS)
+import AppKit
+#elseif os(iOS)
+import UIKit
+#endif
+import WebKit
 
 @objc open class BootpayWebView: BTView {
     @objc public var webview: WKWebView!
-    var circleView: NVActivityIndicatorView?
+    var circleView: UIActivityIndicatorView?
     var circleBG: BTView?
-//    let circularSlider = CircularSlider()
     
     var beforeUrl = ""
     var topBlindView: BTView?
@@ -41,8 +43,10 @@ import NVActivityIndicatorView
     
     func initComponent() {
         HTTPCookieStorage.shared.cookieAcceptPolicy = HTTPCookie.AcceptPolicy.always  // 현대카드 등 쿠키설정 이슈 해결을 위해 필요
-        
+
+        // Bootpay의 공유 ProcessPool 사용 - warmUp() 호출 시 동일한 프로세스 재사용
         let configuration = WKWebViewConfiguration()
+        configuration.processPool = Bootpay.sharedProcessPool
 //        configuration.userContentController.add(self, name: BootpayConstant.BRIDGE_NAME)
         
         
@@ -78,7 +82,6 @@ import NVActivityIndicatorView
         
  
         circleBG = BTView()
-//            .withAlphaComponent(0.25)
         if(circleBG != nil) {
             circleBG?.frame = CGRect(x: 0,
                                      y: 0,
@@ -87,16 +90,15 @@ import NVActivityIndicatorView
             circleBG?.backgroundColor = .black.withAlphaComponent(0.25)
             self.addSubview(circleBG!)
         }
-        
-        circleView = NVActivityIndicatorView(frame: CGRect(
-            x: (UIScreen.main.bounds.width - 40) / 2,
-            y: (UIScreen.main.bounds.height - 40) / 2 - 60,
-            width: 40,
-            height: 40
-        ))
-        
+
+        circleView = UIActivityIndicatorView(style: .large)
+        circleView?.color = .white
+        circleView?.center = CGPoint(
+            x: UIScreen.main.bounds.width / 2,
+            y: UIScreen.main.bounds.height / 2 - 60
+        )
+
         if(circleView != nil) {
-//            circleView?.type = .
             circleBG?.addSubview(circleView!)
             circleView?.startAnimating()
         }
@@ -172,7 +174,7 @@ extension BootpayWebView: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHan
     
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         guard let payload = Bootpay.shared.payload else { return }
-        
+
         guard let url = webView.url?.absoluteString else { return; }
         if(url.contains("webview.bootpay.co.kr")) {
             let scriptList = BootpayConstant.getJSBeforePayStart()
@@ -193,15 +195,14 @@ extension BootpayWebView: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHan
     
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
 //        Bootpay.shared.webview = webView
-        
+
         guard let url =  navigationAction.request.url else { return decisionHandler(.allow) }
         beforeUrl = url.absoluteString
-        
+
 //        print(url.absoluteString)
-         
-       
+
         updateBlindViewIfNaverLogin(webView, url.absoluteString)
-        
+
         if(isItunesURL(url.absoluteString)) {
             startAppToApp(url)
             decisionHandler(.cancel)
@@ -360,7 +361,7 @@ extension BootpayWebView: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHan
         alertController.addAction(confirmAction)
         alertController.addAction(cancelAction)
         DispatchQueue.main.async {
-            if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            if var topController = self.getKeyWindow()?.rootViewController {
                 while let presentedViewController = topController.presentedViewController {
                     topController = presentedViewController
                 }
@@ -368,12 +369,12 @@ extension BootpayWebView: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHan
             }
         }
     }
-     
-    
+
+
     public func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo,
                  completionHandler: @escaping (Bool) -> Void) {
-        
-        
+
+
         let alertController = UIAlertController(title: "", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "확인", style: .default, handler: { (action) in
             completionHandler(true)
@@ -381,9 +382,9 @@ extension BootpayWebView: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHan
         alertController.addAction(UIAlertAction(title: "닫기", style: .default, handler: { (action) in
             completionHandler(false)
         }))
-        
+
         DispatchQueue.main.async {
-            if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            if var topController = self.getKeyWindow()?.rootViewController {
                 while let presentedViewController = topController.presentedViewController {
                     topController = presentedViewController
                 }
@@ -391,10 +392,21 @@ extension BootpayWebView: WKNavigationDelegate, WKUIDelegate, WKScriptMessageHan
             }
         }
     }
+
+    private func getKeyWindow() -> UIWindow? {
+        if #available(iOS 13.0, *) {
+            return UIApplication.shared.connectedScenes
+                .compactMap { $0 as? UIWindowScene }
+                .flatMap { $0.windows }
+                .first { $0.isKeyWindow }
+        } else {
+            return UIApplication.shared.keyWindow
+        }
+    }
 }
 
 extension BootpayWebView {
-    open func doJavascript(_ script: String) {
+    public func doJavascript(_ script: String) {
         webview.evaluateJavaScript(script, completionHandler: nil)
     }
     
@@ -446,6 +458,8 @@ extension BootpayWebView {
             itunesUrl = "https://apps.apple.com/kr/app/%EB%A6%AC%EB%B8%8C/id1126232922"
         } else if(sUrl.starts(with: "mpocket.online.ansimclick") || sUrl.starts(with: "ansimclickscard") || sUrl.starts(with: "ansimclickipcollect") || sUrl.starts(with: "samsungpay") || sUrl.starts(with: "scardcertiapp")) {
             itunesUrl = "https://apps.apple.com/kr/app/%EC%82%BC%EC%84%B1%EC%B9%B4%EB%93%9C/id535125356"
+        } else if(sUrl.starts(with: "monimopay") || sUrl.starts(with: "smcard")) {
+            itunesUrl = "https://apps.apple.com/kr/app/monimo-%EB%AA%A8%EB%8B%88%EB%AA%A8-%EC%82%BC%EC%84%B1%EA%B8%88%EC%9C%B5%EB%84%A4%ED%8A%B8%EC%9B%8D%EC%8A%A4/id379577046"
         } else if(sUrl.starts(with: "lottesmartpay")) {
             itunesUrl = "https://apps.apple.com/us/app/%EB%A1%AF%EB%8D%B0%EC%B9%B4%EB%93%9C-%EC%95%B1%EC%B9%B4%EB%93%9C/id688047200"
         } else if(sUrl.starts(with: "lotteappcard")) {

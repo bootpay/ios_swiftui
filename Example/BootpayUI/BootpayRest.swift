@@ -4,7 +4,7 @@
 //
 //  Created by Taesup Yoon on 2021/05/17.
 //
- 
+
 import Alamofire
 import Bootpay
 
@@ -21,18 +21,18 @@ import Bootpay
         sendable: BootpayRestProtocol,
         restApplicationId: String,
         privateKey: String) {
-       
+
        var params = [String: Any]()
        params["application_id"] = restApplicationId
        params["private_key"] = privateKey
-       
+
        AF.request("https://api.bootpay.co.kr/v2/request/token.json",
                   method: .post,
                   parameters: params,
                   encoding: URLEncoding.default)
                 .validate()
                 .responseJSON { response in
-                   
+
                    switch response.result {
                    case .success(let value):
 //                        print("token \(value)")
@@ -50,16 +50,49 @@ import Bootpay
                    }
        }
    }
-   
-   
-   @objc(getEasyPayUserToken::::)
+
+
+
+  /// 권장 방식: client_key/server_key 인증. server_key는 실서비스 클라이언트 앱에 포함하지 말고 서버사이드에서만 사용하세요. 기존 application_id/private_key 방식은 legacy 호환용으로 유지합니다.
+  @objc(getRestTokenWithClientKey:::)
+  public static func getRestToken(
+       sendable: BootpayRestProtocol,
+       clientKey: String,
+       serverKey: String) {
+
+      var params = [String: Any]()
+      params["client_key"] = clientKey
+      params["server_key"] = serverKey
+
+      AF.request("https://api.bootpay.co.kr/v2/request/token.json",
+                 method: .post,
+                 parameters: params,
+                 encoding: URLEncoding.default)
+               .validate()
+               .responseJSON { response in
+
+                  switch response.result {
+                  case .success(let value):
+                      guard let res = value as? [String: AnyObject] else { return }
+                      sendable.callbackRestToken(resData: res)
+                  case .failure(_):
+                      if let data = response.data {
+                          if let jsonString = String(data: data, encoding: String.Encoding.utf8), let json = jsonString.convertToDictionary() {
+                              print(json)
+                          }
+                      }
+                  }
+      }
+  }
+
+  @objc(getEasyPayUserToken::::)
    public static func getEasyPayUserToken(sendable: BootpayRestProtocol,
                                           restToken: String,
                                           user: BootUser,
                                           gameObject: String = "") {
-       
+
        print("restToken: \(restToken)")
-       
+
        do {
            var params = [String: Any]()
            params["user_id"] = user.id
@@ -68,12 +101,12 @@ import Bootpay
            params["gender"] = user.gender
            params["birth"] = user.birth
            params["phone"] = user.phone
-           
+
            let headers: HTTPHeaders = [
                "Authorization": "Bearer \(restToken)",
                "Accept": "application/json"
            ]
-           
+
            AF.request(
                 "https://api.bootpay.co.kr/v2/request/user/token",
                 method: .post,
@@ -83,7 +116,7 @@ import Bootpay
            )
           .validate()
           .responseJSON { response in
-                       
+
                switch response.result {
                case .success(let value):
                    print(value)
@@ -101,6 +134,6 @@ import Bootpay
        } catch {
            print(error)
        }
-   }    
+   }
 }
- 
+

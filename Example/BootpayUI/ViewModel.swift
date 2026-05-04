@@ -11,7 +11,7 @@ import Bootpay
 
 class ViewModel: ObservableObject {
     let restApplicationId = BootpayConfig.restApplicationId
-    let privateKey = BootpayConfig.privateKey
+    let serverKey = BootpayConfig.serverKey
 //    var manager = BootpayRest()
     
     @Published var easyPayUserToken = ""
@@ -24,8 +24,8 @@ class ViewModel: ObservableObject {
         
         BootpayRest.getRestToken(
             sendable: self,
-            restApplicationId: restApplicationId,
-            privateKey: privateKey
+            clientKey: BootpayConfig.clientKey,
+            serverKey: serverKey
         )
     }
     
@@ -68,7 +68,7 @@ extension ViewModel: BootpayRestProtocol {
 //       let restApplicationId = "5b9f51264457636ab9a07cde"
 //       let privateKey = "sfilSOSVakw+PZA+PRux4Iuwm7a//9CXXudCq9TMDHk="
 //
-//        BootpayRest.getRestToken(sendable: self, restApplicationId: restApplicationId, privateKey: privateKey)
+//        BootpayRest.getRestToken(sendable: self, restApplicationId: restApplicationId, serverKey: serverKey)
 //   }
 
 }

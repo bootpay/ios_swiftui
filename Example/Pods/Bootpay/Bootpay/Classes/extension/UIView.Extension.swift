@@ -5,35 +5,24 @@
 //  Created by Taesup Yoon on 2022/06/03.
 //
 
-import Foundation
-
+#if os(iOS)
+import UIKit
 
 extension UIView {
-  public var safeTopAnchor: NSLayoutYAxisAnchor {
-    if #available(iOS 11.0, *) {
-      return safeAreaLayoutGuide.topAnchor
+    public var safeTopAnchor: NSLayoutYAxisAnchor {
+        return safeAreaLayoutGuide.topAnchor
     }
-    return topAnchor
-  }
 
-  public var safeLeftAnchor: NSLayoutXAxisAnchor {
-    if #available(iOS 11.0, *){
-      return safeAreaLayoutGuide.leftAnchor
+    public var safeLeftAnchor: NSLayoutXAxisAnchor {
+        return safeAreaLayoutGuide.leftAnchor
     }
-    return leftAnchor
-  }
 
-  public var safeRightAnchor: NSLayoutXAxisAnchor {
-    if #available(iOS 11.0, *){
-      return safeAreaLayoutGuide.rightAnchor
+    public var safeRightAnchor: NSLayoutXAxisAnchor {
+        return safeAreaLayoutGuide.rightAnchor
     }
-    return rightAnchor
-  }
 
-  public var safeBottomAnchor: NSLayoutYAxisAnchor {
-    if #available(iOS 11.0, *) {
-      return safeAreaLayoutGuide.bottomAnchor
+    public var safeBottomAnchor: NSLayoutYAxisAnchor {
+        return safeAreaLayoutGuide.bottomAnchor
     }
-    return bottomAnchor
-  }
 }
+#endif

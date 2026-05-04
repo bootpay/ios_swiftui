@@ -47,7 +47,7 @@ Pod::Spec.new do |s|
   
   
 #  s.static_framework = true
-  s.dependency 'Bootpay', '~> 4.4.6'
+  s.dependency 'Bootpay', '~> 5.1.1'
 #  s.dependency 'SCLAlertView'
   s.dependency 'CryptoSwift'
   s.dependency 'Alamofire'

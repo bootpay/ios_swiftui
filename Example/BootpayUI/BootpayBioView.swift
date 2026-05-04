@@ -85,9 +85,9 @@ struct BootpayBioView: View {
         _user.username = "홍길동"
         
         #if os(macOS)
-        _payload.applicationId = BootpayConfig.webApplicationId
+        _payload.clientKey = BootpayConfig.clientKey
         #elseif os(iOS)
-        _bioPayload.applicationId = BootpayConfig.applicationId
+        _bioPayload.clientKey = BootpayConfig.clientKey
         #endif
 
         _bioPayload.pg = "나이스페이"

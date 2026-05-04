@@ -1,3 +1,7 @@
+## Unreleased
+- example: Bootpay.xcconfig 기반 client_key/server_key 예제로 정리하고 production fallback 유지
+- Bootpay 의존성을 client_key 지원 버전으로 정렬하되 legacy application_id/private_key 헬퍼 유지
+
 ## 4.5.0
 * webview CDN URL을 5.3.0으로 업데이트
 * client_key 인증 방식 추가

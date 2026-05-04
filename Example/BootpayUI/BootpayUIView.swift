@@ -10,7 +10,6 @@
 import SwiftUI
 import WebKit
 import Bootpay
-import BootpayUI
 
 struct BootpayUIView: View {
 //    @State private var showModal = false
@@ -22,7 +21,7 @@ struct BootpayUIView: View {
             VStack {
                 
                 if(self.showingBootpay) {
-                    BootpayUI(payload: payload, requestType: BootpayRequest.TYPE_PAYMENT)
+                    BootpayUI(payload: payload, requestType: BootpayConstant.REQUEST_TYPE_PAYMENT)
                         .onCancel { data in
                             print("-- cancel: \(data)")
                         }
@@ -49,17 +48,7 @@ struct BootpayUIView: View {
                 } else {
                     Button("부트페이 결제테스트") {
 
-//                        #if os(macOS)
-//                        payload.applicationId = "5b8f6a4d396fa665fdc2b5e7" //web application id
-//                        #elseif os(iOS)
-//                        payload.applicationId = "5b8f6a4d396fa665fdc2b5e9" //ios application id
-//                        #endif
-
-                        #if os(macOS)
-                        payload.applicationId = BootpayConfig.webApplicationId
-                        #elseif os(iOS)
-                        payload.applicationId = BootpayConfig.applicationId
-                        #endif
+                        payload.clientKey = BootpayConfig.clientKey
                         payload.pg = "웰컴페이먼츠"
                         payload.method = "디지털카드"
 

@@ -120,11 +120,7 @@ struct BootpayUIView: View {
                     Button("부트페이 결제테스트") {
                         showingBootpay = true
 
-                        #if os(macOS)
-                        payload.applicationId = "5b8f6a4d396fa665fdc2b5e7" //web application id
-                        #elseif os(iOS)
-                        payload.applicationId = "5b8f6a4d396fa665fdc2b5e9" //ios application id
-                        #endif
+                        payload.clientKey = "YOUR_CLIENT_KEY"
 
                         payload.pg = "나이스페이"
                         payload.method = "네이버페이"
@@ -187,11 +183,7 @@ struct BootpayBioView: View {
                    user.birth = "1988-06-10"
                    user.username = "홍길동"
                    
-                   #if os(macOS)
-                   payload.applicationId = "5b8f6a4d396fa665fdc2b5e7" //web application id
-                   #elseif os(iOS)
-                   payload.applicationId = "5b8f6a4d396fa665fdc2b5e9" //ios application id
-                   #endif
+                   payload.clientKey = "YOUR_CLIENT_KEY"
 
                    payload.pg = "nicepay"
 
