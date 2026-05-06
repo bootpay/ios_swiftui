@@ -14,7 +14,12 @@ import Bootpay
 struct BootpayUIView: View {
 //    @State private var showModal = false
     @State private var showingBootpay = false
-    private var payload = Payload()
+    @State private var payload = Payload()
+    private enum PaymentAuthMode {
+        case clientKey
+        case legacyApplicationId
+        case missingKey
+    }
        
     var body: some View {
         GeometryReader { geometry in
@@ -46,29 +51,53 @@ struct BootpayUIView: View {
                             self.showingBootpay = false
                         }
                 } else {
-                    Button("부트페이 결제테스트") {
-
-                        payload.clientKey = BootpayConfig.clientKey
-                        payload.pg = "웰컴페이먼츠"
-                        payload.method = "디지털카드"
-
-                        payload.price = 1000
-                        payload.orderId = String(NSTimeIntervalSince1970)
-                        payload.orderName = "테스트 아이템"
-
-                        payload.extra = BootExtra()
-//                        payload.extra?.separatelyConfirmed = false
-//                        payload.extra?.cardQuota = "6"
-
-                        let user = BootUser()
-                        user.username = "테스트 유저"
-                        user.phone = "01012345678"
-                        payload.user = user
-                        showingBootpay = true
+                    VStack(spacing: 12) {
+                        Button("부트페이 결제테스트 (client_key)") {
+                            requestPayment(authMode: .clientKey)
+                        }
+                        Button("레거시 결제테스트 (application_id)") {
+                            requestPayment(authMode: .legacyApplicationId)
+                        }
+                        Button("키 없음 테스트 (NEED_CLIENT_KEY)") {
+                            requestPayment(authMode: .missingKey)
+                        }
                     }.sheet(isPresented: self.$showingBootpay) {
                     }
                 }
             }.frame(width: geometry.size.width, height: geometry.size.height)
+        }
+    }
+
+    private func requestPayment(authMode: PaymentAuthMode) {
+        let nextPayload = Payload()
+        applyAuth(to: nextPayload, mode: authMode)
+        nextPayload.pg = "웰컴페이먼츠"
+        nextPayload.method = "디지털카드"
+
+        nextPayload.price = 1000
+        nextPayload.orderId = String(NSTimeIntervalSince1970)
+        nextPayload.orderName = "테스트 아이템"
+
+        nextPayload.extra = BootExtra()
+//        nextPayload.extra?.separatelyConfirmed = false
+//        nextPayload.extra?.cardQuota = "6"
+
+        let user = BootUser()
+        user.username = "테스트 유저"
+        user.phone = "01012345678"
+        nextPayload.user = user
+        payload = nextPayload
+        showingBootpay = true
+    }
+
+    private func applyAuth(to payload: Payload, mode: PaymentAuthMode) {
+        switch mode {
+        case .clientKey:
+            payload.clientKey = BootpayConfig.clientKey
+        case .legacyApplicationId:
+            payload.applicationId = BootpayConfig.applicationId
+        case .missingKey:
+            break // NEED_CLIENT_KEY 검증용
         }
     }
 }
