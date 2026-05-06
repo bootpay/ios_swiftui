@@ -2,31 +2,11 @@ import Foundation
 
 /// Bootpay 환경 설정
 ///
-/// 우선순위: Info.plist (xcconfig 주입) → production fallback
+/// 키는 모두 xcconfig 에서 주입 — `BootpayDefaults.xcconfig` (production, 커밋됨) 가 단일 출처.
+/// 로컬 dev 환경 시 `Bootpay.xcconfig` (gitignored) 를 만들어 BOOTPAY_ENV/키를 override.
 ///
-/// 환경 전환 (로컬 테스트):
-///   `Bootpay.xcconfig`를 생성하여 BOOTPAY_ENV / BOOTPAY_APPLICATION_ID 등 정의 후
-///   Xcode → Project Settings → Configurations → Configuration File로 지정.
-///   `Info.plist`에는 `$(BOOTPAY_*)` 변수 expansion으로 값이 주입됨.
-///
-/// 미설정 시 production 기본값으로 동작 (배포 안전 — production-default 규칙).
+/// 흐름: xcconfig → Info.plist 변수 expansion → `Bundle.main.infoDictionary`
 struct BootpayConfig {
-
-    // ===== Production 기본값 (fallback) =====
-    private static let prodApplicationId = "5b8f6a4d396fa665fdc2b5e9"
-    private static let prodWebApplicationId = "5b8f6a4d396fa665fdc2b5e7"
-    private static let prodRestApplicationId = "5b8f6a4d396fa665fdc2b5ea"
-    private static let prodPrivateKey = "rm6EYECr6aroQVG2ntW0A6LpWnkTgP4uQ3H18sDDUYw="
-    private static let prodClientKey = "OdKci2s0ux9iyFWsgYHdKw"
-    private static let prodServerKey = "L15AxIjXxGwFj9xe7NUUOt9VPHqP-CvyXJuK-FqMHto="
-
-    // ===== Development 기본값 =====
-    private static let devApplicationId = "5b9f51264457636ab9a07cdd"
-    private static let devWebApplicationId = "5b9f51264457636ab9a07cdb"
-    private static let devRestApplicationId = "59b731f084382614ebf72215"
-    private static let devPrivateKey = "WwDv0UjfwFa04wYG0LJZZv1xwraQnlhnHE375n52X0U="
-    private static let devClientKey = "K1Xok7RzFxbT7zMBmiBXNw"
-    private static let devServerKey = "vcd_5OXoQAxTA8JSg2VGaSnwmQPkd8DgQ6xiyL6QkyE="
 
     private static func infoString(_ key: String) -> String? {
         guard let value = Bundle.main.object(forInfoDictionaryKey: key) as? String,
@@ -45,31 +25,19 @@ struct BootpayConfig {
     static var isDevelopment: Bool { env == "development" }
 
     // PG API - iOS
-    static var applicationId: String {
-        infoString("BootpayApplicationId") ?? (isDevelopment ? devApplicationId : prodApplicationId)
-    }
+    static var applicationId: String { infoString("BootpayApplicationId") ?? "" }
 
     // PG API - Web (macOS 빌드용)
-    static var webApplicationId: String {
-        infoString("BootpayWebApplicationId") ?? (isDevelopment ? devWebApplicationId : prodWebApplicationId)
-    }
+    static var webApplicationId: String { infoString("BootpayWebApplicationId") ?? "" }
 
     // PG REST API (deprecated - EasyPay 전용)
-    static var restApplicationId: String {
-        infoString("BootpayRestApplicationId") ?? (isDevelopment ? devRestApplicationId : prodRestApplicationId)
-    }
+    static var restApplicationId: String { infoString("BootpayRestApplicationId") ?? "" }
 
-    static var serverKey: String {
-        infoString("BootpayServerKey") ?? (isDevelopment ? devServerKey : prodServerKey)
-    }
+    static var serverKey: String { infoString("BootpayServerKey") ?? "" }
 
     /// Legacy alias. 기존 예제/사용자 코드 호환을 위해 유지합니다.
-    static var privateKey: String {
-        infoString("BootpayPrivateKey") ?? (isDevelopment ? devPrivateKey : prodPrivateKey)
-    }
+    static var privateKey: String { infoString("BootpayPrivateKey") ?? "" }
 
     // Commerce API
-    static var clientKey: String {
-        infoString("BootpayClientKey") ?? (isDevelopment ? devClientKey : prodClientKey)
-    }
+    static var clientKey: String { infoString("BootpayClientKey") ?? "" }
 }
