@@ -11,8 +11,8 @@ import Bootpay
 
 class ViewModel: ObservableObject {
     let restApplicationId = BootpayConfig.restApplicationId
-    // 주의: server_key (secret) 는 클라이언트에 절대 포함하지 말 것 — 서버 SDK 에서만 사용. 아래 호출은 서버에서 받은 토큰을 직접 주입하도록 변경하세요.
-    let serverKey = ""
+    // 주의: secret_key (secret) 는 클라이언트에 절대 포함하지 말 것 — 서버 SDK 에서만 사용. 아래 호출은 서버에서 받은 토큰을 직접 주입하도록 변경하세요.
+    let secretKey = ""
 //    var manager = BootpayRest()
     
     @Published var easyPayUserToken = ""
@@ -26,7 +26,7 @@ class ViewModel: ObservableObject {
         BootpayRest.getRestToken(
             sendable: self,
             clientKey: BootpayConfig.clientKey,
-            serverKey: serverKey
+            secretKey: secretKey
         )
     }
     
@@ -69,7 +69,7 @@ extension ViewModel: BootpayRestProtocol {
 //       let restApplicationId = "5b9f51264457636ab9a07cde"
 //       let privateKey = "sfilSOSVakw+PZA+PRux4Iuwm7a//9CXXudCq9TMDHk="
 //
-//        BootpayRest.getRestToken(sendable: self, restApplicationId: restApplicationId, serverKey: serverKey)
+//        BootpayRest.getRestToken(sendable: self, restApplicationId: restApplicationId, secretKey: secretKey)
 //   }
 
 }
