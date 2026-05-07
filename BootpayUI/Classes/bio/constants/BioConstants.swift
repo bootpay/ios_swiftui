@@ -133,9 +133,10 @@ struct BioConstants {
     static func getJSBeforePayStart(payload: BootBioPayload) -> [String] {
         var array = [String]()
         array.append(close())
-        if(BootpayBuildConfig.DEBUG) {
-            array.append("Bootpay.setEnvironmentMode('development', 'gosomi.bootpay.co.kr');")
-            array.append("BootpaySDK.setEnvironmentMode('development', 'gosomi.bootpay.co.kr');")
+        if BootpayBuildConfig.DEBUG || BootpayConstant.ENVIRONMENT_MODE != "production" {
+            let mode = BootpayBuildConfig.DEBUG && BootpayConstant.ENVIRONMENT_MODE == "production" ? "development" : BootpayConstant.ENVIRONMENT_MODE
+            array.append("Bootpay.setEnvironmentMode('\(mode)');")
+            array.append("BootpaySDK.setEnvironmentMode('\(mode)');")
         }
         
         #if os(iOS)

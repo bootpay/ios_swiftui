@@ -22,6 +22,7 @@ BOOTPAY_ENV = production
 // BOOTPAY_REST_APPLICATION_ID = 59b731f084382614ebf72215
 // BOOTPAY_PRIVATE_KEY = WwDv0UjfwFa04wYG0LJZZv1xwraQnlhnHE375n52X0U=
 
-// PG API - Client/Server Key (권장)
+// PG API - Client Key (권장)
 // BOOTPAY_CLIENT_KEY = K1Xok7RzFxbT7zMBmiBXNw
-// BOOTPAY_SERVER_KEY = vcd_5OXoQAxTA8JSg2VGaSnwmQPkd8DgQ6xiyL6QkyE=
+
+// 주의: server_key (secret) 는 클라이언트에 절대 포함하지 말 것 — 서버 SDK 에서만 사용
