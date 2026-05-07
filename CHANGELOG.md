@@ -1,6 +1,10 @@
-## Unreleased
-- example: Bootpay.xcconfig 기반 client_key/server_key 예제로 정리하고 production fallback 유지
-- Bootpay 의존성을 client_key 지원 버전으로 정렬하되 legacy application_id/private_key 헬퍼 유지
+## 4.6.0
+* 통합 환경 모드 API 추가
+  - bio 결제 `setEnvironmentMode("development" | "stage" | "production")` 지원
+  - iOS Swift core 와 동일 truth-table 로 webview 에 주입 (기본값 production)
+* example: Bootpay.xcconfig 기반 client_key/server_key 예제로 정리하고 production fallback 유지
+  - Bootpay 의존성을 client_key 지원 버전으로 정렬하되 legacy application_id/private_key 헬퍼 유지
+  - `BOOTPAY_SERVER_KEY` 흔적 제거 (client 에 secret 노출 금지)
 
 ## 4.5.0
 * webview CDN URL을 5.3.0으로 업데이트
