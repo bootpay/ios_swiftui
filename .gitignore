@@ -38,3 +38,6 @@ Carthage/Build
 # `pod install` in .travis.yml
 #
 # Pods/
+
+# omj automation runtime
+.omj/
